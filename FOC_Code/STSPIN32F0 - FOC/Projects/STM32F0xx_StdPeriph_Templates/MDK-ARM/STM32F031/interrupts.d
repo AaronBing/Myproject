@@ -2,7 +2,7 @@ stm32f031\interrupts.o: ..\interrupts.c
 stm32f031\interrupts.o: ..\main.h
 stm32f031\interrupts.o: ..\..\..\Libraries\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h
 stm32f031\interrupts.o: ..\..\..\Libraries\CMSIS\Include\core_cm0.h
-stm32f031\interrupts.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+stm32f031\interrupts.o: D:\software\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 stm32f031\interrupts.o: ..\..\..\Libraries\CMSIS\Include\core_cmInstr.h
 stm32f031\interrupts.o: ..\..\..\Libraries\CMSIS\Include\core_cmFunc.h
 stm32f031\interrupts.o: ..\..\..\Libraries\CMSIS\Device\ST\STM32F0xx\Include\system_stm32f0xx.h

@@ -2,7 +2,7 @@ stm32f031\main.o: ..\main.c
 stm32f031\main.o: ..\main.h
 stm32f031\main.o: ..\..\..\Libraries\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h
 stm32f031\main.o: ..\..\..\Libraries\CMSIS\Include\core_cm0.h
-stm32f031\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+stm32f031\main.o: D:\software\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 stm32f031\main.o: ..\..\..\Libraries\CMSIS\Include\core_cmInstr.h
 stm32f031\main.o: ..\..\..\Libraries\CMSIS\Include\core_cmFunc.h
 stm32f031\main.o: ..\..\..\Libraries\CMSIS\Device\ST\STM32F0xx\Include\system_stm32f0xx.h

@@ -1273,27 +1273,27 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       772        100          0         24          0       4025   foc.o
-      1132         54          0          8          0       5377   init.o
-       892        170          0         84         36       4759   interrupts.o
-       420         58          0          8         14     237491   main.o
-      2372        360          0         57         12       4075   position_hall.o
-       200         42          0         16          0       1168   self_test.o
-        88         38        176          0       1024        784   startup_stm32f031.o
-       210          4          0          0          0      14360   stm32f0xx_adc.o
-       448         24          0          0          0      31446   stm32f0xx_dma.o
-       240          4          0          0          0       7984   stm32f0xx_gpio.o
-        12          0          0          0          0       2319   stm32f0xx_it.o
-       112          6          0          0          0       2320   stm32f0xx_misc.o
-         0          0          0          0          0      13132   stm32f0xx_pwr.o
-       812         56          0         16          0      19434   stm32f0xx_rcc.o
-       952        166          0          0          0      31589   stm32f0xx_tim.o
-       472         22          0          0          0      16803   stm32f0xx_usart.o
-       308         24          0          0          0     159477   system_stm32f0xx.o
-        58          4       2048          0          0       1675   trig.o
+       772        100          0         24          0       3837   foc.o
+      1132         54          0          8          0       5105   init.o
+       892        170          0         84         36       4599   interrupts.o
+       420         58          0          8         14     237155   main.o
+      2372        360          0         57         12       3999   position_hall.o
+       200         42          0         16          0       1116   self_test.o
+        88         38        176          0       1024        772   startup_stm32f031.o
+       210          4          0          0          0      14096   stm32f0xx_adc.o
+       448         24          0          0          0      31310   stm32f0xx_dma.o
+       240          4          0          0          0       7820   stm32f0xx_gpio.o
+        12          0          0          0          0       2183   stm32f0xx_it.o
+       112          6          0          0          0       2236   stm32f0xx_misc.o
+         0          0          0          0          0      13104   stm32f0xx_pwr.o
+       812         56          0         16          0      19158   stm32f0xx_rcc.o
+       952        166          0          0          0      31141   stm32f0xx_tim.o
+       472         22          0          0          0      16543   stm32f0xx_usart.o
+       308         24          0          0          0     159377   system_stm32f0xx.o
+        58          4       2048          0          0       1571   trig.o
 
     ----------------------------------------------------------------------
-      9524       1132       2256        216       1088     558218   Object Totals
+      9524       1132       2256        216       1088     555122   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         24          0          0          3          2          0   (incl. Padding)
 
@@ -1333,8 +1333,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      9656       1148       2256        216       1088     555166   Grand Totals
-      9656       1148       2256        216       1088     555166   ELF Image Totals
+      9656       1148       2256        216       1088     552070   Grand Totals
+      9656       1148       2256        216       1088     552070   ELF Image Totals
       9656       1148       2256        216          0          0   ROM Totals
 
 ==============================================================================
