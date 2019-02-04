@@ -1,757 +1,0 @@
-Dependencies for Project 'Project_Uart', Target 'STSPIN32F0A': (DO NOT MODIFY !)
-F (..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0\stspin32f0.c)(0x5C49939A)(--c99 -c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I ..\..\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc -I ..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\Common -I ..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include -I ..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc-I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F031x6 -DUSE_HAL_DRIVER -DSTM32F031x6 -DUART_COMM -DNO_PID -DNO_HALL_SENSORS -DNO_ALL_WINDINGS_ENERGIZATION -DNO_FIXED_HALL_DELAY -DNO_PWM_ON_BEMF_SENSING -DNO_MC_FAN_4PP_24V -DNO_MC_RS_57BL54 -DNO_MC_2036_U_024_B_K312 -DMC_BR2804_1700_KV_1 -DDELTA_6STEP_TABLE -DCOMPLEMENTARY_DRIVE -DVOLTAGE_MODE -DNO_POTENTIOMETER -DNO_CURRENT_SENSE_ADC -DNO_VBUS_SENSE_ADC -DNO_TEMP_SENSE_ADC -DNO_BEMF_RECORDING -DNO_SPEED_SENDING -DSPEED_RAMP-o .\objects\stspin32f0.o --omf_browse .\objects\stspin32f0.crf --depend .\objects\stspin32f0.d)
-I (..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0\stspin32f0.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (..\..\..\..\..\..\..\Drivers\BSP\Components\Common\MC_Common.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h)(0x5C49939B)
-I (..\..\Inc\stm32f0xx_hal_conf.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f031x6.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include\system_stm32f0xx.h)(0x56E9F63A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h)(0x5C49939C)
-F (..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202\STEVAL-SPIN3202.c)(0x5C49939A)(--c99 -c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I ..\..\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc -I ..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\Common -I ..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include -I ..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc-I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F031x6 -DUSE_HAL_DRIVER -DSTM32F031x6 -DUART_COMM -DNO_PID -DNO_HALL_SENSORS -DNO_ALL_WINDINGS_ENERGIZATION -DNO_FIXED_HALL_DELAY -DNO_PWM_ON_BEMF_SENSING -DNO_MC_FAN_4PP_24V -DNO_MC_RS_57BL54 -DNO_MC_2036_U_024_B_K312 -DMC_BR2804_1700_KV_1 -DDELTA_6STEP_TABLE -DCOMPLEMENTARY_DRIVE -DVOLTAGE_MODE -DNO_POTENTIOMETER -DNO_CURRENT_SENSE_ADC -DNO_VBUS_SENSE_ADC -DNO_TEMP_SENSE_ADC -DNO_BEMF_RECORDING -DNO_SPEED_SENDING -DSPEED_RAMP-o .\objects\steval-spin3202.o --omf_browse .\objects\steval-spin3202.crf --depend .\objects\steval-spin3202.d)
-I (..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202\STEVAL-SPIN3202.h)(0x5C49939A)
-I (..\..\Inc\MC_SixStep_param_32F0.h)(0x5C49939D)
-I (..\..\Inc\MC_SixStep_param_BR2804_1700_KV_1.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0\stspin32f0.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (..\..\..\..\..\..\..\Drivers\BSP\Components\Common\MC_Common.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h)(0x5C49939B)
-I (..\..\Inc\stm32f0xx_hal_conf.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f031x6.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include\system_stm32f0xx.h)(0x56E9F63A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h)(0x5C49939C)
-F (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal.c)(0x5C49939C)(--c99 -c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I ..\..\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc -I ..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\Common -I ..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include -I ..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc-I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F031x6 -DUSE_HAL_DRIVER -DSTM32F031x6 -DUART_COMM -DNO_PID -DNO_HALL_SENSORS -DNO_ALL_WINDINGS_ENERGIZATION -DNO_FIXED_HALL_DELAY -DNO_PWM_ON_BEMF_SENSING -DNO_MC_FAN_4PP_24V -DNO_MC_RS_57BL54 -DNO_MC_2036_U_024_B_K312 -DMC_BR2804_1700_KV_1 -DDELTA_6STEP_TABLE -DCOMPLEMENTARY_DRIVE -DVOLTAGE_MODE -DNO_POTENTIOMETER -DNO_CURRENT_SENSE_ADC -DNO_VBUS_SENSE_ADC -DNO_TEMP_SENSE_ADC -DNO_BEMF_RECORDING -DNO_SPEED_SENDING -DSPEED_RAMP-o .\objects\stm32f0xx_hal.o --omf_browse .\objects\stm32f0xx_hal.crf --depend .\objects\stm32f0xx_hal.d)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h)(0x5C49939B)
-I (..\..\Inc\stm32f0xx_hal_conf.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f031x6.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include\system_stm32f0xx.h)(0x56E9F63A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h)(0x5C49939C)
-F (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_adc.c)(0x5C49939C)(--c99 -c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I ..\..\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc -I ..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\Common -I ..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include -I ..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc-I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F031x6 -DUSE_HAL_DRIVER -DSTM32F031x6 -DUART_COMM -DNO_PID -DNO_HALL_SENSORS -DNO_ALL_WINDINGS_ENERGIZATION -DNO_FIXED_HALL_DELAY -DNO_PWM_ON_BEMF_SENSING -DNO_MC_FAN_4PP_24V -DNO_MC_RS_57BL54 -DNO_MC_2036_U_024_B_K312 -DMC_BR2804_1700_KV_1 -DDELTA_6STEP_TABLE -DCOMPLEMENTARY_DRIVE -DVOLTAGE_MODE -DNO_POTENTIOMETER -DNO_CURRENT_SENSE_ADC -DNO_VBUS_SENSE_ADC -DNO_TEMP_SENSE_ADC -DNO_BEMF_RECORDING -DNO_SPEED_SENDING -DSPEED_RAMP-o .\objects\stm32f0xx_hal_adc.o --omf_browse .\objects\stm32f0xx_hal_adc.crf --depend .\objects\stm32f0xx_hal_adc.d)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h)(0x5C49939B)
-I (..\..\Inc\stm32f0xx_hal_conf.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f031x6.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include\system_stm32f0xx.h)(0x56E9F63A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h)(0x5C49939C)
-F (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_adc_ex.c)(0x5C49939C)(--c99 -c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I ..\..\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc -I ..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\Common -I ..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include -I ..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc-I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F031x6 -DUSE_HAL_DRIVER -DSTM32F031x6 -DUART_COMM -DNO_PID -DNO_HALL_SENSORS -DNO_ALL_WINDINGS_ENERGIZATION -DNO_FIXED_HALL_DELAY -DNO_PWM_ON_BEMF_SENSING -DNO_MC_FAN_4PP_24V -DNO_MC_RS_57BL54 -DNO_MC_2036_U_024_B_K312 -DMC_BR2804_1700_KV_1 -DDELTA_6STEP_TABLE -DCOMPLEMENTARY_DRIVE -DVOLTAGE_MODE -DNO_POTENTIOMETER -DNO_CURRENT_SENSE_ADC -DNO_VBUS_SENSE_ADC -DNO_TEMP_SENSE_ADC -DNO_BEMF_RECORDING -DNO_SPEED_SENDING -DSPEED_RAMP-o .\objects\stm32f0xx_hal_adc_ex.o --omf_browse .\objects\stm32f0xx_hal_adc_ex.crf --depend .\objects\stm32f0xx_hal_adc_ex.d)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h)(0x5C49939B)
-I (..\..\Inc\stm32f0xx_hal_conf.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f031x6.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include\system_stm32f0xx.h)(0x56E9F63A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h)(0x5C49939C)
-F (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_cortex.c)(0x5C49939C)(--c99 -c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I ..\..\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc -I ..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\Common -I ..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include -I ..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc-I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F031x6 -DUSE_HAL_DRIVER -DSTM32F031x6 -DUART_COMM -DNO_PID -DNO_HALL_SENSORS -DNO_ALL_WINDINGS_ENERGIZATION -DNO_FIXED_HALL_DELAY -DNO_PWM_ON_BEMF_SENSING -DNO_MC_FAN_4PP_24V -DNO_MC_RS_57BL54 -DNO_MC_2036_U_024_B_K312 -DMC_BR2804_1700_KV_1 -DDELTA_6STEP_TABLE -DCOMPLEMENTARY_DRIVE -DVOLTAGE_MODE -DNO_POTENTIOMETER -DNO_CURRENT_SENSE_ADC -DNO_VBUS_SENSE_ADC -DNO_TEMP_SENSE_ADC -DNO_BEMF_RECORDING -DNO_SPEED_SENDING -DSPEED_RAMP-o .\objects\stm32f0xx_hal_cortex.o --omf_browse .\objects\stm32f0xx_hal_cortex.crf --depend .\objects\stm32f0xx_hal_cortex.d)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h)(0x5C49939B)
-I (..\..\Inc\stm32f0xx_hal_conf.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f031x6.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include\system_stm32f0xx.h)(0x56E9F63A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h)(0x5C49939C)
-F (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_dma.c)(0x5C49939C)(--c99 -c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I ..\..\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc -I ..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\Common -I ..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include -I ..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc-I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F031x6 -DUSE_HAL_DRIVER -DSTM32F031x6 -DUART_COMM -DNO_PID -DNO_HALL_SENSORS -DNO_ALL_WINDINGS_ENERGIZATION -DNO_FIXED_HALL_DELAY -DNO_PWM_ON_BEMF_SENSING -DNO_MC_FAN_4PP_24V -DNO_MC_RS_57BL54 -DNO_MC_2036_U_024_B_K312 -DMC_BR2804_1700_KV_1 -DDELTA_6STEP_TABLE -DCOMPLEMENTARY_DRIVE -DVOLTAGE_MODE -DNO_POTENTIOMETER -DNO_CURRENT_SENSE_ADC -DNO_VBUS_SENSE_ADC -DNO_TEMP_SENSE_ADC -DNO_BEMF_RECORDING -DNO_SPEED_SENDING -DSPEED_RAMP-o .\objects\stm32f0xx_hal_dma.o --omf_browse .\objects\stm32f0xx_hal_dma.crf --depend .\objects\stm32f0xx_hal_dma.d)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h)(0x5C49939B)
-I (..\..\Inc\stm32f0xx_hal_conf.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f031x6.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include\system_stm32f0xx.h)(0x56E9F63A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h)(0x5C49939C)
-F (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_flash.c)(0x5C49939C)(--c99 -c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I ..\..\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc -I ..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\Common -I ..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include -I ..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc-I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F031x6 -DUSE_HAL_DRIVER -DSTM32F031x6 -DUART_COMM -DNO_PID -DNO_HALL_SENSORS -DNO_ALL_WINDINGS_ENERGIZATION -DNO_FIXED_HALL_DELAY -DNO_PWM_ON_BEMF_SENSING -DNO_MC_FAN_4PP_24V -DNO_MC_RS_57BL54 -DNO_MC_2036_U_024_B_K312 -DMC_BR2804_1700_KV_1 -DDELTA_6STEP_TABLE -DCOMPLEMENTARY_DRIVE -DVOLTAGE_MODE -DNO_POTENTIOMETER -DNO_CURRENT_SENSE_ADC -DNO_VBUS_SENSE_ADC -DNO_TEMP_SENSE_ADC -DNO_BEMF_RECORDING -DNO_SPEED_SENDING -DSPEED_RAMP-o .\objects\stm32f0xx_hal_flash.o --omf_browse .\objects\stm32f0xx_hal_flash.crf --depend .\objects\stm32f0xx_hal_flash.d)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h)(0x5C49939B)
-I (..\..\Inc\stm32f0xx_hal_conf.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f031x6.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include\system_stm32f0xx.h)(0x56E9F63A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h)(0x5C49939C)
-F (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_flash_ex.c)(0x5C49939C)(--c99 -c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I ..\..\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc -I ..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\Common -I ..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include -I ..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc-I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F031x6 -DUSE_HAL_DRIVER -DSTM32F031x6 -DUART_COMM -DNO_PID -DNO_HALL_SENSORS -DNO_ALL_WINDINGS_ENERGIZATION -DNO_FIXED_HALL_DELAY -DNO_PWM_ON_BEMF_SENSING -DNO_MC_FAN_4PP_24V -DNO_MC_RS_57BL54 -DNO_MC_2036_U_024_B_K312 -DMC_BR2804_1700_KV_1 -DDELTA_6STEP_TABLE -DCOMPLEMENTARY_DRIVE -DVOLTAGE_MODE -DNO_POTENTIOMETER -DNO_CURRENT_SENSE_ADC -DNO_VBUS_SENSE_ADC -DNO_TEMP_SENSE_ADC -DNO_BEMF_RECORDING -DNO_SPEED_SENDING -DSPEED_RAMP-o .\objects\stm32f0xx_hal_flash_ex.o --omf_browse .\objects\stm32f0xx_hal_flash_ex.crf --depend .\objects\stm32f0xx_hal_flash_ex.d)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h)(0x5C49939B)
-I (..\..\Inc\stm32f0xx_hal_conf.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f031x6.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include\system_stm32f0xx.h)(0x56E9F63A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h)(0x5C49939C)
-F (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_gpio.c)(0x5C49939C)(--c99 -c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I ..\..\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc -I ..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\Common -I ..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include -I ..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc-I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F031x6 -DUSE_HAL_DRIVER -DSTM32F031x6 -DUART_COMM -DNO_PID -DNO_HALL_SENSORS -DNO_ALL_WINDINGS_ENERGIZATION -DNO_FIXED_HALL_DELAY -DNO_PWM_ON_BEMF_SENSING -DNO_MC_FAN_4PP_24V -DNO_MC_RS_57BL54 -DNO_MC_2036_U_024_B_K312 -DMC_BR2804_1700_KV_1 -DDELTA_6STEP_TABLE -DCOMPLEMENTARY_DRIVE -DVOLTAGE_MODE -DNO_POTENTIOMETER -DNO_CURRENT_SENSE_ADC -DNO_VBUS_SENSE_ADC -DNO_TEMP_SENSE_ADC -DNO_BEMF_RECORDING -DNO_SPEED_SENDING -DSPEED_RAMP-o .\objects\stm32f0xx_hal_gpio.o --omf_browse .\objects\stm32f0xx_hal_gpio.crf --depend .\objects\stm32f0xx_hal_gpio.d)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h)(0x5C49939B)
-I (..\..\Inc\stm32f0xx_hal_conf.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f031x6.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include\system_stm32f0xx.h)(0x56E9F63A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h)(0x5C49939C)
-F (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_rcc.c)(0x5C49939C)(--c99 -c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I ..\..\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc -I ..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\Common -I ..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include -I ..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc-I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F031x6 -DUSE_HAL_DRIVER -DSTM32F031x6 -DUART_COMM -DNO_PID -DNO_HALL_SENSORS -DNO_ALL_WINDINGS_ENERGIZATION -DNO_FIXED_HALL_DELAY -DNO_PWM_ON_BEMF_SENSING -DNO_MC_FAN_4PP_24V -DNO_MC_RS_57BL54 -DNO_MC_2036_U_024_B_K312 -DMC_BR2804_1700_KV_1 -DDELTA_6STEP_TABLE -DCOMPLEMENTARY_DRIVE -DVOLTAGE_MODE -DNO_POTENTIOMETER -DNO_CURRENT_SENSE_ADC -DNO_VBUS_SENSE_ADC -DNO_TEMP_SENSE_ADC -DNO_BEMF_RECORDING -DNO_SPEED_SENDING -DSPEED_RAMP-o .\objects\stm32f0xx_hal_rcc.o --omf_browse .\objects\stm32f0xx_hal_rcc.crf --depend .\objects\stm32f0xx_hal_rcc.d)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h)(0x5C49939B)
-I (..\..\Inc\stm32f0xx_hal_conf.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f031x6.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include\system_stm32f0xx.h)(0x56E9F63A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h)(0x5C49939C)
-F (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_rcc_ex.c)(0x5C49939C)(--c99 -c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I ..\..\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc -I ..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\Common -I ..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include -I ..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc-I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F031x6 -DUSE_HAL_DRIVER -DSTM32F031x6 -DUART_COMM -DNO_PID -DNO_HALL_SENSORS -DNO_ALL_WINDINGS_ENERGIZATION -DNO_FIXED_HALL_DELAY -DNO_PWM_ON_BEMF_SENSING -DNO_MC_FAN_4PP_24V -DNO_MC_RS_57BL54 -DNO_MC_2036_U_024_B_K312 -DMC_BR2804_1700_KV_1 -DDELTA_6STEP_TABLE -DCOMPLEMENTARY_DRIVE -DVOLTAGE_MODE -DNO_POTENTIOMETER -DNO_CURRENT_SENSE_ADC -DNO_VBUS_SENSE_ADC -DNO_TEMP_SENSE_ADC -DNO_BEMF_RECORDING -DNO_SPEED_SENDING -DSPEED_RAMP-o .\objects\stm32f0xx_hal_rcc_ex.o --omf_browse .\objects\stm32f0xx_hal_rcc_ex.crf --depend .\objects\stm32f0xx_hal_rcc_ex.d)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h)(0x5C49939B)
-I (..\..\Inc\stm32f0xx_hal_conf.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f031x6.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include\system_stm32f0xx.h)(0x56E9F63A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h)(0x5C49939C)
-F (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_tim.c)(0x5C49939C)(--c99 -c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I ..\..\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc -I ..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\Common -I ..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include -I ..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc-I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F031x6 -DUSE_HAL_DRIVER -DSTM32F031x6 -DUART_COMM -DNO_PID -DNO_HALL_SENSORS -DNO_ALL_WINDINGS_ENERGIZATION -DNO_FIXED_HALL_DELAY -DNO_PWM_ON_BEMF_SENSING -DNO_MC_FAN_4PP_24V -DNO_MC_RS_57BL54 -DNO_MC_2036_U_024_B_K312 -DMC_BR2804_1700_KV_1 -DDELTA_6STEP_TABLE -DCOMPLEMENTARY_DRIVE -DVOLTAGE_MODE -DNO_POTENTIOMETER -DNO_CURRENT_SENSE_ADC -DNO_VBUS_SENSE_ADC -DNO_TEMP_SENSE_ADC -DNO_BEMF_RECORDING -DNO_SPEED_SENDING -DSPEED_RAMP-o .\objects\stm32f0xx_hal_tim.o --omf_browse .\objects\stm32f0xx_hal_tim.crf --depend .\objects\stm32f0xx_hal_tim.d)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h)(0x5C49939B)
-I (..\..\Inc\stm32f0xx_hal_conf.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f031x6.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include\system_stm32f0xx.h)(0x56E9F63A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h)(0x5C49939C)
-F (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_tim_ex.c)(0x5C49939C)(--c99 -c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I ..\..\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc -I ..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\Common -I ..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include -I ..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc-I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F031x6 -DUSE_HAL_DRIVER -DSTM32F031x6 -DUART_COMM -DNO_PID -DNO_HALL_SENSORS -DNO_ALL_WINDINGS_ENERGIZATION -DNO_FIXED_HALL_DELAY -DNO_PWM_ON_BEMF_SENSING -DNO_MC_FAN_4PP_24V -DNO_MC_RS_57BL54 -DNO_MC_2036_U_024_B_K312 -DMC_BR2804_1700_KV_1 -DDELTA_6STEP_TABLE -DCOMPLEMENTARY_DRIVE -DVOLTAGE_MODE -DNO_POTENTIOMETER -DNO_CURRENT_SENSE_ADC -DNO_VBUS_SENSE_ADC -DNO_TEMP_SENSE_ADC -DNO_BEMF_RECORDING -DNO_SPEED_SENDING -DSPEED_RAMP-o .\objects\stm32f0xx_hal_tim_ex.o --omf_browse .\objects\stm32f0xx_hal_tim_ex.crf --depend .\objects\stm32f0xx_hal_tim_ex.d)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h)(0x5C49939B)
-I (..\..\Inc\stm32f0xx_hal_conf.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f031x6.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include\system_stm32f0xx.h)(0x56E9F63A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h)(0x5C49939C)
-F (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_uart.c)(0x5C49939C)(--c99 -c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I ..\..\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc -I ..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\Common -I ..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include -I ..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc-I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F031x6 -DUSE_HAL_DRIVER -DSTM32F031x6 -DUART_COMM -DNO_PID -DNO_HALL_SENSORS -DNO_ALL_WINDINGS_ENERGIZATION -DNO_FIXED_HALL_DELAY -DNO_PWM_ON_BEMF_SENSING -DNO_MC_FAN_4PP_24V -DNO_MC_RS_57BL54 -DNO_MC_2036_U_024_B_K312 -DMC_BR2804_1700_KV_1 -DDELTA_6STEP_TABLE -DCOMPLEMENTARY_DRIVE -DVOLTAGE_MODE -DNO_POTENTIOMETER -DNO_CURRENT_SENSE_ADC -DNO_VBUS_SENSE_ADC -DNO_TEMP_SENSE_ADC -DNO_BEMF_RECORDING -DNO_SPEED_SENDING -DSPEED_RAMP-o .\objects\stm32f0xx_hal_uart.o --omf_browse .\objects\stm32f0xx_hal_uart.crf --depend .\objects\stm32f0xx_hal_uart.d)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h)(0x5C49939B)
-I (..\..\Inc\stm32f0xx_hal_conf.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f031x6.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include\system_stm32f0xx.h)(0x56E9F63A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h)(0x5C49939C)
-F (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_uart_ex.c)(0x5C49939C)(--c99 -c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I ..\..\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc -I ..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\Common -I ..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include -I ..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc-I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F031x6 -DUSE_HAL_DRIVER -DSTM32F031x6 -DUART_COMM -DNO_PID -DNO_HALL_SENSORS -DNO_ALL_WINDINGS_ENERGIZATION -DNO_FIXED_HALL_DELAY -DNO_PWM_ON_BEMF_SENSING -DNO_MC_FAN_4PP_24V -DNO_MC_RS_57BL54 -DNO_MC_2036_U_024_B_K312 -DMC_BR2804_1700_KV_1 -DDELTA_6STEP_TABLE -DCOMPLEMENTARY_DRIVE -DVOLTAGE_MODE -DNO_POTENTIOMETER -DNO_CURRENT_SENSE_ADC -DNO_VBUS_SENSE_ADC -DNO_TEMP_SENSE_ADC -DNO_BEMF_RECORDING -DNO_SPEED_SENDING -DSPEED_RAMP-o .\objects\stm32f0xx_hal_uart_ex.o --omf_browse .\objects\stm32f0xx_hal_uart_ex.crf --depend .\objects\stm32f0xx_hal_uart_ex.d)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h)(0x5C49939B)
-I (..\..\Inc\stm32f0xx_hal_conf.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f031x6.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include\system_stm32f0xx.h)(0x56E9F63A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h)(0x5C49939C)
-F (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_usart.c)(0x5C49939C)(--c99 -c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I ..\..\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc -I ..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\Common -I ..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include -I ..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc-I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F031x6 -DUSE_HAL_DRIVER -DSTM32F031x6 -DUART_COMM -DNO_PID -DNO_HALL_SENSORS -DNO_ALL_WINDINGS_ENERGIZATION -DNO_FIXED_HALL_DELAY -DNO_PWM_ON_BEMF_SENSING -DNO_MC_FAN_4PP_24V -DNO_MC_RS_57BL54 -DNO_MC_2036_U_024_B_K312 -DMC_BR2804_1700_KV_1 -DDELTA_6STEP_TABLE -DCOMPLEMENTARY_DRIVE -DVOLTAGE_MODE -DNO_POTENTIOMETER -DNO_CURRENT_SENSE_ADC -DNO_VBUS_SENSE_ADC -DNO_TEMP_SENSE_ADC -DNO_BEMF_RECORDING -DNO_SPEED_SENDING -DSPEED_RAMP-o .\objects\stm32f0xx_hal_usart.o --omf_browse .\objects\stm32f0xx_hal_usart.crf --depend .\objects\stm32f0xx_hal_usart.d)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h)(0x5C49939B)
-I (..\..\Inc\stm32f0xx_hal_conf.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f031x6.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include\system_stm32f0xx.h)(0x56E9F63A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h)(0x5C49939C)
-F (..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Src\UART_UI.c)(0x5C49939D)(--c99 -c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I ..\..\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc -I ..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\Common -I ..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include -I ..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc-I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F031x6 -DUSE_HAL_DRIVER -DSTM32F031x6 -DUART_COMM -DNO_PID -DNO_HALL_SENSORS -DNO_ALL_WINDINGS_ENERGIZATION -DNO_FIXED_HALL_DELAY -DNO_PWM_ON_BEMF_SENSING -DNO_MC_FAN_4PP_24V -DNO_MC_RS_57BL54 -DNO_MC_2036_U_024_B_K312 -DMC_BR2804_1700_KV_1 -DDELTA_6STEP_TABLE -DCOMPLEMENTARY_DRIVE -DVOLTAGE_MODE -DNO_POTENTIOMETER -DNO_CURRENT_SENSE_ADC -DNO_VBUS_SENSE_ADC -DNO_TEMP_SENSE_ADC -DNO_BEMF_RECORDING -DNO_SPEED_SENDING -DSPEED_RAMP-o .\objects\uart_ui.o --omf_browse .\objects\uart_ui.crf --depend .\objects\uart_ui.d)
-I (..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc\UART_UI.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc\6Step_Lib.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202\STEVAL-SPIN3202.h)(0x5C49939A)
-I (..\..\Inc\MC_SixStep_param_32F0.h)(0x5C49939D)
-I (..\..\Inc\MC_SixStep_param_BR2804_1700_KV_1.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0\stspin32f0.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (..\..\..\..\..\..\..\Drivers\BSP\Components\Common\MC_Common.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h)(0x5C49939B)
-I (..\..\Inc\stm32f0xx_hal_conf.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f031x6.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include\system_stm32f0xx.h)(0x56E9F63A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h)(0x5C49939C)
-I (D:\software\Keil_v5\ARM\ARMCC\include\math.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
-F (..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Src\6Step_Lib.c)(0x5C49939D)(--c99 -c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I ..\..\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc -I ..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\Common -I ..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include -I ..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc-I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F031x6 -DUSE_HAL_DRIVER -DSTM32F031x6 -DUART_COMM -DNO_PID -DNO_HALL_SENSORS -DNO_ALL_WINDINGS_ENERGIZATION -DNO_FIXED_HALL_DELAY -DNO_PWM_ON_BEMF_SENSING -DNO_MC_FAN_4PP_24V -DNO_MC_RS_57BL54 -DNO_MC_2036_U_024_B_K312 -DMC_BR2804_1700_KV_1 -DDELTA_6STEP_TABLE -DCOMPLEMENTARY_DRIVE -DVOLTAGE_MODE -DNO_POTENTIOMETER -DNO_CURRENT_SENSE_ADC -DNO_VBUS_SENSE_ADC -DNO_TEMP_SENSE_ADC -DNO_BEMF_RECORDING -DNO_SPEED_SENDING -DSPEED_RAMP-o .\objects\6step_lib.o --omf_browse .\objects\6step_lib.crf --depend .\objects\6step_lib.d)
-I (..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc\6Step_Lib.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202\STEVAL-SPIN3202.h)(0x5C49939A)
-I (..\..\Inc\MC_SixStep_param_32F0.h)(0x5C49939D)
-I (..\..\Inc\MC_SixStep_param_BR2804_1700_KV_1.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0\stspin32f0.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (..\..\..\..\..\..\..\Drivers\BSP\Components\Common\MC_Common.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h)(0x5C49939B)
-I (..\..\Inc\stm32f0xx_hal_conf.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f031x6.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include\system_stm32f0xx.h)(0x56E9F63A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h)(0x5C49939C)
-I (D:\software\Keil_v5\ARM\ARMCC\include\math.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
-F (..\..\Src\main_32F0.c)(0x5C49939D)(--c99 -c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I ..\..\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc -I ..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\Common -I ..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include -I ..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc-I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F031x6 -DUSE_HAL_DRIVER -DSTM32F031x6 -DUART_COMM -DNO_PID -DNO_HALL_SENSORS -DNO_ALL_WINDINGS_ENERGIZATION -DNO_FIXED_HALL_DELAY -DNO_PWM_ON_BEMF_SENSING -DNO_MC_FAN_4PP_24V -DNO_MC_RS_57BL54 -DNO_MC_2036_U_024_B_K312 -DMC_BR2804_1700_KV_1 -DDELTA_6STEP_TABLE -DCOMPLEMENTARY_DRIVE -DVOLTAGE_MODE -DNO_POTENTIOMETER -DNO_CURRENT_SENSE_ADC -DNO_VBUS_SENSE_ADC -DNO_TEMP_SENSE_ADC -DNO_BEMF_RECORDING -DNO_SPEED_SENDING -DSPEED_RAMP-o .\objects\main_32f0.o --omf_browse .\objects\main_32f0.crf --depend .\objects\main_32f0.d)
-I (..\..\Inc\main_32F0.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc\6Step_Lib.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202\STEVAL-SPIN3202.h)(0x5C49939A)
-I (..\..\Inc\MC_SixStep_param_32F0.h)(0x5C49939D)
-I (..\..\Inc\MC_SixStep_param_BR2804_1700_KV_1.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0\stspin32f0.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (..\..\..\..\..\..\..\Drivers\BSP\Components\Common\MC_Common.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h)(0x5C49939B)
-I (..\..\Inc\stm32f0xx_hal_conf.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f031x6.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include\system_stm32f0xx.h)(0x56E9F63A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h)(0x5C49939C)
-I (D:\software\Keil_v5\ARM\ARMCC\include\math.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
-F (..\..\Src\stspin32f0_hal_msp.c)(0x5C49939D)(--c99 -c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I ..\..\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc -I ..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\Common -I ..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include -I ..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc-I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F031x6 -DUSE_HAL_DRIVER -DSTM32F031x6 -DUART_COMM -DNO_PID -DNO_HALL_SENSORS -DNO_ALL_WINDINGS_ENERGIZATION -DNO_FIXED_HALL_DELAY -DNO_PWM_ON_BEMF_SENSING -DNO_MC_FAN_4PP_24V -DNO_MC_RS_57BL54 -DNO_MC_2036_U_024_B_K312 -DMC_BR2804_1700_KV_1 -DDELTA_6STEP_TABLE -DCOMPLEMENTARY_DRIVE -DVOLTAGE_MODE -DNO_POTENTIOMETER -DNO_CURRENT_SENSE_ADC -DNO_VBUS_SENSE_ADC -DNO_TEMP_SENSE_ADC -DNO_BEMF_RECORDING -DNO_SPEED_SENDING -DSPEED_RAMP-o .\objects\stspin32f0_hal_msp.o --omf_browse .\objects\stspin32f0_hal_msp.crf --depend .\objects\stspin32f0_hal_msp.d)
-I (..\..\Inc\main_32F0.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc\6Step_Lib.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202\STEVAL-SPIN3202.h)(0x5C49939A)
-I (..\..\Inc\MC_SixStep_param_32F0.h)(0x5C49939D)
-I (..\..\Inc\MC_SixStep_param_BR2804_1700_KV_1.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0\stspin32f0.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (..\..\..\..\..\..\..\Drivers\BSP\Components\Common\MC_Common.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h)(0x5C49939B)
-I (..\..\Inc\stm32f0xx_hal_conf.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f031x6.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include\system_stm32f0xx.h)(0x56E9F63A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h)(0x5C49939C)
-I (D:\software\Keil_v5\ARM\ARMCC\include\math.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
-F (..\..\Src\stspin32f0_it.c)(0x5C49939D)(--c99 -c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I ..\..\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc -I ..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\Common -I ..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include -I ..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc-I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F031x6 -DUSE_HAL_DRIVER -DSTM32F031x6 -DUART_COMM -DNO_PID -DNO_HALL_SENSORS -DNO_ALL_WINDINGS_ENERGIZATION -DNO_FIXED_HALL_DELAY -DNO_PWM_ON_BEMF_SENSING -DNO_MC_FAN_4PP_24V -DNO_MC_RS_57BL54 -DNO_MC_2036_U_024_B_K312 -DMC_BR2804_1700_KV_1 -DDELTA_6STEP_TABLE -DCOMPLEMENTARY_DRIVE -DVOLTAGE_MODE -DNO_POTENTIOMETER -DNO_CURRENT_SENSE_ADC -DNO_VBUS_SENSE_ADC -DNO_TEMP_SENSE_ADC -DNO_BEMF_RECORDING -DNO_SPEED_SENDING -DSPEED_RAMP-o .\objects\stspin32f0_it.o --omf_browse .\objects\stspin32f0_it.crf --depend .\objects\stspin32f0_it.d)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h)(0x5C49939B)
-I (..\..\Inc\stm32f0xx_hal_conf.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f031x6.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include\system_stm32f0xx.h)(0x56E9F63A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h)(0x5C49939C)
-I (..\..\Inc\stspin32f0_it.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc\6Step_Lib.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202\STEVAL-SPIN3202.h)(0x5C49939A)
-I (..\..\Inc\MC_SixStep_param_32F0.h)(0x5C49939D)
-I (..\..\Inc\MC_SixStep_param_BR2804_1700_KV_1.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0\stspin32f0.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\BSP\Components\Common\MC_Common.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\math.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
-I (..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc\UART_UI.h)(0x5C49939D)
-I (D:\software\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
-F (..\..\Inc\MC_SixStep_param_32F0.h)(0x5C49939D)()
-F (..\..\Inc\MC_SixStep_param_2036_U_024_B_K312.h)(0x5C49939D)()
-F (..\..\Inc\MC_SixStep_param_BR2804_1700_KV_1.h)(0x5C49939D)()
-F (..\..\Inc\MC_SixStep_param_FAN_4PP_24V.h)(0x5C49939D)()
-F (..\..\Inc\MC_SixStep_param_RS_57BL54.h)(0x5C49939D)()
-F (RTE\Device\STM32F031C6\startup_stm32f031x6.s)(0x56E9F63A)(--cpu Cortex-M0 -g --apcs=interwork -I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include--pd "__UVISION_VERSION SETA 524" --pd "_RTE_ SETA 1" --pd "STM32F031x6 SETA 1"--list .\listings\startup_stm32f031x6.lst --xref -o .\objects\startup_stm32f031x6.o --depend .\objects\startup_stm32f031x6.d)
-F (RTE\Device\STM32F031C6\system_stm32f0xx.c)(0x56E9F63A)(--c99 -c --cpu Cortex-M0 -g -O3 --apcs=interwork --split_sections -I ..\..\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\MC_6Step_Lib\Inc -I ..\..\..\..\..\..\..\Middlewares\ST\UART_serial_com\Inc -I ..\..\..\..\..\..\..\Drivers\BSP\STEVAL-SPIN3202 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\stspin32f0 -I ..\..\..\..\..\..\..\Drivers\BSP\Components\Common -I ..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include -I ..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc-I.\RTE\_STSPIN32F0A-ID:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F031x6 -DUSE_HAL_DRIVER -DSTM32F031x6 -DUART_COMM -DNO_PID -DNO_HALL_SENSORS -DNO_ALL_WINDINGS_ENERGIZATION -DNO_FIXED_HALL_DELAY -DNO_PWM_ON_BEMF_SENSING -DNO_MC_FAN_4PP_24V -DNO_MC_RS_57BL54 -DNO_MC_2036_U_024_B_K312 -DMC_BR2804_1700_KV_1 -DDELTA_6STEP_TABLE -DCOMPLEMENTARY_DRIVE -DVOLTAGE_MODE -DNO_POTENTIOMETER -DNO_CURRENT_SENSE_ADC -DNO_VBUS_SENSE_ADC -DNO_TEMP_SENSE_ADC -DNO_BEMF_RECORDING -DNO_SPEED_SENDING -DSPEED_RAMP-o .\objects\system_stm32f0xx.o --omf_browse .\objects\system_stm32f0xx.crf --depend .\objects\system_stm32f0xx.d)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x5C49939A)
-I (..\..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f031x6.h)(0x5C49939A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x5898498A)
-I (D:\software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include\system_stm32f0xx.h)(0x56E9F63A)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h)(0x5C49939B)
-I (..\..\Inc\stm32f0xx_hal_conf.h)(0x5C49939D)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_adc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h)(0x5C49939B)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h)(0x5C49939C)
-I (..\..\..\..\..\..\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h)(0x5C49939C)
