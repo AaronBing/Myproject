@@ -1,6 +1,6 @@
 ﻿# Myproject
 My code，maybe some very import thing
-
+2018年2月15日开始公开我的私人项目
 
 1、这个文档是作为存储我的项目，和个人的代码和笔记
 2、EveryDay文档中放的是每天要做的工作，并且每日要查看和更新
