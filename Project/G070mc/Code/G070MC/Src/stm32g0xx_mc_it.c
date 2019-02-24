@@ -1,11 +1,11 @@
 
 /**
   ******************************************************************************
-  * @file    stm32f0xx_mc_it.c 
+  * @file    stm32g0xx_mc_it.c 
   * @author  Motor Control SDK Team, ST Microelectronics
   * @brief   Main Interrupt Service Routines.
   *          This file provides exceptions handler and peripherals interrupt 
-  *          service routine related to Motor Control for the STM32F0 Family.
+  *          service routine related to Motor Control
   ******************************************************************************
   * @attention
   *
@@ -18,7 +18,7 @@
   *                             www.st.com/SLA0044
   *
   ******************************************************************************
-  * @ingroup STM32F0xx_IRQ_Handlers
+  * @ingroup STM32G0xx_IRQ_Handlers
   */ 
 
 /* Includes ------------------------------------------------------------------*/
@@ -28,7 +28,7 @@
 #include "ui_task.h"
 #include "parameters_conversion.h"
 #include "motorcontrol.h"
-#include "stm32f0xx_ll_exti.h"
+#include "stm32g0xx_ll_exti.h"
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
@@ -53,34 +53,34 @@
 
 /* USER CODE END PRIVATE */
 
-/* Public prototypes of IRQ handlers called from assembly code ---------------*/
-void CURRENT_REGULATION_IRQHandler(void);
-void TIMx_UP_BRK_M1_IRQHandler(void);
+void DMA1_Channel1_IRQHandler (void);
+void TIM1_BRK_UP_TRG_COM_IRQHandler (void);
 void DMAx_R1_M1_IRQHandler(void);
-void SPD_TIM_M1_IRQHandler(void);
-void USART_IRQHandler(void);
+void USART3_4_LPUART1_IRQHandler (void);
 void HardFault_Handler(void);
 void SysTick_Handler(void);
-void EXTI0_1_IRQHandler (void);
+void EXTI4_15_IRQHandler (void);
 
 /**
   * @brief  This function handles current regulation interrupt request.
   * @param  None
   * @retval None
   */
-void CURRENT_REGULATION_IRQHandler(void)
+void DMA1_Channel1_IRQHandler (void)    
 {
   /* USER CODE BEGIN CURRENT_REGULATION_IRQn 0 */
-
+    /* Debug High frequency task duration
+     * LL_GPIO_SetOutputPin (GPIOB, LL_GPIO_PIN_3); 
+     */
   /* USER CODE END CURRENT_REGULATION_IRQn 0 */
   
   /* Clear Flags */
-  DMA1->IFCR = (LL_DMA_ISR_GIF2|LL_DMA_ISR_TCIF2|LL_DMA_ISR_HTIF2);
+  DMA1->IFCR = (LL_DMA_ISR_GIF1|LL_DMA_ISR_TCIF1|LL_DMA_ISR_HTIF1);
   /* USER CODE BEGIN CURRENT_REGULATION_IRQn 1 */
 
   /* USER CODE END CURRENT_REGULATION_IRQn 1 */   
   
-    TSK_HighFrequencyTask();          /*GUI, this section is present only if DAC is disabled*/
+    UI_DACUpdate(TSK_HighFrequencyTask());  /*GUI, this section is present only if DAC is enabled*/
   /* USER CODE BEGIN CURRENT_REGULATION_IRQn 2 */
 
   /* USER CODE END CURRENT_REGULATION_IRQn 2 */   
@@ -91,7 +91,7 @@ void CURRENT_REGULATION_IRQHandler(void)
   * @param  None
   * @retval None
   */
-void TIMx_UP_BRK_M1_IRQHandler(void)
+void TIM1_BRK_UP_TRG_COM_IRQHandler (void)  
 {
   /* USER CODE BEGIN TIMx_UP_BRK_M1_IRQn 0 */
 
@@ -100,15 +100,23 @@ void TIMx_UP_BRK_M1_IRQHandler(void)
   if(LL_TIM_IsActiveFlag_UPDATE(PWM_Handle_M1.pParams_str->TIMx) && LL_TIM_IsEnabledIT_UPDATE(PWM_Handle_M1.pParams_str->TIMx))
   {
     LL_TIM_ClearFlag_UPDATE(PWM_Handle_M1.pParams_str->TIMx);
-    R1F0XX_TIMx_UP_IRQHandler(&PWM_Handle_M1);
+    R1G0XX_TIMx_UP_IRQHandler(&PWM_Handle_M1);
     /* USER CODE BEGIN PWM_Update */
 
     /* USER CODE END PWM_Update */  
-  }
+  }  
   if(LL_TIM_IsActiveFlag_BRK(PWM_Handle_M1.pParams_str->TIMx) && LL_TIM_IsEnabledIT_BRK(PWM_Handle_M1.pParams_str->TIMx)) 
   {
-    LL_TIM_ClearFlag_BRK(PWM_Handle_M1.pParams_str->TIMx);      
-    F0XX_BRK_IRQHandler(&PWM_Handle_M1);
+    LL_TIM_ClearFlag_BRK(PWM_Handle_M1.pParams_str->TIMx);
+    R1G0XX_OVERCURRENT_IRQHandler(&PWM_Handle_M1);
+    /* USER CODE BEGIN Break */
+
+    /* USER CODE END Break */ 
+  }
+  if (LL_TIM_IsActiveFlag_BRK2(PWM_Handle_M1.pParams_str->TIMx) && LL_TIM_IsEnabledIT_BRK(PWM_Handle_M1.pParams_str->TIMx)) 
+  {
+    LL_TIM_ClearFlag_BRK2(PWM_Handle_M1.pParams_str->TIMx);
+    R1G0XX_OVERVOLTAGE_IRQHandler(&PWM_Handle_M1);
     /* USER CODE BEGIN Break */
 
     /* USER CODE END Break */ 
@@ -122,31 +130,6 @@ void TIMx_UP_BRK_M1_IRQHandler(void)
   /* USER CODE END TIMx_UP_BRK_M1_IRQn 1 */   
 }
 
-/**
-  * @brief  This function handles first motor DMAx TC interrupt request. 
-  *         Required only for R1 with rep rate > 1
-  * @param  None
-  * @retval None
-  */
-void DMAx_R1_M1_IRQHandler(void)
-{
-  /* USER CODE BEGIN DMAx_R1_M1_IRQn 0 */
-
-  /* USER CODE END DMAx_R1_M1_IRQn 0 */ 
-  
-  if (LL_DMA_IsActiveFlag_TC4(DMA1))
-  {
-    LL_DMA_ClearFlag_TC4(DMA1);
-    R1F0XX_DMA_TC_IRQHandler(&PWM_Handle_M1);
-    /* USER CODE BEGIN DMAx_R1_M1_TC4 */
-
-    /* USER CODE END DMAx_R1_M1_TC4 */     
-  } 
-  /* USER CODE BEGIN DMAx_R1_M1_IRQn 1 */
-
-  /* USER CODE END DMAx_R1_M1_IRQn 1 */ 
-}
-
 /*Start here***********************************************************/
 /*GUI, this section is present only if serial communication is enabled*/
 /**
@@ -154,7 +137,7 @@ void DMAx_R1_M1_IRQHandler(void)
   * @param  None
   * @retval None
   */
-void USART_IRQHandler(void)
+void USART3_4_LPUART1_IRQHandler (void)
 {
   /* USER CODE BEGIN USART_IRQn 0 */
 
@@ -281,12 +264,16 @@ static uint8_t SystickDividerCounter = SYSTICK_DIVIDER;
 
 /*GUI, this section is present only if start/stop button is enabled*/
 /**
-  * @brief  This function handles Button IRQ on PIN PF0.
+  * @brief  This function handles Button IRQ on PIN PC13.
+  * @param  None
+  * @retval None
   */
-void EXTI0_1_IRQHandler (void)
+
+void EXTI4_15_IRQHandler (void)
 {
 /* USER CODE BEGIN START_STOP_BTN */
-  LL_EXTI_ClearFlag_0_31 (LL_EXTI_LINE_0);
+  LL_EXTI_ClearRisingFlag_0_31 (LL_EXTI_LINE_13);
+  LL_EXTI_ClearFallingFlag_0_31 (LL_EXTI_LINE_13);
   UI_HandleStartStopButton_cb ();
 /* USER CODE END START_STOP_BTN */
 }

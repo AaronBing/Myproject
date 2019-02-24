@@ -340,7 +340,7 @@ uint16_t RCM_ExecRegularConv (uint8_t handle)
     LL_ADC_REG_SetTriggerSource (RCM_handle_array[handle]->regADC, LL_ADC_REG_TRIG_SOFTWARE);
   
     /* Set Sampling time and channel */ 
-    LL_ADC_SetSamplingTimeCommonChannels (RCM_handle_array[handle]->regADC,  RCM_handle_array[handle]->samplingTime );
+    LL_ADC_SetSamplingTimeCommonChannels (RCM_handle_array[handle]->regADC, LL_ADC_SAMPLINGTIME_COMMON_2, RCM_handle_array[handle]->samplingTime );
     LL_ADC_REG_SetSequencerChannels (RCM_handle_array[handle]->regADC, __LL_ADC_DECIMAL_NB_TO_CHANNEL(RCM_handle_array[handle]->channel) );
     
     /* Clear EOC */
@@ -518,7 +518,7 @@ void RCM_ExecNextConv (void)
     LL_ADC_REG_SetTriggerSource (RCM_handle_array[RCM_currentHandle]->regADC, LL_ADC_REG_TRIG_SOFTWARE);
       
     /* Set Sampling time and channel of ADC for Regular Conversion */
-    LL_ADC_SetSamplingTimeCommonChannels (RCM_handle_array[RCM_currentHandle]->regADC,  RCM_handle_array[RCM_currentHandle]->samplingTime );
+    LL_ADC_SetSamplingTimeCommonChannels (RCM_handle_array[RCM_currentHandle]->regADC, LL_ADC_SAMPLINGTIME_COMMON_2, RCM_handle_array[RCM_currentHandle]->samplingTime );
     LL_ADC_REG_SetSequencerChannels (RCM_handle_array[RCM_currentHandle]->regADC, __LL_ADC_DECIMAL_NB_TO_CHANNEL(RCM_handle_array[RCM_currentHandle]->channel) );
     
     /* Start ADC for regular conversion */

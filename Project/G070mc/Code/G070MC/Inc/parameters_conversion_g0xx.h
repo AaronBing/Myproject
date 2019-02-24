@@ -28,11 +28,11 @@
 #include "drive_parameters.h"
 
 /************************* CPU & ADC PERIPHERAL CLOCK CONFIG ******************/
-#define SYSCLK_FREQ      48000000uL
+#define SYSCLK_FREQ      64000000uL
 #define TIM_CLOCK_DIVIDER  1 
-#define ADV_TIM_CLK_MHz    48
-#define ADC_CLK_MHz    14uL /* Maximum ADC Clock Frequency expressed in MHz */
-#define HALL_TIM_CLK       48000000uL
+#define ADV_TIM_CLK_MHz    64
+#define ADC_CLK_MHz    32uL /* Maximum ADC Clock Frequency expressed in MHz */
+#define HALL_TIM_CLK       64000000uL
 #define ADC1_2  ADC1
 
 /*********************** SENSORLESS REV-UP PARAMETERS *************************/
@@ -50,18 +50,14 @@
 #endif
 
 /*************************  IRQ Handler Mapping  *********************/														  
- #define CURRENT_REGULATION_IRQHandler          DMA1_Channel2_3_IRQHandler
+ #define CURRENT_REGULATION_IRQHandler          DMA1_Channel1_IRQHandler
 #define TIMx_UP_BRK_M1_IRQHandler               TIM1_BRK_UP_TRG_COM_IRQHandler
 #define DMAx_R1_M1_IRQHandler                   DMA1_Channel4_5_IRQHandler
 
-/**********  AUXILIARY TIMER (SINGLE SHUNT) *************/
- 
-#define R1_PWM_AUX_TIM                  TIM3
-
-#define TRIG_CONV_LATENCY_NS	259ul /* Referred to Maximum value indicated 
-                                    in the Datasheet Table 50 if ADC clock = HSI14 */ 				   
+#define TRIG_CONV_LATENCY_NS	(3*1000ul)/ADC_CLK_MHz /* Referred to Maximum value indicated 
+                                    in the Datasheet Table 50 if ADC clock is asynchronous (CKMOD = 00) 3 clk cycles */ 				   
 #define SAMPLING_TIME_CORRECTION_FACTOR_NS           500ul/ADC_CLK_MHz                 /* 0.5*1000/ADC_CLK_MHz */ 
-#define SAMPLING_TIME_NS ((7 * 1000uL/ADC_CLK_MHz)+SAMPLING_TIME_CORRECTION_FACTOR_NS)
+#define SAMPLING_TIME_NS ((1 * 1000uL/ADC_CLK_MHz)+SAMPLING_TIME_CORRECTION_FACTOR_NS)
 
 #define ADC_CONV_NB_CK 13u
 #define ADC_CONV_TIME_NS    (uint16_t) (((ADC_CONV_NB_CK*1000ul)-500ul)/ADC_CLK_MHz)
@@ -71,10 +67,10 @@
 #define M1_VBUS_SW_FILTER_BW_FACTOR      10u
 
 /* Sampling time allowed for F0xx are: 1, 7, 13, 28 ADC clock cycle */    
-#define M1_VBUS_SAMPLING_TIME  LL_ADC_SAMPLINGTIME_28CYCLES_5
+#define M1_VBUS_SAMPLING_TIME  LL_ADC_SAMPLINGTIME_7CYCLES_5
 
 /* Sampling time allowed for F0xx are:  1, 7, 13, 28 ADC clock cycle */    
-#define M1_TEMP_SAMPLING_TIME  LL_ADC_SAMPLINGTIME_1CYCLE_5
+#define M1_TEMP_SAMPLING_TIME  LL_ADC_SAMPLINGTIME_7CYCLES_5
 
 #endif /*__PARAMETERS_CONVERSION_F0XX_H*/
 

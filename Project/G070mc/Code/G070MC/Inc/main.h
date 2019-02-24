@@ -58,7 +58,7 @@ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f0xx_hal.h"
+#include "stm32g0xx_hal.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -90,39 +90,43 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define Start_Stop_Pin GPIO_PIN_0
-#define Start_Stop_GPIO_Port GPIOF
-#define Start_Stop_EXTI_IRQn EXTI0_1_IRQn
-#define M1_CURR_AMPL_Pin GPIO_PIN_4
-#define M1_CURR_AMPL_GPIO_Port GPIOA
+#define UART_RX_Pin GPIO_PIN_11
+#define UART_RX_GPIO_Port GPIOC
+#define Start_Stop_Pin GPIO_PIN_13
+#define Start_Stop_GPIO_Port GPIOC
+#define Start_Stop_EXTI_IRQn EXTI4_15_IRQn
 #define M1_BUS_VOLTAGE_Pin GPIO_PIN_1
-#define M1_BUS_VOLTAGE_GPIO_Port GPIOB
+#define M1_BUS_VOLTAGE_GPIO_Port GPIOA
+#define M1_TEMPERATURE_Pin GPIO_PIN_3
+#define M1_TEMPERATURE_GPIO_Port GPIOA
+#define DBG_DAC_CH1_Pin GPIO_PIN_4
+#define DBG_DAC_CH1_GPIO_Port GPIOA
+#define DBG_DAC_CH2_Pin GPIO_PIN_5
+#define DBG_DAC_CH2_GPIO_Port GPIOA
+#define M1_CURR_AMPL_Pin GPIO_PIN_6
+#define M1_CURR_AMPL_GPIO_Port GPIOA
 #define M1_OCP_Pin GPIO_PIN_12
 #define M1_OCP_GPIO_Port GPIOB
-#define M1_PWM_UL_Pin GPIO_PIN_13
-#define M1_PWM_UL_GPIO_Port GPIOB
-#define M1_PWM_VL_Pin GPIO_PIN_14
-#define M1_PWM_VL_GPIO_Port GPIOB
-#define M1_PWM_WL_Pin GPIO_PIN_15
-#define M1_PWM_WL_GPIO_Port GPIOB
 #define M1_PWM_UH_Pin GPIO_PIN_8
 #define M1_PWM_UH_GPIO_Port GPIOA
 #define M1_PWM_VH_Pin GPIO_PIN_9
 #define M1_PWM_VH_GPIO_Port GPIOA
 #define M1_PWM_WH_Pin GPIO_PIN_10
 #define M1_PWM_WH_GPIO_Port GPIOA
-#define OC_SEL_Pin GPIO_PIN_11
-#define OC_SEL_GPIO_Port GPIOA
-#define OC_COMP_INT2_Pin GPIO_PIN_12
-#define OC_COMP_INT2_GPIO_Port GPIOA
-#define OCTH_STBY2_Pin GPIO_PIN_6
-#define OCTH_STBY2_GPIO_Port GPIOF
-#define OCTH_STBY1_Pin GPIO_PIN_7
-#define OCTH_STBY1_GPIO_Port GPIOF
-#define UART_TX_Pin GPIO_PIN_6
-#define UART_TX_GPIO_Port GPIOB
-#define UART_RX_Pin GPIO_PIN_7
-#define UART_RX_GPIO_Port GPIOB
+#define TMS_Pin GPIO_PIN_13
+#define TMS_GPIO_Port GPIOA
+#define TCK_Pin GPIO_PIN_14
+#define TCK_GPIO_Port GPIOA
+#define M1_PWM_UL_Pin GPIO_PIN_2
+#define M1_PWM_UL_GPIO_Port GPIOD
+#define M1_PWM_VL_Pin GPIO_PIN_3
+#define M1_PWM_VL_GPIO_Port GPIOD
+#define M1_PWM_WL_Pin GPIO_PIN_4
+#define M1_PWM_WL_GPIO_Port GPIOD
+#define M1_ICL_SHUT_OUT_Pin GPIO_PIN_9
+#define M1_ICL_SHUT_OUT_GPIO_Port GPIOB
+#define UART_TX_Pin GPIO_PIN_10
+#define UART_TX_GPIO_Port GPIOC
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

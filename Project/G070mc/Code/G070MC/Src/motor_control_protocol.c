@@ -217,12 +217,14 @@ void MCP_ReceivedFrame(MCP_Handle_t *pHandle, uint8_t Code, uint8_t *buffer, uin
 
       case MC_PROTOCOL_REG_DAC_OUT1:
         {
+          UI_SetDAC(&pHandle->pDAC->_Super, DAC_CH0, (MC_Protocol_REG_t)(buffer[1]));
           bNoError = true; /* No check inside class return always true*/
         }
         break;
 
       case MC_PROTOCOL_REG_DAC_OUT2:
         {
+          UI_SetDAC(&pHandle->pDAC->_Super, DAC_CH1, (MC_Protocol_REG_t)(buffer[1]));
           bNoError = true; /* No check inside class return always true*/
         }
         break;
@@ -323,11 +325,24 @@ void MCP_ReceivedFrame(MCP_Handle_t *pHandle, uint8_t Code, uint8_t *buffer, uin
 
       case MC_PROTOCOL_REG_DAC_OUT1:
         {
+          if (pHandle->pDAC)
+          {
+            MC_Protocol_REG_t value = UI_GetDAC(&pHandle->pDAC->_Super, DAC_CH0);
+            pHandle->fFcpSend(pHandle->pFCP, ACK_NOERROR, (uint8_t*)(&value), 1);
+            bNoError = true;
+            RequireAck = false;
+          }
         }
         break;
 
       case MC_PROTOCOL_REG_DAC_OUT2:
         {
+          if (pHandle->pDAC)
+          {
+            MC_Protocol_REG_t value = UI_GetDAC(&pHandle->pDAC->_Super, DAC_CH1);
+            pHandle->fFcpSend(pHandle->pFCP, ACK_NOERROR, (uint8_t*)(&value), 1);
+            bNoError = true;
+          }
         }
         break;
 

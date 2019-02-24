@@ -22,20 +22,10 @@
 #ifndef MC_PARAMETERS_H
 #define MC_PARAMETERS_H
 
-#include "r1_f0xx_pwm_curr_fdbk.h"
- 
- 
- 
- 
- 
+#include "r1_g0xx_pwm_curr_fdbk.h"
  
 
-extern const R1_F0XX_Params_t R1_F0XX_Params;
- 
- 
- 
- 
- 
+extern const R1_G0XXParams_t R1_G0XX_Params;
  
 
 #endif /* MC_PARAMETERS_H */

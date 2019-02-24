@@ -135,26 +135,26 @@ RevUpCtrl_Handle_t RevUpControlM1 =
                             },
 };
 
-PWMC_R1_F0_Handle_t PWM_Handle_M1 =
+PWMC_R1_G0_Handle_t PWM_Handle_M1 =
 {
   {
-    .pFctGetPhaseCurrents              = &R1F0XX_GetPhaseCurrents,    
-    .pFctSwitchOffPwm                  = &R1F0XX_SwitchOffPWM,             
-    .pFctSwitchOnPwm                   = &R1F0XX_SwitchOnPWM,              
-    .pFctCurrReadingCalib              = &R1F0XX_CurrentReadingCalibration,
-    .pFctTurnOnLowSides                = &R1F0XX_TurnOnLowSides,         
-    .pFctSetADCSampPointSect1          = &R1F0XX_CalcDutyCycles,     
-    .pFctSetADCSampPointSect2          = &R1F0XX_CalcDutyCycles,     
-    .pFctSetADCSampPointSect3          = &R1F0XX_CalcDutyCycles,     
-    .pFctSetADCSampPointSect4          = &R1F0XX_CalcDutyCycles,     
-    .pFctSetADCSampPointSect5          = &R1F0XX_CalcDutyCycles,     
-    .pFctSetADCSampPointSect6          = &R1F0XX_CalcDutyCycles,           
-    .pFctIsOverCurrentOccurred         = &R1F0XX_IsOverCurrentOccurred,    
+    .pFctGetPhaseCurrents              = &R1G0XX_GetPhaseCurrents,    
+    .pFctSwitchOffPwm                  = &R1G0XX_SwitchOffPWM,             
+    .pFctSwitchOnPwm                   = &R1G0XX_SwitchOnPWM,              
+    .pFctCurrReadingCalib              = &R1G0XX_CurrentReadingCalibration,
+    .pFctTurnOnLowSides                = &R1G0XX_TurnOnLowSides,         
+    .pFctSetADCSampPointSect1          = &R1G0XX_CalcDutyCycles,     
+    .pFctSetADCSampPointSect2          = &R1G0XX_CalcDutyCycles,     
+    .pFctSetADCSampPointSect3          = &R1G0XX_CalcDutyCycles,     
+    .pFctSetADCSampPointSect4          = &R1G0XX_CalcDutyCycles,     
+    .pFctSetADCSampPointSect5          = &R1G0XX_CalcDutyCycles,     
+    .pFctSetADCSampPointSect6          = &R1G0XX_CalcDutyCycles,           
+    .pFctIsOverCurrentOccurred         = &R1G0XX_IsOverCurrentOccurred,    
     .pFctOCPSetReferenceVoltage        = MC_NULL,
     .pFctRLDetectionModeEnable         = MC_NULL,    
     .pFctRLDetectionModeDisable        = MC_NULL,   
     .pFctRLDetectionModeSetDuty        = MC_NULL,   
-    .hT_Sqrt3 = (PWM_PERIOD_CYCLES*SQRT3FACTOR)/16384u,   
+    .hT_Sqrt3 = (PWM_PERIOD_CYCLES*SQRT3FACTOR)/16384u,    
     .hSector = 0,   
     .hCntPhA = 0,
     .hCntPhB = 0,
@@ -179,8 +179,6 @@ PWMC_R1_F0_Handle_t PWM_Handle_M1 =
   .hPhaseOffset = 0,      
   /* .hDmaBuff[2] */  
   {0,0},  
-  /* .hCCDmaBuffCh4[4] */
-  {0,0,0,0},
   .hCntSmp1 = 0,         
   .hCntSmp2 = 0,         
   .sampCur1 = 0,          
@@ -195,10 +193,9 @@ PWMC_R1_F0_Handle_t PWM_Handle_M1 =
   .bDMACur = 0,           
   .hFlags = 0,                                    
   /* hCurConv[2] */
-  {0,0},          
-  .wADC_ExtTrigConv = 0,                                
+  {0,0},                                        
   .OverCurrentFlag = false,       
-  .pParams_str = &R1_F0XX_Params,
+  .pParams_str = &R1_G0XX_Params,
 };
 
 /**
@@ -281,14 +278,33 @@ STO_Handle_t STO_M1 =
   .pFctSTO_SpeedReliabilityCheck = &STO_PLL_IsVarianceTight                              
 };
 
+ICL_Handle_t ICL_M1 =
+{
+  .ICLstate			=	ICL_INACTIVE,						
+  .hICLTicksCounter	=	0u,    								
+  .hICLTotalTicks	=	UINT16_MAX,							
+  .hICLFrequencyHz 	=	SPEED_LOOP_FREQUENCY_HZ,			
+  .hICLDurationms	=	INRUSH_CURRLIMIT_CHANGE_AFTER_MS,	
+};
+
 /**
-  * Virtual temperature sensor parameters Motor 1
+  * temperature sensor parameters Motor 1
   */
 NTC_Handle_t TempSensorParamsM1 =
 {
-  .bSensorType = VIRTUAL_SENSOR,
-  .hExpectedTemp_d = 555, 
-  .hExpectedTemp_C = M1_VIRTUAL_HEAT_SINK_TEMPERATURE_VALUE,
+  .bSensorType = REAL_SENSOR,
+  .TempRegConv =
+  {
+    .regADC = ADC1, 
+    .channel = MC_ADC_CHANNEL_3,
+    .samplingTime = M1_TEMP_SAMPLING_TIME,   
+  },  
+  .hLowPassFilterBW        = M1_TEMP_SW_FILTER_BW_FACTOR,
+  .hOverTempThreshold      = (uint16_t)(OV_TEMPERATURE_THRESHOLD_d),
+  .hOverTempDeactThreshold = (uint16_t)(OV_TEMPERATURE_THRESHOLD_d - OV_TEMPERATURE_HYSTERESIS_d),
+  .hSensitivity            = (uint16_t)(ADC_REFERENCE_VOLTAGE/dV_dT),
+  .wV0                     = (uint16_t)(V0_V *65536/ ADC_REFERENCE_VOLTAGE),
+  .hT0                     = T0_C,											 
 };
 
 /* Bus voltage sensor value filter buffer */
@@ -308,7 +324,7 @@ RDivider_Handle_t RealBusVoltageSensorParamsM1 =
   .VbusRegConv =
   {
     .regADC = ADC1, 
-    .channel = MC_ADC_CHANNEL_9,
+    .channel = MC_ADC_CHANNEL_1,
     .samplingTime = M1_VBUS_SAMPLING_TIME,   
   },
   .LowPassFilterBW       =  M1_VBUS_SW_FILTER_BW_FACTOR,  
@@ -320,6 +336,19 @@ RDivider_Handle_t RealBusVoltageSensorParamsM1 =
 UI_Handle_t UI_Params =
 {
 	      .bDriveNum = 0,
+	      .pFct_DACInit = &DAC_Init,               
+	      .pFct_DACExec = &DAC_Exec,
+	      .pFctDACSetChannelConfig    = &DAC_SetChannelConfig,
+	      .pFctDACGetChannelConfig    = &DAC_GetChannelConfig,
+	      .pFctDACSetUserChannelValue = &DAC_SetUserChannelValue,
+	      .pFctDACGetUserChannelValue = &DAC_GetUserChannelValue,
+ 
+};
+
+DAC_UI_Handle_t DAC_UI_Params = 
+{
+  .hDAC_CH1_ENABLED = ENABLE,  
+  .hDAC_CH2_ENABLED = ENABLE
 };
 
 /** RAMP for Motor1.
@@ -339,11 +368,19 @@ CircleLimitation_Handle_t CircleLimitationM1 =
   .Circle_limit_table = MMITABLE,        	
   .Start_index        = START_INDEX, 		
 };
+DOUT_handle_t ICLDOUTParamsM1 =
+{
+  .OutputState       = INACTIVE,                   
+  .hDOutputPort      = M1_ICL_SHUT_OUT_GPIO_Port,
+  .hDOutputPin       = M1_ICL_SHUT_OUT_Pin,		
+  .bDOutputPolarity  = DOUT_ACTIVE_LOW		
+};
+
 UFCP_Handle_t pUSART =
 {
     ._Super.RxTimeout = 0, 
 
-    .USARTx              = USART1,                
+    .USARTx              = USART3,                
        
 };
 

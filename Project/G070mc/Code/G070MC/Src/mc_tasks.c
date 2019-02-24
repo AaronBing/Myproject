@@ -59,7 +59,7 @@
 /* #define  MC.SMOOTH_BRAKING_ACTION_ON_OVERVOLTAGE */
 
 /* USER CODE END Private define */
-#define VBUS_TEMP_ERR_MASK ~(0 | 0 | MC_OVER_TEMP)
+#define VBUS_TEMP_ERR_MASK (MC_OVER_VOLT| MC_UNDER_VOLT| MC_OVER_TEMP)
 
 /* Private variables----------------------------------------------------------*/
 FOCVars_t FOCVars[NBR_OF_MOTORS];
@@ -133,10 +133,15 @@ void MCboot( MCI_Handle_t* pMCIList[NBR_OF_MOTORS],MCT_Handle_t* pMCTList[NBR_OF
   /*    PWM and current sensing component initialization    */
   /**********************************************************/
   pwmcHandle[M1] = &PWM_Handle_M1._Super;
-  R1F0XX_Init(&PWM_Handle_M1);
+  R1G0XX_Init(&PWM_Handle_M1);
   /* USER CODE BEGIN MCboot 1 */
 
   /* USER CODE END MCboot 1 */
+
+  /**************************************/
+  /*    Start timers synchronously      */
+  /**************************************/
+  startTimers();    
 
   /**************************************/
   /*    State machine initialization    */
@@ -232,6 +237,9 @@ void MCboot( MCI_Handle_t* pMCIList[NBR_OF_MOTORS],MCT_Handle_t* pMCTList[NBR_OF
   MCT[M1].pOTT = MC_NULL;
   pMCTList[M1] = &MCT[M1];
  
+  DOUT_SetOutputState(&ICLDOUTParamsM1, INACTIVE);
+  ICL_Init(&ICL_M1, &(pBusSensorM1->_Super), &ICLDOUTParamsM1);
+  STM_NextState(&STM[M1],ICLWAIT);
 
   /* USER CODE BEGIN MCboot 2 */
 
@@ -329,6 +337,7 @@ void TSK_MediumFrequencyTaskM1(void)
   State_t StateM1;
   int16_t wAux = 0;
 
+  ICL_State_t ICLstate = ICL_Exec( &ICL_M1 );
   bool IsSpeedReliable = STO_PLL_CalcAvrgMecSpeed01Hz( &STO_PLL_M1, &wAux );
   PQD_CalcElMotorPower( pMPM[M1] );
 
@@ -336,8 +345,16 @@ void TSK_MediumFrequencyTaskM1(void)
 
   switch ( StateM1 )
   {
+  case ICLWAIT:
+    if ( ICLstate == ICL_INACTIVE )
+    {
+      /* If ICL is Inactive, move to IDLE */
+      STM_NextState( &STM[M1], IDLE );
+    }
+    break;
+
   case IDLE_START:
-    R1F0XX_TurnOnLowSides( pwmcHandle[M1] );
+    R1G0XX_TurnOnLowSides( pwmcHandle[M1] );
     TSK_SetChargeBootCapDelayM1( CHARGE_BOOT_CAP_TICKS );
     STM_NextState( &STM[M1], CHARGE_BOOT_CAP );
     break;
@@ -374,7 +391,7 @@ void TSK_MediumFrequencyTaskM1(void)
     {
       FOC_Clear( M1 );
 
-      R1F0XX_SwitchOnPWM( pwmcHandle[M1] );
+      R1G0XX_SwitchOnPWM( pwmcHandle[M1] );
     }
     break;
 
@@ -497,7 +514,7 @@ void TSK_MediumFrequencyTaskM1(void)
     break;
 
   case ANY_STOP:
-    R1F0XX_SwitchOffPWM( pwmcHandle[M1] );
+    R1G0XX_SwitchOffPWM( pwmcHandle[M1] );
     FOC_Clear( M1 );
     MPM_Clear( (MotorPowMeas_Handle_t*) pMPM[M1] );
     TSK_SetStopPermanencyTimeM1( STOPPERMANENCY_TICKS );
@@ -523,7 +540,7 @@ void TSK_MediumFrequencyTaskM1(void)
     /* USER CODE BEGIN MediumFrequencyTask M1 5 */
 
     /* USER CODE END MediumFrequencyTask M1 5 */
-    STM_NextState( &STM[M1], IDLE );
+    STM_NextState( &STM[M1], ICLWAIT );
     break;
 
   default:
@@ -907,7 +924,7 @@ void TSK_HardwareFaultTask(void)
 
   /* USER CODE END TSK_HardwareFaultTask 0 */
   
-  R1F0XX_SwitchOffPWM(pwmcHandle[M1]);
+  R1G0XX_SwitchOffPWM(pwmcHandle[M1]);
   STM_FaultProcessing(&STM[M1], MC_SW_ERROR, 0);
   /* USER CODE BEGIN TSK_HardwareFaultTask 1 */
 
@@ -918,15 +935,17 @@ void TSK_HardwareFaultTask(void)
   */
 void mc_lock_pins (void)
 {
-LL_GPIO_LockPin(M1_CURR_AMPL_GPIO_Port, M1_CURR_AMPL_Pin);
-LL_GPIO_LockPin(M1_BUS_VOLTAGE_GPIO_Port, M1_BUS_VOLTAGE_Pin);
 LL_GPIO_LockPin(M1_PWM_UH_GPIO_Port, M1_PWM_UH_Pin);
 LL_GPIO_LockPin(M1_PWM_VH_GPIO_Port, M1_PWM_VH_Pin);
-LL_GPIO_LockPin(M1_OCP_GPIO_Port, M1_OCP_Pin);
-LL_GPIO_LockPin(M1_PWM_VL_GPIO_Port, M1_PWM_VL_Pin);
 LL_GPIO_LockPin(M1_PWM_WH_GPIO_Port, M1_PWM_WH_Pin);
+LL_GPIO_LockPin(M1_PWM_VL_GPIO_Port, M1_PWM_VL_Pin);
 LL_GPIO_LockPin(M1_PWM_WL_GPIO_Port, M1_PWM_WL_Pin);
 LL_GPIO_LockPin(M1_PWM_UL_GPIO_Port, M1_PWM_UL_Pin);
+LL_GPIO_LockPin(M1_OCP_GPIO_Port, M1_OCP_Pin);
+LL_GPIO_LockPin(M1_ICL_SHUT_OUT_GPIO_Port, M1_ICL_SHUT_OUT_Pin);
+LL_GPIO_LockPin(M1_CURR_AMPL_GPIO_Port, M1_CURR_AMPL_Pin);
+LL_GPIO_LockPin(M1_TEMPERATURE_GPIO_Port, M1_TEMPERATURE_Pin);
+LL_GPIO_LockPin(M1_BUS_VOLTAGE_GPIO_Port, M1_BUS_VOLTAGE_Pin);
 }
 
 /* USER CODE BEGIN mc_task 0 */

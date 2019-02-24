@@ -36,6 +36,9 @@ void UI_TaskInit(uint32_t* pUICfg, uint8_t bMCNum, MCI_Handle_t * pMCIList[],
 void UI_Scheduler(void);
 MCP_Handle_t * GetMCP(void);
 
+void UI_DACUpdate(uint8_t bMotorNbr);
+UI_Handle_t * GetDAC(void);
+
 bool UI_IdleTimeHasElapsed(void);
 void UI_SetIdleTime(uint16_t SysTickCount);
 bool UI_SerialCommunicationTimeOutHasElapsed(void);

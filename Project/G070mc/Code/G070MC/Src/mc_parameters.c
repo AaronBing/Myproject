@@ -24,9 +24,7 @@
 #include "main.h"
 #include "parameters_conversion.h"
 
-#include "r1_f0xx_pwm_curr_fdbk.h"
- 
- 
+#include "r1_g0xx_pwm_curr_fdbk.h"
  
  
  
@@ -38,11 +36,10 @@
 /**
   * @brief  Current sensor parameters Single Drive - one shunt
   */
-const R1_F0XX_Params_t R1_F0XX_Params =
+const R1_G0XXParams_t R1_G0XX_Params =
 {
 /* Current reading A/D Conversions initialization -----------------------------*/
-  .b_ISamplingTime = LL_ADC_SAMPLINGTIME_7CYCLES_5,
-  .hIChannel = MC_ADC_CHANNEL_4,
+  .hIChannel = MC_ADC_CHANNEL_6,
   
 /* PWM generation parameters --------------------------------------------------*/
   .hDeadTime = DEAD_TIME_COUNTS, 
@@ -51,12 +48,12 @@ const R1_F0XX_Params_t R1_F0XX_Params =
   .hTbefore = TBEFORE,
   .hTMin = TMIN,
   .hHTMin = HTMIN,
+  .hCHTMin = CHTMIN,
   .hTSample = SAMPLING_TIME,
   .hMaxTrTs = MAX_TRTS,
 
 /* PWM Driving signals initialization ----------------------------------------*/
   .TIMx = PWM_TIM1,
-  .AuxTIM = R1_PWM_AUX_TIM, 
   
   (LowSideOutputsFunction_t)LOW_SIDE_SIGNALS_ENABLING, 
     

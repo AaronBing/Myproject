@@ -1,7 +1,7 @@
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file    stm32f0xx_it.h
+  * @file    stm32g0xx_it.h
   * @brief   This file contains the headers of the interrupt handlers.
   ******************************************************************************
   *
@@ -34,8 +34,8 @@
 /* USER CODE END Header */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __STM32F0xx_IT_H
-#define __STM32F0xx_IT_H
+#ifndef __STM32G0xx_IT_H
+#define __STM32G0xx_IT_H
 
 #ifdef __cplusplus
  extern "C" {
@@ -62,7 +62,10 @@
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/
-
+void NMI_Handler(void);
+void SVC_Handler(void);
+void PendSV_Handler(void);
+void DMA1_Ch4_7_DMAMUX1_OVR_IRQHandler(void);
 /* USER CODE BEGIN EFP */
 
 /* USER CODE END EFP */
@@ -71,6 +74,6 @@
 }
 #endif
 
-#endif /* __STM32F0xx_IT_H */
+#endif /* __STM32G0xx_IT_H */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
