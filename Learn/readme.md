@@ -34,8 +34,11 @@ st，如何获取最高ADC精度，p18
 
 
 
+Jlink使用技巧之J-Scope虚拟示波器功能
+https://www.cnblogs.com/whik/p/9873177.html
 
-
+一款很好用的markdown编辑器
+https://www.cnblogs.com/whik/p/9873177.html
 
 
 
