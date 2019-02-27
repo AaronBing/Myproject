@@ -11,17 +11,18 @@
   *           + three shunt current sesnsing
   *           + space vector modulation function
   *           + ADC sampling function
-  *
+
+              当使用单个分流电流检测拓扑时，该文件提供实现当前传感器类的固件功能。
+              它专为STM32F0XX 微控制器设计，仅使用一个ADC实现两个电机电流的连续采样。
+              + MCU外设和手柄初始化功能
+              +三个分流电流sesnsing
+              +空间矢量调制功能
+              + ADC采样功能
+
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2018 STMicroelectronics.
-  * All rights reserved.</center></h2>
   *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
   *
   ******************************************************************************
   */
@@ -132,34 +133,38 @@ static void R1G0XX_TIMxInit(TIM_TypeDef* TIMx, PWMC_Handle_t *pHdl);
 /**
   * @brief  It initializes TIM1, ADC, GPIO, DMA1 and NVIC for single shunt current
   *         reading configuration using STM32F0XX family.
+            它使用STM32F0XX系列初始化TIM1，ADC，GPIO，DMA1和NVIC，以实现单分流电流*读取配置。
   * @param  pHdl: handler of the current instance of the PWM component
+            pHdl：PWM组件当前实例的处理程序
   * @retval none
   */
 void R1G0XX_Init(PWMC_R1_G0_Handle_t *pHandle)
 {
-  
+
   if ((uint32_t)pHandle == (uint32_t)&pHandle->_Super)
   {
     /* disable IT and flags in case of LL driver usage
-     * workaround for unwanted interrupt enabling done by LL driver */
+     * workaround for unwanted interrupt enabling done by LL driver
+     在LL驱动程序使用情况下禁用IT和标志解决方法，以便由LL驱动程序完成不需要的中断启用 */
     LL_ADC_DisableIT_EOC( ADC1 );
     LL_ADC_ClearFlag_EOC( ADC1 );
     LL_ADC_DisableIT_EOS( ADC1 );
     LL_ADC_ClearFlag_EOS( ADC1 );
-    /* DMA Event related to TIM1 Channel 4 */
-    /* DMA1 Channel4 configuration ----------------------------------------------*/
+    /* DMA Event related to TIM1 Channel 4  与TIM1通道4相关的DMA事件*/
+    /* DMA1 Channel4 configuration  DMA1 Channel4配置 ----------------------------------------------*/
     LL_DMA_SetMemoryAddress(DMA1, LL_DMA_CHANNEL_4, (uint32_t)pHandle->hDmaBuff);
     LL_DMA_SetPeriphAddress(DMA1, LL_DMA_CHANNEL_4, (uint32_t)&(TIM1->CCR1));
     LL_DMA_SetDataLength( DMA1, LL_DMA_CHANNEL_4, 2u );
 
-    /* ensable DMA1 Channel4 */
+    /* ensable DMA1 Channel4  可靠的DMA1 Channel4*/
     LL_DMA_EnableChannel(DMA1, LL_DMA_CHANNEL_4);
-    
-    /* Debug feature, we froze the timer if the MCU is halted by the debugger*/
+
+    /* Debug feature, we froze the timer if the MCU is halted by the debugger
+    调试功能，如果MCU被调试器暂停，我们会冻结定时器*/
     LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_DBGMCU);
     LL_DBGMCU_APB2_GRP1_FreezePeriph(LL_DBGMCU_APB2_GRP1_TIM1_STOP);
     /* End of debug feature */
-    
+
     /* DMA Event related to TIM1 update */
     /* DMA1 Channel5 configuration ----------------------------------------------*/
     LL_DMA_SetMemoryAddress(DMA1, LL_DMA_CHANNEL_5, (uint32_t)&(pHandle->wPreloadDisableActing));
@@ -191,16 +196,16 @@ void R1G0XX_Init(PWMC_R1_G0_Handle_t *pHandle)
     LL_ADC_REG_SetTriggerSource (ADC1, LL_ADC_REG_TRIG_SOFTWARE);
     LL_ADC_REG_SetDMATransfer(ADC1, LL_ADC_REG_DMA_TRANSFER_NONE);
     LL_ADC_Enable(ADC1);
-    
+
 
     /* Wait ADC Ready */
     while (LL_ADC_IsActiveFlag_ADRDY(ADC1)==RESET)
     {}
-    
+
     R1G0XX_1ShuntMotorVarsRestart(&pHandle->_Super);
 
     LL_DMA_EnableIT_TC(DMA1, LL_DMA_CHANNEL_1);
-    
+
 
     LL_TIM_EnableCounter(TIM1);
 
@@ -242,7 +247,7 @@ static void R1G0XX_TIMxInit(TIM_TypeDef* TIMx, PWMC_Handle_t *pHdl)
   LL_TIM_OC_EnablePreload(TIMx, LL_TIM_CHANNEL_CH6);
 
   LL_TIM_OC_SetDeadTime(TIMx, (pHandle->pParams_str->hDeadTime)/2u);
- 
+
   pHandle->wPreloadDisableCC1 = TIMx->CCMR1 & CC1_PRELOAD_DISABLE_MASK;
   pHandle->wPreloadDisableCC2 = TIMx->CCMR1 & CC2_PRELOAD_DISABLE_MASK;
   pHandle->wPreloadDisableCC3 = TIMx->CCMR2 & CC3_PRELOAD_DISABLE_MASK;
@@ -266,33 +271,33 @@ void R1G0XX_CurrentReadingCalibration(PWMC_Handle_t *pHdl)
   pHandle->hFlags |= CALIB;
 
   /* We forbid ADC usage for regular conversion on Systick*/
-  pHandle->ADCRegularLocked=true; 
+  pHandle->ADCRegularLocked=true;
   /* ADC Channel config for current reading */
   LL_ADC_REG_SetSequencerChannels ( ADC1, __LL_ADC_DECIMAL_NB_TO_CHANNEL ( pHandle->pParams_str->hIChannel ));
-  
+
   /* Disable DMA1 Channel1 */
   LL_DMA_DisableChannel(DMA1, LL_DMA_CHANNEL_1);
-  
-  /* ADC Channel used for current reading are read 
-  in order to get zero currents ADC values*/   
+
+  /* ADC Channel used for current reading are read
+  in order to get zero currents ADC values*/
   while (bIndex< NB_CONVERSIONS)
-  {     
+  {
     /* Software start of conversion */
     LL_ADC_REG_StartConversion(ADC1);
-    
+
     /* Wait until end of regular conversion */
     while (LL_ADC_IsActiveFlag_EOC(ADC1)==RESET)
-    {}    
-    
+    {}
+
     wPhaseOffset += LL_ADC_REG_ReadConversionData12(ADC1);
     bIndex++;
   }
-  
+
   pHandle->hPhaseOffset = (uint16_t)(wPhaseOffset/NB_CONVERSIONS);
-  
+
   /* Reset the CALIB flags to indicate the end of ADC calibartion phase*/
   pHandle->hFlags &= (~CALIB);
-  
+
 }
 
 /**
@@ -303,20 +308,20 @@ void R1G0XX_CurrentReadingCalibration(PWMC_Handle_t *pHdl)
 static void R1G0XX_1ShuntMotorVarsRestart(PWMC_Handle_t *pHdl)
 {
   PWMC_R1_G0_Handle_t *pHandle = (PWMC_R1_G0_Handle_t *)pHdl;
-  
+
   /* Default value of DutyValues */
   pHandle->hCntSmp1 = (pHandle->Half_PWMPeriod >> 1) - pHandle->pParams_str->hTbefore;
   pHandle->hCntSmp2 = (pHandle->Half_PWMPeriod >> 1) + pHandle->pParams_str->hTafter;
-  
+
   pHandle->bInverted_pwm_new=INVERT_NONE;
   pHandle->hFlags &= (~STBD3); /*STBD3 cleared*/
-  
+
 
   /* After start value of dvDutyValues */
   pHandle->_Super.hCntPhA = pHandle->Half_PWMPeriod >> 1;
   pHandle->_Super.hCntPhB = pHandle->Half_PWMPeriod >> 1;
   pHandle->_Super.hCntPhC = pHandle->Half_PWMPeriod >> 1;
-  
+
   /* Set the default previous value of Phase A,B,C current */
   pHandle->hCurrAOld=0;
   pHandle->hCurrBOld=0;
@@ -324,7 +329,7 @@ static void R1G0XX_1ShuntMotorVarsRestart(PWMC_Handle_t *pHdl)
    /* After reset, value of DMA buffers for distortion*/
   pHandle->hDmaBuff[0] =  pHandle->Half_PWMPeriod + 1u;
   pHandle->hDmaBuff[1] =  pHandle->Half_PWMPeriod >> 1; /*dummy*/
-  
+
   pHandle->BrakeActionLock = false;
 
    }
@@ -335,7 +340,7 @@ static void R1G0XX_1ShuntMotorVarsRestart(PWMC_Handle_t *pHdl)
   * @retval Curr_Components Ia and Ib current in Curr_Components format
   */
 void R1G0XX_GetPhaseCurrents(PWMC_Handle_t *pHdl,Curr_Components* pStator_Currents)
-{  
+{
   int32_t wAux;
   int16_t hCurrA = 0;
   int16_t hCurrB = 0;
@@ -343,23 +348,23 @@ void R1G0XX_GetPhaseCurrents(PWMC_Handle_t *pHdl,Curr_Components* pStator_Curren
   uint8_t bCurrASamp = 0u;
   uint8_t bCurrBSamp = 0u;
   uint8_t bCurrCSamp = 0u;
-  
+
   PWMC_R1_G0_Handle_t *pHandle = (PWMC_R1_G0_Handle_t *)pHdl;
   TIM1->CCMR1 |= CC12_PRELOAD_ENABLE_MASK;
-  TIM1->CCMR2 |= CC3_PRELOAD_ENABLE_MASK; 
-  
+  TIM1->CCMR2 |= CC3_PRELOAD_ENABLE_MASK;
+
   /* Disabling the External triggering for ADCx*/
   LL_ADC_REG_SetTriggerSource (ADC1, LL_ADC_REG_TRIG_SOFTWARE);
-  
+
   /* Reset the update flag to indicate the start of FOC algorithm*/
   LL_TIM_ClearFlag_UPDATE(TIM1);
-  
+
   /* First sampling point */
   wAux = (int32_t)(pHandle->hCurConv[0]) - (int32_t)(pHandle->hPhaseOffset);
-  
+
   /* Check saturation */
   wAux = (wAux > -INT16_MAX) ? ((wAux < INT16_MAX) ? wAux : INT16_MAX) : -INT16_MAX;
-  
+
   switch (pHandle->sampCur1)
   {
   case SAMP_IA:
@@ -400,13 +405,13 @@ void R1G0XX_GetPhaseCurrents(PWMC_Handle_t *pHdl,Curr_Components* pStator_Curren
   default:
     break;
   }
-  
+
   /* Second sampling point */
   wAux = (int32_t)(pHandle->hCurConv[1]) - (int32_t)(pHandle->hPhaseOffset);
-  
+
   wAux = (wAux > -INT16_MAX) ? ((wAux < INT16_MAX) ? wAux : INT16_MAX) : -INT16_MAX;
 
-  
+
   switch (pHandle->sampCur2)
   {
   case SAMP_IA:
@@ -422,61 +427,61 @@ void R1G0XX_GetPhaseCurrents(PWMC_Handle_t *pHdl,Curr_Components* pStator_Curren
     bCurrCSamp = 1u;
     break;
   case SAMP_NIA:
-    wAux = -wAux; 
+    wAux = -wAux;
     hCurrA = (int16_t)(wAux);
     bCurrASamp = 1u;
     break;
   case SAMP_NIB:
-    wAux = -wAux; 
+    wAux = -wAux;
     hCurrB = (int16_t)(wAux);
     bCurrBSamp = 1u;
     break;
   case SAMP_NIC:
-    wAux = -wAux; 
+    wAux = -wAux;
     hCurrC = (int16_t)(wAux);
     bCurrCSamp = 1u;
     break;
   default:
     break;
   }
-    
+
   /* Computation of the third value */
   if (bCurrASamp == 0u)
   {
     wAux = -((int32_t)(hCurrB)) -((int32_t)(hCurrC));
-    
+
     /* Check saturation */
 	wAux = (wAux > -INT16_MAX) ? ((wAux < INT16_MAX) ? wAux : INT16_MAX) : -INT16_MAX;
-    
-    hCurrA = (int16_t)wAux; 
+
+    hCurrA = (int16_t)wAux;
   }
   if (bCurrBSamp == 0u)
   {
     wAux = -((int32_t)(hCurrA)) -((int32_t)(hCurrC));
-    
+
     /* Check saturation */
 	wAux = (wAux > -INT16_MAX) ? ((wAux < INT16_MAX) ? wAux : INT16_MAX) : -INT16_MAX;
-    
+
     hCurrB = (int16_t)wAux;
   }
   if (bCurrCSamp == 0u)
   {
     wAux = -((int32_t)(hCurrA)) -((int32_t)(hCurrB));
-    
+
     /* Check saturation */
     wAux = (wAux > -INT16_MAX) ? ((wAux < INT16_MAX) ? wAux : INT16_MAX) : -INT16_MAX;
-    
+
     hCurrC = (int16_t)wAux;
   }
-  
+
   /* hCurrA, hCurrB, hCurrC values are the sampled values */
-    
+
   pHandle->hCurrAOld = hCurrA;
   pHandle->hCurrBOld = hCurrB;
 
   pStator_Currents->qI_Component1 = hCurrA;
   pStator_Currents->qI_Component2 = hCurrB;
-  
+
   pHandle->_Super.hIa = pStator_Currents->qI_Component1;
   pHandle->_Super.hIb = pStator_Currents->qI_Component2;
   pHandle->_Super.hIc = -pStator_Currents->qI_Component1 - pStator_Currents->qI_Component2;
@@ -499,11 +504,11 @@ void R1G0XX_TurnOnLowSides(PWMC_Handle_t *pHdl)
   TIM1->CCR1 = 0u;
   TIM1->CCR2 = 0u;
   TIM1->CCR3 = 0u;
-  
+
   LL_TIM_ClearFlag_UPDATE(TIM1);
   while (LL_TIM_IsActiveFlag_UPDATE(TIM1) == RESET)
   {}
-  
+
   /* Main PWM Output Enable */
   LL_TIM_EnableAllOutputs(TIM1);
   if ((pHandle->pParams_str->LowSideOutputs)== ES_GPIO)
@@ -512,7 +517,7 @@ void R1G0XX_TurnOnLowSides(PWMC_Handle_t *pHdl)
     LL_GPIO_SetOutputPin( pHandle->pParams_str->pwm_en_v_port, pHandle->pParams_str->pwm_en_v_pin );
     LL_GPIO_SetOutputPin( pHandle->pParams_str->pwm_en_w_port, pHandle->pParams_str->pwm_en_w_pin );
   }
-  return; 
+  return;
 }
 
 /**
@@ -524,9 +529,9 @@ void R1G0XX_TurnOnLowSides(PWMC_Handle_t *pHdl)
 void R1G0XX_SwitchOnPWM(PWMC_Handle_t *pHdl)
 {
   PWMC_R1_G0_Handle_t *pHandle = (PWMC_R1_G0_Handle_t *)pHdl;
-  
+
   pHandle->_Super.bTurnOnLowSidesAction = false;
-  
+
   /* enable break Interrupt */
   LL_TIM_ClearFlag_BRK(TIM1);
   LL_TIM_EnableIT_BRK(TIM1);
@@ -566,10 +571,10 @@ void R1G0XX_SwitchOnPWM(PWMC_Handle_t *pHdl)
   LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_1, 2u);
   LL_DMA_EnableChannel(DMA1, LL_DMA_CHANNEL_1);
 
-  
-  /* Main PWM Output Enable */  
+
+  /* Main PWM Output Enable */
   LL_TIM_EnableAllOutputs(TIM1);
-  
+
   /* TIM output trigger 2 for ADC */
 
 
@@ -580,8 +585,8 @@ void R1G0XX_SwitchOnPWM(PWMC_Handle_t *pHdl)
   LL_TIM_ClearFlag_UPDATE(TIM1);
   LL_TIM_EnableIT_UPDATE(TIM1);
   LL_TIM_EnableDMAReq_CC4(TIM1);
-  LL_DMA_EnableChannel (DMA1, LL_DMA_CHANNEL_4); 
-  
+  LL_DMA_EnableChannel (DMA1, LL_DMA_CHANNEL_4);
+
   if ((pHandle->pParams_str->LowSideOutputs)== ES_GPIO)
   {
     if ((TIM1->CCER & TIMxCCER_MASK_CH123) != 0u)
@@ -598,11 +603,11 @@ void R1G0XX_SwitchOnPWM(PWMC_Handle_t *pHdl)
       LL_GPIO_ResetOutputPin( pHandle->pParams_str->pwm_en_w_port, pHandle->pParams_str->pwm_en_w_pin );
     }
   }
-  
+
   /* Enabling distortion for single shunt */
   pHandle->hFlags |= DSTEN;
   /* We forbid ADC usage for regular conversion on Systick*/
-  pHandle->ADCRegularLocked=true; 
+  pHandle->ADCRegularLocked=true;
   return;
 }
 
@@ -628,34 +633,34 @@ void R1G0XX_SwitchOffPWM(PWMC_Handle_t *pHdl)
     LL_GPIO_ResetOutputPin( pHandle->pParams_str->pwm_en_v_port, pHandle->pParams_str->pwm_en_v_pin );
     LL_GPIO_ResetOutputPin( pHandle->pParams_str->pwm_en_w_port, pHandle->pParams_str->pwm_en_w_pin );
   }
-  
+
   /* Switch off the DMA from this point High frequency task is shut down*/
   LL_DMA_DisableChannel(DMA1, LL_DMA_CHANNEL_1);
-  
+
   /* channel 5 and 6 Preload Disable */
   LL_TIM_OC_DisablePreload(TIM1, LL_TIM_CHANNEL_CH5);
   LL_TIM_OC_DisablePreload(TIM1, LL_TIM_CHANNEL_CH6);
-  
+
   LL_TIM_OC_SetCompareCH5(TIM1,(uint32_t)(pHandle->Half_PWMPeriod + 1u));
   LL_TIM_OC_SetCompareCH6(TIM1,(uint32_t)(pHandle->Half_PWMPeriod + 1u));
-  
+
     /* channel 5 and 6 Preload enable */
   LL_TIM_OC_EnablePreload(TIM1, LL_TIM_CHANNEL_CH5);
   LL_TIM_OC_EnablePreload(TIM1, LL_TIM_CHANNEL_CH6);
-  
+
   /* Disable TIMx DMA requests enable */
   LL_TIM_DisableDMAReq_CC4(TIM1);
   LL_TIM_DisableDMAReq_UPDATE(TIM1);
 
   /* Disable DMA channels*/
   LL_DMA_DisableChannel (DMA1, LL_DMA_CHANNEL_5);
-  
+
   /* Disable UPDATE ISR */
   LL_TIM_DisableIT_UPDATE(TIM1);
-  
+
   /* Disable break interrupt */
   LL_TIM_DisableIT_BRK(TIM1);
-  
+
   /*Clear potential ADC Ongoing conversion*/
   if (LL_ADC_REG_IsConversionOngoing (ADC1))
   {
@@ -665,24 +670,24 @@ void R1G0XX_SwitchOffPWM(PWMC_Handle_t *pHdl)
     }
   }
   LL_ADC_REG_SetTriggerSource (ADC1, LL_ADC_REG_TRIG_SOFTWARE);
-    
+
   /* Disabling distortion for single */
   pHandle->hFlags &= (~DSTEN);
 
   while (LL_TIM_IsActiveFlag_UPDATE(TIM1)==RESET)
   {}
 
-  
+
   /* We allow ADC usage for regular conversion on Systick*/
-  pHandle->ADCRegularLocked=false; 
+  pHandle->ADCRegularLocked=false;
 
   /* Set all duty to 50% */
   hAux = pHandle->Half_PWMPeriod >> 1;
   TIM1->CCR1 = hAux;
   TIM1->CCR2 = hAux;
-  TIM1->CCR3 = hAux;    
-    
-  return; 
+  TIM1->CCR3 = hAux;
+
+  return;
 }
 
 /**
@@ -704,11 +709,11 @@ uint16_t R1G0XX_CalcDutyCycles(PWMC_Handle_t *pHdl)
   uint16_t hAux;
 
   PWMC_R1_G0_Handle_t *pHandle = (PWMC_R1_G0_Handle_t *)pHdl;
-    
+
   bSector = (uint8_t)pHandle->_Super.hSector;
-  
+
   if ((pHandle->hFlags & DSTEN) != 0u)
-  { 
+  {
     switch (bSector)
     {
     case SECTOR_1:
@@ -744,11 +749,11 @@ uint16_t R1G0XX_CalcDutyCycles(PWMC_Handle_t *pHdl)
     default:
       break;
     }
-    
+
     /* Compute delta duty */
     hDeltaDuty_0 = (int16_t)(hDutyV_1) - (int16_t)(hDutyV_0);
     hDeltaDuty_1 = (int16_t)(hDutyV_2) - (int16_t)(hDutyV_1);
-    
+
     /* Check region */
     if ((uint16_t)hDeltaDuty_0<=pHandle->pParams_str->hTMin)
     {
@@ -760,8 +765,8 @@ uint16_t R1G0XX_CalcDutyCycles(PWMC_Handle_t *pHdl)
       {
         bStatorFluxPos = BOUNDARY_2;
       }
-    } 
-    else 
+    }
+    else
     {
       if ((uint16_t)hDeltaDuty_1>pHandle->pParams_str->hTMin)
       {
@@ -772,7 +777,7 @@ uint16_t R1G0XX_CalcDutyCycles(PWMC_Handle_t *pHdl)
         bStatorFluxPos = BOUNDARY_1;
       }
     }
-            
+
     if (bStatorFluxPos == REGULAR)
     {
       pHandle->bInverted_pwm_new = INVERT_NONE;
@@ -800,7 +805,7 @@ uint16_t R1G0XX_CalcDutyCycles(PWMC_Handle_t *pHdl)
             pHandle->bInverted_pwm_new = INVERT_A;
             pHandle->_Super.hCntPhA -=pHandle->pParams_str->hCHTMin;
             pHandle->hFlags |= STBD3;
-          } 
+          }
           else
           {
             pHandle->bInverted_pwm_new = INVERT_B;
@@ -828,7 +833,7 @@ uint16_t R1G0XX_CalcDutyCycles(PWMC_Handle_t *pHdl)
             pHandle->bInverted_pwm_new = INVERT_A;
             pHandle->_Super.hCntPhA -=pHandle->pParams_str->hCHTMin;
             pHandle->hFlags |= STBD3;
-          } 
+          }
           else
           {
             pHandle->bInverted_pwm_new = INVERT_B;
@@ -856,7 +861,7 @@ uint16_t R1G0XX_CalcDutyCycles(PWMC_Handle_t *pHdl)
             pHandle->bInverted_pwm_new = INVERT_A;
             pHandle->_Super.hCntPhA -=pHandle->pParams_str->hCHTMin;
             pHandle->hFlags |= STBD3;
-          } 
+          }
           else
           {
             pHandle->bInverted_pwm_new = INVERT_B;
@@ -911,7 +916,7 @@ uint16_t R1G0XX_CalcDutyCycles(PWMC_Handle_t *pHdl)
         pHandle->bInverted_pwm_new = INVERT_A;
         pHandle->_Super.hCntPhA -=pHandle->pParams_str->hCHTMin;
         pHandle->hFlags |= STBD3;
-      } 
+      }
       else
       {
         pHandle->bInverted_pwm_new = INVERT_B;
@@ -919,7 +924,7 @@ uint16_t R1G0XX_CalcDutyCycles(PWMC_Handle_t *pHdl)
         pHandle->hFlags &= (~STBD3);
       }
     }
-        
+
     if (bStatorFluxPos == REGULAR) /* Regular zone */
     {
       /* First point */
@@ -943,23 +948,23 @@ uint16_t R1G0XX_CalcDutyCycles(PWMC_Handle_t *pHdl)
         pHandle->hCntSmp2 = hDutyV_2 - pHandle->pParams_str->hTbefore;
     /*  }*/
     }
-    
+
     if (bStatorFluxPos == BOUNDARY_1) /* Two small, one big */
-    {      
+    {
       /* First point */
     /*  if ((hDutyV_1 - hDutyV_0 - pHandle->pParams_str->hDeadTime)> pHandle->pParams_str->hMaxTrTs)
       {
         pHandle->hCntSmp1 = hDutyV_0 + hDutyV_1 + pHandle->pParams_str->hDeadTime;
         pHandle->hCntSmp1 >>= 1;
       }
-      else 
+      else
       { */
         pHandle->hCntSmp1 = hDutyV_1 - pHandle->pParams_str->hTbefore;
      /* }*/
       /* Second point */
       pHandle->hCntSmp2 = pHandle->Half_PWMPeriod - pHandle->pParams_str->hHTMin + pHandle->pParams_str->hTSample;
     }
-    
+
     if (bStatorFluxPos == BOUNDARY_2) /* Two big, one small */
     {
       /* First point */
@@ -975,8 +980,8 @@ uint16_t R1G0XX_CalcDutyCycles(PWMC_Handle_t *pHdl)
       /* Second point */
       pHandle->hCntSmp2 = pHandle->Half_PWMPeriod - pHandle->pParams_str->hHTMin + pHandle->pParams_str->hTSample;
     }
-    
-    if (bStatorFluxPos == BOUNDARY_3)  
+
+    if (bStatorFluxPos == BOUNDARY_3)
     {
       /* First point */
       pHandle->hCntSmp1 = hDutyV_0-pHandle->pParams_str->hTbefore; /* Dummy trigger */
@@ -991,22 +996,22 @@ uint16_t R1G0XX_CalcDutyCycles(PWMC_Handle_t *pHdl)
   }
 
 
- 
-  /* Update Timer Ch4 for active vector*/  
+
+  /* Update Timer Ch4 for active vector*/
   /* Update Timer Ch 5,6 for ADC triggering and books the queue*/
   TIM1->CCMR3 &= TIMxCCR56_PRELOAD_DISABLE_MASK;
   TIM1->CCR5 = 0x0u;
   TIM1->CCR6 = 0xFFFFu;
-  TIM1->CCMR3 |= TIMxCCR56_PRELOAD_ENABLE_MASK; 
+  TIM1->CCMR3 |= TIMxCCR56_PRELOAD_ENABLE_MASK;
 
   TIM1->CCR5 = pHandle->hCntSmp1;
   TIM1->CCR6 = pHandle->hCntSmp2;
 
-    
+
  if (bStatorFluxPos == REGULAR)
   {
     LL_TIM_SetTriggerOutput2(TIM1, LL_TIM_TRGO2_OC5_RISING_OC6_RISING);
-    
+
 	switch (pHandle->bInverted_pwm_new)
     {
       case INVERT_A:
@@ -1032,28 +1037,28 @@ uint16_t R1G0XX_CalcDutyCycles(PWMC_Handle_t *pHdl)
     {
       case INVERT_A:
         LL_DMA_SetPeriphAddress(DMA1, LL_DMA_CHANNEL_4, (uint32_t) &(TIM1->CCR1));
-        LL_DMA_SetPeriphAddress(DMA1, LL_DMA_CHANNEL_5, (uint32_t) &(TIM1->CCMR1));        
+        LL_DMA_SetPeriphAddress(DMA1, LL_DMA_CHANNEL_5, (uint32_t) &(TIM1->CCMR1));
         pHandle->hDmaBuff[1] = pHandle->_Super.hCntPhA;
         pHandle->wPreloadDisableActing = pHandle->wPreloadDisableCC1;
         break;
 
       case INVERT_B:
         LL_DMA_SetPeriphAddress(DMA1, LL_DMA_CHANNEL_4, (uint32_t) &(TIM1->CCR2));
-        LL_DMA_SetPeriphAddress(DMA1, LL_DMA_CHANNEL_5, (uint32_t) &(TIM1->CCMR1)); 
+        LL_DMA_SetPeriphAddress(DMA1, LL_DMA_CHANNEL_5, (uint32_t) &(TIM1->CCMR1));
         pHandle->hDmaBuff[1] = pHandle->_Super.hCntPhB;
         pHandle->wPreloadDisableActing = pHandle->wPreloadDisableCC2;
         break;
 
       case INVERT_C:
         LL_DMA_SetPeriphAddress(DMA1, LL_DMA_CHANNEL_4, (uint32_t) &(TIM1->CCR3));
-        LL_DMA_SetPeriphAddress(DMA1, LL_DMA_CHANNEL_5, (uint32_t) &(TIM1->CCMR2)); 
+        LL_DMA_SetPeriphAddress(DMA1, LL_DMA_CHANNEL_5, (uint32_t) &(TIM1->CCMR2));
         pHandle->hDmaBuff[1] = pHandle->_Super.hCntPhC;
         pHandle->wPreloadDisableActing = pHandle->wPreloadDisableCC3;
         break;
 
       default:
         break;
-    }    
+    }
     LL_TIM_SetTriggerOutput2(TIM1, LL_TIM_TRGO2_OC5_RISING_OC6_FALLING);
     /*active vector*/
     LL_DMA_DisableChannel (DMA1, LL_DMA_CHANNEL_5);
@@ -1063,12 +1068,12 @@ uint16_t R1G0XX_CalcDutyCycles(PWMC_Handle_t *pHdl)
     /* enable DMA request update interrupt */
     LL_TIM_EnableDMAReq_UPDATE(TIM1);
  }
- 
+
    /* Update Timer Ch 1,2,3 (These value are required before update event) */
   TIM1->CCR1 = pHandle->_Super.hCntPhA;
   TIM1->CCR2 = pHandle->_Super.hCntPhB;
   TIM1->CCR3 = pHandle->_Super.hCntPhC;
-   
+
   /* Debug High frequency task duration
    * LL_GPIO_ResetOutputPin (GPIOB, LL_GPIO_PIN_3);
    */
@@ -1077,7 +1082,7 @@ uint16_t R1G0XX_CalcDutyCycles(PWMC_Handle_t *pHdl)
   if (LL_TIM_IsActiveFlag_UPDATE(TIM1))
   {
     hAux = MC_FOC_DURATION;
-    
+
   }
   else
   {
@@ -1087,32 +1092,32 @@ uint16_t R1G0XX_CalcDutyCycles(PWMC_Handle_t *pHdl)
   {
     hAux = MC_FOC_DURATION;
     pHandle->_Super.SWerror = 0u;
-  }  
-  
-      
-  /* The following instruction can be executed after Update handler 
+  }
+
+
+  /* The following instruction can be executed after Update handler
      before the get phase current (Second EOC) */
-      
+
   /* Set the current sampled */
    if (bStatorFluxPos == REGULAR) /* Regual zone */
   {
     pHandle->sampCur1 = REGULAR_SAMP_CUR1[bSector];
     pHandle->sampCur2 = REGULAR_SAMP_CUR2[bSector];
   }
-  
+
   if (bStatorFluxPos == BOUNDARY_1) /* Two small, one big */
   {
     pHandle->sampCur1 = REGULAR_SAMP_CUR1[bSector];
     pHandle->sampCur2 = BOUNDR1_SAMP_CUR2[bSector];
   }
-  
+
   if (bStatorFluxPos == BOUNDARY_2) /* Two big, one small */
   {
     pHandle->sampCur1 = BOUNDR2_SAMP_CUR1[bSector];
     pHandle->sampCur2 = BOUNDR2_SAMP_CUR2[bSector];
   }
-  
-  if (bStatorFluxPos == BOUNDARY_3)  
+
+  if (bStatorFluxPos == BOUNDARY_3)
   {
     if (pHandle->bInverted_pwm_new == INVERT_A)
     {
@@ -1125,9 +1130,9 @@ uint16_t R1G0XX_CalcDutyCycles(PWMC_Handle_t *pHdl)
       pHandle->sampCur2 = SAMP_IB;
     }
   }
-    
+
   /* Limit for the Get Phase current (Second EOC Handler) */
-      
+
   return (hAux);
 }
 
@@ -1137,7 +1142,7 @@ uint16_t R1G0XX_CalcDutyCycles(PWMC_Handle_t *pHdl)
   * @retval void* It returns always MC_NULL
   */
 void R1G0XX_TIMx_UP_IRQHandler(PWMC_R1_G0_Handle_t *pHdl)
-{ 
+{
 
   LL_ADC_REG_SetTriggerSource (ADC1, LL_ADC_REG_TRIG_EXT_TIM1_TRGO2);
   LL_ADC_REG_StartConversion (ADC1);
@@ -1151,7 +1156,7 @@ void R1G0XX_TIMx_UP_IRQHandler(PWMC_R1_G0_Handle_t *pHdl)
 
   */
 void* R1G0XX_OVERCURRENT_IRQHandler(PWMC_R1_G0_Handle_t *pHandle)
-{ 
+{
   if ( pHandle->BrakeActionLock == false )
   {
     if ((pHandle->pParams_str->LowSideOutputs)== ES_GPIO)
@@ -1162,7 +1167,7 @@ void* R1G0XX_OVERCURRENT_IRQHandler(PWMC_R1_G0_Handle_t *pHandle)
     }
   }
   pHandle->OverCurrentFlag = true;
-  
+
   return MC_NULL;
 }
 
@@ -1187,16 +1192,16 @@ void * R1G0XX_OVERVOLTAGE_IRQHandler( PWMC_R1_G0_Handle_t * pHandle )
   *                  detected since last method call, MC_NO_FAULTS otherwise.
   */
 uint16_t R1G0XX_IsOverCurrentOccurred(PWMC_Handle_t *pHdl)
-{  
+{
   PWMC_R1_G0_Handle_t *pHandle = (PWMC_R1_G0_Handle_t *)pHdl;
   uint16_t retVal = MC_NO_FAULTS;
-  
+
   if ( pHandle->OverVoltageFlag == true )
   {
     retVal = MC_OVER_VOLT;
     pHandle->OverVoltageFlag = false;
   }
-    
+
   if (pHandle->OverCurrentFlag == true)
   {
     retVal |= MC_BREAK_IN;
@@ -1208,7 +1213,7 @@ uint16_t R1G0XX_IsOverCurrentOccurred(PWMC_Handle_t *pHdl)
 /**
   * @}
   */
-  
+
 /**
   * @}
   */

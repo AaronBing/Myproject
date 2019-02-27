@@ -4,6 +4,7 @@
   * @author  Motor Control SDK Team, ST Microelectronics
   * @brief   This file contains all definitions and functions prototypes for the
   *          Encoder Alignment Control component of the Motor Control SDK.
+            该文件包含Motor Control SDK的 Encoder Alignment Control组件的所有定义和函数原型。
   ******************************************************************************
   * @attention
   *

@@ -7,6 +7,9 @@
  *
  *           * proportional, integral and derivative computation funcions
  *           * read and write gain functions
+              该文件提供的固件功能实现了Motor Control SDK的PID调节器组件的以下功能*：
+              比例，积分和微分计算功能
+              读写增益功能
  *
  ******************************************************************************
   * @attention

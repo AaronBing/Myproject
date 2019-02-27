@@ -4,6 +4,7 @@
   * @author  Motor Control SDK Team, ST Microelectronics
   * @brief   This file contains all definitions and functions prototypes for the
   *          Encoder Speed & Position Feedback component of the Motor Control SDK.
+              此文件包含Motor Control SDK的编码器速度和位置反馈组件的所有定义和函数原型。
   ******************************************************************************
   * @attention
   *

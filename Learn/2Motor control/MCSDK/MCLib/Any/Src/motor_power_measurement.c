@@ -9,17 +9,16 @@
   *           * Clear power measurement
   *           * Get Power of the motor
   *           * Get average Power of the motor
+                此文件提供固件功能，实现电机控制SDK的电机功率测量组件的功能：
+                 * *计算电机功率
+                 * *清除功率测量
+                 * *获取电机功率
+                 * *获取电机的平均功率
   *
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2018 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
+
   *
   ******************************************************************************
   */

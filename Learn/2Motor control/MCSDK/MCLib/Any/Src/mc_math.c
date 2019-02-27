@@ -4,17 +4,11 @@
   * @author  Motor Control SDK Team, ST Microelectronics
   * @brief   This file provides mathematics functions useful for and specific to
   *          Motor Control.
+              该文件提供对Motor Control有用且特定的数学函数。
   *
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2018 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
   *
   ******************************************************************************
   */
@@ -28,9 +22,9 @@
 
 /** @defgroup MC_Math Motor Control Math functions
   * @brief Motor Control Mathematic functions of the Motor Control SDK
-  *
+  *       电机控制电机控制SDK的数学功能
   * @todo Document the Motor Control Math "module".
-  *
+  *       记录电机控制数学“模块”。
   * @{
   */
 
@@ -92,8 +86,12 @@ __attribute__( ( section ( ".ccmram" ) ) )
   *         Ialpha and Ibeta in a stationary qd reference frame.
   *                               Ialpha = Ia
   *                       Ibeta = -(2*Ib+Ia)/sqrt(3)
+            该功能将定子电流Ia和qIb（它们沿着每个位移120度的轴指向）转换成静止的qd参考系中的电流* Ialpha和Ibeta。
+  *         Ialpha = Ia * Ibeta =  - （2 * Ib + Ia）/ sqrt（3）
   * @param  Curr_Input: stator current Ia and Ib in Curr_Components format
+            Curr_Input：Curr_Components格式的定子电流Ia和Ib
   * @retval Stator current Ialpha and Ibeta in Curr_Components format
+            定子电流Ialpha和Ibeta采用Curr_Components格式
   */
 Curr_Components MCM_Clarke( Curr_Components Curr_Input )
 {
@@ -117,13 +115,14 @@ Curr_Components MCM_Clarke( Curr_Components Curr_Input )
 #else
   /* WARNING: the below instruction is not MISRA compliant, user should verify
     that Cortex-M3 assembly instruction ASR (arithmetic shift right) is used by
-    the compiler to perform the shift (instead of LSR logical shift right) */
+    the compiler to perform the shift (instead of LSR logical shift right)
+    警告：以下指令不符合MISRA，用户应验证编译器是否使用Cortex-M3汇编指令ASR（算术右移）来执行移位（而不是LSR逻辑右移）*/
 
   wIbeta_tmp = ( -( qIa_divSQRT3_tmp ) - ( qIb_divSQRT3_tmp ) -
                  ( qIb_divSQRT3_tmp ) ) >> 15;
 #endif
 
-  /* Check saturation of Ibeta */
+  /* Check saturation of Ibeta 检查Ibeta的饱和度 */
   if ( wIbeta_tmp > INT16_MAX )
   {
     hIbeta_tmp = INT16_MAX;

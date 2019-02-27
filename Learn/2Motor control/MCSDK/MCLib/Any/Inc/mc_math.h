@@ -37,6 +37,7 @@
 #define SQRT_3  1.732
 /**
   * @brief  Macro to compute logarithm of two
+    宏来计算两个对数
   */
 #define LOG2(x) \
   ((x) == 65535 ? 16 : \
