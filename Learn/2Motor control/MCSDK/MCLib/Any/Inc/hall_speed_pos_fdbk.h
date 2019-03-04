@@ -4,19 +4,14 @@
   * @author  Motor Control SDK Team, ST Microelectronics
   * @brief   This file contains all definitions and functions prototypes for the
   *          Hall Speed & Position Feedback component of the Motor Control SDK.
+              该文件包含Motor Control SDK的霍尔速度和位置反馈组件的所有定义和函数原型。
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2018 STMicroelectronics.
-  * All rights reserved.</center></h2>
   *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
   *
   ******************************************************************************
-  * @ingroup hall_speed_pos_fdbk
+  *
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
@@ -44,15 +39,15 @@ extern "C" {
 
 #define HALL_SPEED_FIFO_SIZE  ((uint8_t)18)
 
-/* HALL SENSORS PLACEMENT ----------------------------------------------------*/
+/* HALL SENSORS PLACEMENT 霍尔传感器放置---------------------------------------*/
 #define DEGREES_120 0u
 #define DEGREES_60 1u
 
 
-/* Exported types ------------------------------------------------------------*/
+/* Exported types ------导出类型     ---------------------------------------*/
 
 /**
-  * @brief HALL component parameters definition
+  * @brief HALL component parameters definition HALL组件参数定义
   *
   *  <Type @p type represents a thing that needs to be detailed more. Additional details
   * are provided in the detailed section of the doxygen comment block.
@@ -70,38 +65,46 @@ typedef struct
   /* SW Settings */
   uint8_t  SensorPlacement; /*!< Define here the mechanical position of the sensors
                              with reference to an electrical cycle.
-                             Allowed values are: DEGREES_120 or DEGREES_60.*/
+                             在此定义传感器的机械位置，参考电气循环。
+                             Allowed values are: DEGREES_120 or DEGREES_60.
+                             允许的值为：DEGREES_120或DEGREES_60。*/
 
   int16_t  PhaseShift;  /*!< Define here in s16degree the electrical phase shift
                              between the low to high transition of signal H1 and
-                             the maximum of the Bemf induced on phase A.*/
+                             the maximum of the Bemf induced on phase A.
+                             在s16degree中定义信号H1的低到高转换与A相引起的Bemf的最大值之间的电相移。*/
 
   uint16_t SpeedSamplingFreqHz; /*!< Frequency (Hz) at which motor speed is to
                              be computed. It must be equal to the frequency
                              at which function SPD_CalcAvrgMecSpeed01Hz
-                             is called.*/
+                             is called.
+                             计算电机速度的频率（Hz）。它必须等于调用函数SPD_CalcAvrgMecSpeed01Hz的频率 */
 
   uint8_t  SpeedBufferSize; /*!< Size of the buffer used to calculate the average
-                             speed. It must be less than 18.*/
+                             speed. It must be less than 18.
+                             用于计算平均速度的缓冲区大小。它必须小于18。*/
 
 
   /* HW Settings */
-  uint32_t TIMClockFreq; /*!< Timer clock frequency express in Hz.*/
+  uint32_t TIMClockFreq; /*!< Timer clock frequency express in Hz.定时器时钟频率以Hz表示。*/
 
-  TIM_TypeDef * TIMx;   /*!< Timer used for HALL sensor management.*/
+  TIM_TypeDef * TIMx;   /*!< Timer used for HALL sensor management.用于HALL传感器管理的定时器。*/
 
 
   GPIO_TypeDef * H1Port;
   /*!< HALL sensor H1 channel GPIO input port (if used,
-       after re-mapping). It must be GPIOx x= A, B, ...*/
+       after re-mapping). It must be GPIOx x= A, B, ...
+       HALL传感器H1通道GPIO输入端口（如果在重新映射后使用）。必须是GPIOx x = A，B，......*/
 
   uint32_t  H1Pin;      /*!< HALL sensor H1 channel GPIO output pin (if used,
                              after re-mapping). It must be GPIO_Pin_x x= 0, 1,
+                             HALL传感器H1通道GPIO输出引脚（如果使用，则在重新映射后）。它必须是GPIO_Pin_x x = 0,1，
                              ...*/
 
   GPIO_TypeDef * H2Port;
   /*!< HALL sensor H2 channel GPIO input port (if used,
-       after re-mapping). It must be GPIOx x= A, B, ...*/
+       after re-mapping). It must be GPIOx x= A, B, ...
+       HALL传感器H2通道GPIO输入端口（如果在重新映射后使用）。必须是GPIOx x = A，B，......*/
 
   uint32_t  H2Pin;      /*!< HALL sensor H2 channel GPIO output pin (if used,
                              after re-mapping). It must be GPIO_Pin_x x= 0, 1,
