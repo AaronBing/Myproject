@@ -648,7 +648,7 @@ void * HALL_TIMx_CC_IRQHandler( void * pHandleVoid )
         }
         else
         {
-          pHandle->ElSpeedSum -= pHandle->SensorSpeed[pHandle->SpeedFIFOIdx]; /* value we gonna removed from the accumulator */
+          pHandle->ElSpeedSum -= pHandle->SensorSpeed[pHandle->SpeedFIFOIdx]; /* value we gonna removed from the accumulator我们要从累加器中删除的值 */
           if ( wCaptBuf >= pHandle->MaxPeriod )
           {
             pHandle->SensorSpeed[pHandle->SpeedFIFOIdx]  = 0;
@@ -659,17 +659,17 @@ void * HALL_TIMx_CC_IRQHandler( void * pHandleVoid )
             pHandle->SensorSpeed[pHandle->SpeedFIFOIdx] *= pHandle->Direction;
             pHandle->ElSpeedSum += pHandle->SensorSpeed[pHandle->SpeedFIFOIdx];
           }
-          /* Update pointers to speed buffer */
+          /* Update pointers to speed buffer 更新指向速度缓冲区的指针*/
           pHandle->CurrentSpeed = pHandle->SensorSpeed[pHandle->SpeedFIFOIdx];
           pHandle->SpeedFIFOIdx++;
           if ( pHandle->SpeedFIFOIdx == pHandle->SpeedBufferSize )
           {
             pHandle->SpeedFIFOIdx = 0u;
           }
-          /* Indicate new speed acquisitions */
+          /* Indicate new speed acquisitions 表示新的速度收购*/
           pHandle->NewSpeedAcquisition = 1;
         }
-      /* Reset the number of overflow occurred */
+      /* Reset the number of overflow occurred 重置发生的溢出次数*/
       pHandle->OVFCounter = 0u;
     }
   }
@@ -686,7 +686,9 @@ __attribute__( ( section ( ".ccmram" ) ) )
 /**
 * @brief  Example of private method of the class HALL to implement an MC IRQ function
 *         to be called when TIMx update event occurs
+          类HALL的私有方法示例，用于实现在发生TIMx更新事件时要调用的MC IRQ函数
 * @param  pHandle: handler of the current instance of the hall_speed_pos_fdbk component
+          pHandle：hall_speed_pos_fdbk组件的当前实例的处理程序
 * @retval none
 */
 void * HALL_TIMx_UP_IRQHandler( void * pHandleVoid )
@@ -697,25 +699,25 @@ void * HALL_TIMx_UP_IRQHandler( void * pHandleVoid )
   if ( pHandle->SensorIsReliable )
   {
     uint16_t hMaxTimerOverflow;
-    /* an update event occured for this interrupt request generation */
+    /* an update event occured for this interrupt request generation 为此中断请求生成发生更新事件*/
     pHandle->OVFCounter++;
 
     hMaxTimerOverflow = ( uint16_t )( ( ( uint32_t )pHandle->HallTimeout * pHandle->OvfFreq )
                                       / ( ( LL_TIM_GetPrescaler ( TIMx ) + 1 ) * 1000u ) );
     if ( pHandle->OVFCounter >= hMaxTimerOverflow )
     {
-      /* Set rotor speed to zero */
+      /* Set rotor speed to zero 将转子速度设置为零*/
       pHandle->_Super.hElSpeedDpp = 0;
 
-      /* Reset the electrical angle according the hall sensor configuration */
+      /* Reset the electrical angle according the hall sensor configuration 根据霍尔传感器配置重置电角度*/
       HALL_Init_Electrical_Angle( pHandle );
 
-      /* Reset the overflow counter */
+      /* Reset the overflow counter 重置溢出计数器*/
       pHandle->OVFCounter = 0u;
 
 
 #if 1
-      /* Reset the SensorSpeed buffer*/
+      /* Reset the SensorSpeed buffer 重置SensorSpeed缓冲区 */
       uint8_t bIndex;
       for ( bIndex = 0u; bIndex < pHandle->SpeedBufferSize; bIndex++ )
       {
@@ -742,8 +744,11 @@ void * HALL_TIMx_UP_IRQHandler( void * pHandleVoid )
 
 /**
 * @brief  Compute and returns the average rotor electrical speed express in dpp
+          计算并返回以dpp表示的平均转子电速
 * @param  pHandle: handler of the current instance of the hall_speed_pos_fdbk component
+          pHandle：hall_speed_pos_fdbk组件的当前实例的处理程序
 * @retval int16_t the average rotor electrical speed express in dpp
+          int16_t平均转子电速以dpp表示
 */
 static int16_t HALL_CalcAvrgElSpeedDpp( HALL_Handle_t * pHandle )
 {
@@ -761,7 +766,7 @@ static int16_t HALL_CalcAvrgElSpeedDpp( HALL_Handle_t * pHandle )
                                               pHandle->SpeedBufferSize ) ); /* Average value */
     }
 
-    /* Clear new speed acquisitions flag */
+    /* Clear new speed acquisitions flag 清除新的速度收购标志*/
     pHandle->NewSpeedAcquisition = 0;
   }
 
@@ -772,6 +777,7 @@ static int16_t HALL_CalcAvrgElSpeedDpp( HALL_Handle_t * pHandle )
 * @brief  Read the logic level of the three Hall sensor and individuates in this
 *         way the position of the rotor (+/- 30ï¿½). Electrical angle is then
 *         initialized.
+          读取三个霍尔传感器的逻辑电平，并以此方式个别化转子的位置（+/- 30°）。然后初始化电角度。
 * @param  pHandle: handler of the current instance of the hall_speed_pos_fdbk component
 * @retval none
 */
@@ -816,12 +822,13 @@ static void HALL_Init_Electrical_Angle( HALL_Handle_t * pHandle )
       pHandle->_Super.hElAngle = ( int16_t )( pHandle->PhaseShift - S16_60_PHASE_SHIFT / 2 );
       break;
     default:
-      /* Bad hall sensor configutarion so update the speed reliability */
+      /* Bad hall sensor configutarion so update the speed reliability
+        坏霍尔传感器配置更新速度可靠性*/
       pHandle->SensorIsReliable = false;
       break;
   }
 
-  /* Initialize the measured angle */
+  /* Initialize the measured angle 初始化测量的角度 */
   pHandle->MeasuredElAngle = pHandle->_Super.hElAngle;
 
 }
@@ -834,7 +841,9 @@ static void HALL_Init_Electrical_Angle( HALL_Handle_t * pHandle )
   它可用于设置转子机械角度的等静态信息。
   注意：霍尔传感器类的版本中未实现机械角度管理。
   * @param  pHandle pointer on related component instance
+          相关组件实例上的pHandle指针
   * @param  hMecAngle istantaneous measure of rotor mechanical angle
+            hMec角度瞬时测量转子机械角度
   * @retval none
   */
 void HALL_SetMecAngle( HALL_Handle_t * pHandle, int16_t hMecAngle )
