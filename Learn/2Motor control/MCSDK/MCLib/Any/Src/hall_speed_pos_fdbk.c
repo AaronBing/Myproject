@@ -335,12 +335,12 @@ bool HALL_CalcAvrgMecSpeed01Hz( HALL_Handle_t * pHandle, int16_t * hMecSpeed01Hz
       pHandle->_Super.hElSpeedDpp = SpeedMeasAux;
       if ( SpeedMeasAux == 0 )
       {
-        /* Speed is too low */
+        /* Speed is too low 速度太低了*/
         *hMecSpeed01Hz = 0;
       }
       else
       {
-        /* Check if speed is not to fast */
+        /* Check if speed is not to fast 检查速度是否快 */
         if ( SpeedMeasAux != HALL_MAX_PSEUDO_SPEED )
         {
 #ifdef HALL_MTPA
@@ -359,7 +359,7 @@ bool HALL_CalcAvrgMecSpeed01Hz( HALL_Handle_t * pHandle, int16_t * hMecSpeed01Hz
 
           *hMecSpeed01Hz = HALL_CalcAvrgElSpeedDpp( pHandle );
 
-          /* Converto el_dpp to Mec01Hz */
+          /* Converto el_dpp to Mec01Hz 将el_dpp转换为Mec01Hz*/
           *hMecSpeed01Hz = ( int16_t )( ( *hMecSpeed01Hz *
                                           ( int32_t )pHandle->_Super.hMeasurementFrequency * 10 ) /
                                         ( 65536 * ( int32_t )pHandle->_Super.bElToMecRatio ) );
@@ -377,7 +377,8 @@ bool HALL_CalcAvrgMecSpeed01Hz( HALL_Handle_t * pHandle, int16_t * hMecSpeed01Hz
   {
     bReliability = false;
     pHandle->_Super.bSpeedErrorNumber = pHandle->_Super.bMaximumSpeedErrorsNumber;
-    /* If speed is not reliable the El and Mec speed is set to 0 */
+    /* If speed is not reliable the El and Mec speed is set to 0
+     如果速度不可靠，则El和Mec速度设置为0*/
     pHandle->_Super.hElSpeedDpp = 0;
     *hMecSpeed01Hz = 0;
   }
@@ -397,7 +398,9 @@ __attribute__( ( section ( ".ccmram" ) ) )
 /**
 * @brief  Example of private method of the class HALL to implement an MC IRQ function
 *         to be called when TIMx capture event occurs
+          类HALL的私有方法示例，用于实现在发生TIMx捕获事件时要调用的MC IRQ函数*
 * @param  pHandle: handler of the current instance of the hall_speed_pos_fdbk component
+            句柄：hall_speed_pos_fdbk组件的当前实例的处理程序
 * @retval none
 */
 void * HALL_TIMx_CC_IRQHandler( void * pHandleVoid )
@@ -411,7 +414,7 @@ void * HALL_TIMx_CC_IRQHandler( void * pHandleVoid )
 
   if ( pHandle->SensorIsReliable )
   {
-    /* A capture event generated this interrupt */
+    /* A capture event generated this interrupt 捕获事件生成此中断*/
     bPrevHallState = pHandle->HallState;
 
     if ( pHandle->SensorPlacement == DEGREES_120 )
@@ -529,7 +532,8 @@ void * HALL_TIMx_CC_IRQHandler( void * pHandleVoid )
         break;
 
       default:
-        /* Bad hall sensor configutarion so update the speed reliability */
+        /* Bad hall sensor configutarion so update the speed reliability
+          坏霍尔传感器配置更新速度可靠性 */
         pHandle->SensorIsReliable = false;
 
         break;
@@ -542,7 +546,7 @@ void * HALL_TIMx_CC_IRQHandler( void * pHandleVoid )
     }
 #endif
 
-    /* Discard first capture */
+    /* Discard first capture 丢弃第一次捕获*/
     if ( pHandle->FirstCapt == 0u )
     {
       pHandle->FirstCapt++;
@@ -550,65 +554,65 @@ void * HALL_TIMx_CC_IRQHandler( void * pHandleVoid )
     }
     else
     {
-      /* used to validate the average speed measurement */
+      /* used to validate the average speed measurement 用于验证平均速度测量 */
       if ( pHandle->BufferFilled < pHandle->SpeedBufferSize )
       {
         pHandle->BufferFilled++;
       }
 
-      /* Store the latest speed acquisition */
+      /* Store the latest speed acquisition 存储最新的速度采集 */
       hHighSpeedCapture = LL_TIM_IC_GetCaptureCH1( TIMx );
       wCaptBuf = ( uint32_t )hHighSpeedCapture;
       hPrscBuf =  LL_TIM_GetPrescaler ( TIMx );
 
-      /* Add the numbers of overflow to the counter */
+      /* Add the numbers of overflow to the counter  将溢出次数添加到计数器*/
       wCaptBuf += ( uint32_t )pHandle->OVFCounter * 0x10000uL;
 
       if ( pHandle->OVFCounter != 0u )
       {
-        /* Adjust the capture using prescaler */
+        /* Adjust the capture using prescaler 使用预分频器调整捕获 */
         uint16_t hAux;
         hAux = hPrscBuf + 1u;
         wCaptBuf *= hAux;
 
         if ( pHandle->RatioInc )
         {
-          pHandle->RatioInc = false;  /* Previous capture caused overflow */
-          /* Don't change prescaler (delay due to preload/update mechanism) */
+          pHandle->RatioInc = false;  /* Previous capture caused overflow 以前的捕获导致溢出*/
+          /* Don't change prescaler (delay due to preload/update mechanism) 不要更改预分频器（由于预加载/更新机制导致的延迟） */
         }
         else
         {
-          if ( LL_TIM_GetPrescaler ( TIMx ) < pHandle->HALLMaxRatio ) /* Avoid OVF w/ very low freq */
+          if ( LL_TIM_GetPrescaler ( TIMx ) < pHandle->HALLMaxRatio ) /* Avoid OVF w/ very low freq 避免OVF w /非常低的频率*/
           {
-            LL_TIM_SetPrescaler ( TIMx, LL_TIM_GetPrescaler ( TIMx ) + 1 ); /* To avoid OVF during speed decrease */
-            pHandle->RatioInc = true;   /* new prsc value updated at next capture only */
+            LL_TIM_SetPrescaler ( TIMx, LL_TIM_GetPrescaler ( TIMx ) + 1 ); /* To avoid OVF during speed decrease 在速度降低期间避免OVF*/
+            pHandle->RatioInc = true;   /* new prsc value updated at next capture only 新的prsc值仅在下次捕获时更新*/
           }
         }
       }
       else
       {
-        /* If prsc preload reduced in last capture, store current register + 1 */
-        if ( pHandle->RatioDec ) /* and don't decrease it again */
+        /* If prsc preload reduced in last capture, store current register + 1 如果在上次捕获时prsc预加载减少，则存储当前寄存器+ 1*/
+        if ( pHandle->RatioDec ) /* and don't decrease it again 并且不要再减少它*/
         {
-          /* Adjust the capture using prescaler */
+          /* Adjust the capture using prescaler 使用预分频器调整捕获*/
           uint16_t hAux;
           hAux = hPrscBuf + 2u;
           wCaptBuf *= hAux;
 
           pHandle->RatioDec = false;
         }
-        else  /* If prescaler was not modified on previous capture */
+        else  /* If prescaler was not modified on previous capture 如果在之前的捕获中未对预分频器进行修改*/
         {
-          /* Adjust the capture using prescaler */
+          /* Adjust the capture using prescaler 使用预分频器调整捕获*/
           uint16_t hAux = hPrscBuf + 1u;
           wCaptBuf *= hAux;
 
-          if ( hHighSpeedCapture < LOW_RES_THRESHOLD ) /* If capture range correct */
+          if ( hHighSpeedCapture < LOW_RES_THRESHOLD ) /* If capture range correct 如果捕获范围正确*/
           {
-            if ( LL_TIM_GetPrescaler ( TIMx ) > 0u ) /* or prescaler cannot be further reduced */
+            if ( LL_TIM_GetPrescaler ( TIMx ) > 0u ) /* or prescaler cannot be further reduced 或预分频器不能进一步减少*/
             {
-              LL_TIM_SetPrescaler ( TIMx, LL_TIM_GetPrescaler ( TIMx ) - 1 ); /* Increase accuracy by decreasing prsc */
-              /* Avoid decrementing again in next capt.(register preload delay) */
+              LL_TIM_SetPrescaler ( TIMx, LL_TIM_GetPrescaler ( TIMx ) - 1 ); /* Increase accuracy by decreasing prsc 通过降低prsc来提高准确性*/
+              /* Avoid decrementing again in next capt.(register preload delay) 避免在下一次捕获中再次递减。（注册预加载延迟）*/
               pHandle->RatioDec = true;
             }
           }
@@ -616,8 +620,8 @@ void * HALL_TIMx_CC_IRQHandler( void * pHandleVoid )
       }
 
 #if 0
-      /* Store into the buffer */
-      /* Null Speed is detected, erase the buffer */
+      /* Store into the buffer 存入缓冲区*/
+      /* Null Speed is detected, erase the buffer 检测到空速，擦除缓冲区 */
       if ( wCaptBuf > pHandle->MaxPeriod )
       {
         uint8_t bIndex;
@@ -628,12 +632,13 @@ void * HALL_TIMx_CC_IRQHandler( void * pHandleVoid )
         pHandle->BufferFilled = 0 ;
         pHandle->SpeedFIFOSetIdx = 1;
         pHandle->SpeedFIFOGetIdx = 0;
-        /* Indicate new speed acquisitions */
+        /* Indicate new speed acquisitions 表示新的速度收购*/
         pHandle->NewSpeedAcquisition = 1;
         pHandle->ElSpeedSum = 0;
       }
-      /* Filtering to fast speed... could be a glitch  ? */
-      /* the HALL_MAX_PSEUDO_SPEED is temporary in the buffer, and never included in average computation*/
+      /* Filtering to fast speed... could be a glitch  ? 过滤到快速...可能是一个小故障？*/
+      /* the HALL_MAX_PSEUDO_SPEED is temporary in the buffer, and never included in average computation
+      HALL_MAX_PSEUDO_SPEED在缓冲区中是临时的，并且从不包含在平均计算中 */
       else
 #endif
         if ( wCaptBuf < pHandle->MinPeriod )
