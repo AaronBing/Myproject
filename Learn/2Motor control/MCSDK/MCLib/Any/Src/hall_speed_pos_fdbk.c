@@ -149,21 +149,28 @@ void HALL_Init( HALL_Handle_t * pHandle )
   pHandle->PWMNbrPSamplingFreq = ( pHandle->_Super.hMeasurementFrequency /
                                    pHandle->SpeedSamplingFreqHz ) - 1u;
 
-  /* Reset speed reliability */
+  /* Reset speed reliability
+      重置速度可靠性*/
   pHandle->SensorIsReliable = true;
 
   /* Force the TIMx prescaler with immediate access (gen update event)
+    强制TIMx预分频器立即访问（gen更新事件）
   */
   LL_TIM_SetPrescaler ( TIMx, pHandle->HALLMaxRatio );
   LL_TIM_GenerateEvent_UPDATE ( TIMx );
 
 
-  /* Clear the TIMx's pending flags */
+  /* Clear the TIMx's pending flags
+  清除TIMx的挂起标志 */
   LL_TIM_WriteReg( TIMx, SR, 0 );
 
-  /* Selected input capture and Update (overflow) events generate interrupt */
+  /* Selected input capture and Update (overflow) events generate interrupt
+    选定的输入捕获和更新（溢出）事件会产生中断
+  */
 
-  /* Source of Update event is only counter overflow/underflow */
+  /* Source of Update event is only counter overflow/underflow
+    Update事件源仅为计数器溢出/下溢
+   */
   LL_TIM_SetUpdateSource ( TIMx, LL_TIM_UPDATESOURCE_COUNTER );
 
   LL_TIM_EnableIT_CC1 ( TIMx );
@@ -174,7 +181,9 @@ void HALL_Init( HALL_Handle_t * pHandle )
   LL_TIM_EnableCounter ( TIMx );
 
 
-  /* Erase speed buffer */
+  /* Erase speed buffer
+  擦除速度缓冲区
+  */
   bSpeedBufferSize = pHandle->SpeedBufferSize;
 
   for ( bIndex = 0u; bIndex < bSpeedBufferSize; bIndex++ )
@@ -187,23 +196,25 @@ void HALL_Init( HALL_Handle_t * pHandle )
 * @brief  Clear software FIFO where are "pushed" latest speed information
 *         This function must be called before starting the motor to initialize
 *         the speed measurement process.
+          清除软件FIFO“推送”最新速度信息*必须在启动电机初始化*速度测量过程之前调用此功能。
 * @param  pHandle: handler of the current instance of the hall_speed_pos_fdbk component*
+          pHandle：hall_speed_pos_fdbk组件的当前实例的处理程序*
 * @retval none
 */
 void HALL_Clear( HALL_Handle_t * pHandle )
 {
   TIM_TypeDef * TIMx = pHandle->TIMx;
 
-  /* Mask interrupts to insure a clean intialization */
+  /* Mask interrupts to insure a clean intialization 屏蔽中断以确保初始化干净*/
   LL_TIM_DisableIT_CC1 ( TIMx );
 
   pHandle->RatioDec = false;
   pHandle->RatioInc = false;
 
-  /* Reset speed reliability */
+  /* Reset speed reliability 重置速度可靠性*/
   pHandle->SensorIsReliable = true;
 
-  /* Acceleration measurement not implemented.*/
+  /* Acceleration measurement not implemented.没有实施加速度测量*/
   pHandle->_Super.hMecAccel01HzP = 0;
 
   pHandle->FirstCapt = 0u;
@@ -215,13 +226,13 @@ void HALL_Clear( HALL_Handle_t * pHandle )
 
   pHandle->Direction = POSITIVE;
 
-  /* Initialize speed buffer index */
+  /* Initialize speed buffer index 初始化速度缓冲区索引*/
   pHandle->SpeedFIFOIdx = 0u;
 
-  /* Clear new speed acquisitions flag */
+  /* Clear new speed acquisitions flag 清除新的速度收购标志*/
   pHandle->NewSpeedAcquisition = 0;
 
-  /* Re-initialize partly the timer */
+  /* Re-initialize partly the timer 部分重新初始化计时器*/
   LL_TIM_SetPrescaler ( TIMx, pHandle->HALLMaxRatio );
 
   LL_TIM_SetCounter ( TIMx, HALL_COUNTER_RESET );
@@ -243,8 +254,10 @@ __attribute__( ( section ( ".ccmram" ) ) )
 /**
 * @brief  Update the rotor electrical angle integrating the last measured
 *         instantaneous electrical speed express in dpp.
+            更新转子电角度，将最后测量的瞬时电气速度表达为dpp。
 * @param  pHandle: handler of the current instance of the hall_speed_pos_fdbk component
-* @retval int16_t Measured electrical angle in s16degree format.
+          pHandle：hall_speed_pos_fdbk组件的当前实例的处理程序
+* @retval int16_t Measured electrical angle in s16degree format.   int16_t以s16degree格式测量的电角度。
 */
 int16_t HALL_CalcElAngle( HALL_Handle_t * pHandle )
 {
@@ -279,11 +292,21 @@ int16_t HALL_CalcElAngle( HALL_Handle_t * pHandle )
   *         the sensor; in this function the reliability is measured with
   *         reference to specific parameters of the derived
   *         sensor (HALL) through internal variables managed by IRQ.
+  必须至少调用此方法，并且执行速度控制的周期相同。
+  *该方法计算并存储转子的瞬时速度（考虑到测量频率在dpp中表示），以便将其提供给HALL_CalcElAngle函数和SPD_GetElAngle。
+  *然后根据IRQ填充的缓冲区计算转子平均el速度（以dpp表示），然后 - 作为结果 - 计算，存储和返回 - 通过参数* hMecSpeed01Hz  - 转子平均机械速度，表示在01Hz。
+  *然后检查，存储并返回传感器的可靠性状态;在此函数中，通过IRQ管理的内部变量，参考派生的传感器（HALL）的特定参数来测量可靠性。
+
+
   * @param  pHandle: handler of the current instance of the hall_speed_pos_fdbk component
+            pHandle：hall_speed_pos_fdbk组件的当前实例的处理程序
   * @param  hMecSpeed01Hz pointer to int16_t, used to return the rotor average
   *         mechanical speed (01Hz)
+            hMecSpeed01Hz指向int16_t的指针，用于返回转子平均值*机械速度（01Hz）
   * @retval true = sensor information is reliable
+            true =传感器信息可靠
   *         false = sensor information is not reliable
+            false =传感器信息不可靠
   */
 bool HALL_CalcAvrgMecSpeed01Hz( HALL_Handle_t * pHandle, int16_t * hMecSpeed01Hz )
 {
@@ -291,17 +314,19 @@ bool HALL_CalcAvrgMecSpeed01Hz( HALL_Handle_t * pHandle, int16_t * hMecSpeed01Hz
   int16_t SpeedMeasAux;
   bool bReliability;
 
-  /* Computing the rotor istantaneous el speed */
+  /* Computing the rotor istantaneous el speed
+    计算转子瞬时速度*/
   SpeedMeasAux = pHandle->CurrentSpeed;
 
   if ( pHandle->SensorIsReliable )
   {
     /* No errors have been detected during rotor speed information
-    extrapolation */
+    extrapolation 在转子速度信息外推期间没有检测到错误 */
     if ( LL_TIM_GetPrescaler ( TIMx ) >= pHandle->HALLMaxRatio )
     {
-      /* At start-up or very low freq */
-      /* Based on current prescaler value only */
+      /* At start-up or very low freq 在启动时或非常低的频率*/
+      /* Based on current prescaler value only
+        仅基于当前预分频值 */
       pHandle->_Super.hElSpeedDpp = 0;
       *hMecSpeed01Hz = 0;
     }
@@ -801,6 +826,8 @@ static void HALL_Init_Electrical_Angle( HALL_Handle_t * pHandle )
   *         angle.
   *         Note: Mechanical angle management is not implemented in this
   *         version of Hall sensor class.
+  它可用于设置转子机械角度的等静态信息。
+  注意：霍尔传感器类的版本中未实现机械角度管理。
   * @param  pHandle pointer on related component instance
   * @param  hMecAngle istantaneous measure of rotor mechanical angle
   * @retval none
