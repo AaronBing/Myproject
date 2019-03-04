@@ -32,11 +32,12 @@
  *
  * @brief Hall Sensor based Speed & Position Feedback implementation
       基于霍尔传感器的速度和位置反馈实现
- *
-  * This component is used in applications controlling a motor equipped with Hall effect sensors.
   *
-  * This component uses the output of two Hall effects sensors to provide a measure of the speed
-  * and the position of the rotor of the motor.
+  *
+  *
+  *
+  * 该组件用于控制配备霍尔效应传感器的电机的应用。
+  * 该组件使用两个霍尔效应传感器的输出来测量速度*和电机转子的位置。
   *
  * @todo Document the Hall Speed & Position Feedback "module".
  *
@@ -45,7 +46,9 @@
 
 /* Private defines -----------------------------------------------------------*/
 
-/* Lower threshold to reques a decrease of clock prescaler */
+/* Lower threshold to reques a decrease of clock prescaler
+      降低阈值以请求减少时钟预分频器
+*/
 #define LOW_RES_THRESHOLD   ((uint16_t)0x5500u)
 
 #define HALL_COUNTER_RESET  ((uint16_t) 0u)
@@ -67,7 +70,9 @@
 #define NEGATIVE_SWAP     (int8_t)-2
 #define POSITIVE_SWAP     (int8_t)2
 
-/* With digit-per-PWM unit (here 2*PI rad = 0xFFFF): */
+/* With digit-per-PWM unit (here 2*PI rad = 0xFFFF):
+  使用每PWM数字单位（此处2 * PI rad = 0xFFFF）：
+  */
 #define HALL_MAX_PSEUDO_SPEED        ((int16_t)0x7FFF)
 
 #define CCER_CC1E_Set               ((uint16_t)0x0001)
@@ -80,6 +85,7 @@ static int16_t HALL_CalcAvrgElSpeedDpp( HALL_Handle_t * pHandle );
   * @brief  It initializes the hardware peripherals (TIMx, GPIO and NVIC)
             required for the speed position sensor management using HALL
             sensors.
+            它使用HALL传感器初始化速度位置传感器管理所需的硬件外设（TIMx，GPIO和NVIC）。
   * @param  pHandle: handler of the current instance of the hall_speed_pos_fdbk component
   * @retval none
   */
@@ -95,11 +101,13 @@ void HALL_Init( HALL_Handle_t * pHandle )
   uint8_t bIndex;
 
   /* Adjustment factor: minimum measurable speed is x time less than the minimum
-  reliable speed */
+  reliable speed
+  调整系数：最小可测量速度是小于最小可靠速度的x时间*/
   hMinReliableElSpeed01Hz /= 4u;
 
   /* Adjustment factor: maximum measurable speed is x time greather than the
-  maximum reliable speed */
+  maximum reliable speed
+  调整系数：最大可测量速度是大于最大可靠速度的x时间 */
   hMaxReliableElSpeed01Hz *= 2u;
 
   pHandle->OvfFreq = ( uint16_t )( pHandle->TIMClockFreq / 65536u );
@@ -107,21 +115,27 @@ void HALL_Init( HALL_Handle_t * pHandle )
   /* SW Init */
   if ( hMinReliableElSpeed01Hz == 0u )
   {
-    /* Set fixed to 150 ms */
+    /* Set fixed to 150 ms
+    设置固定为150毫秒  */
     pHandle->HallTimeout = 150u;
   }
   else
   {
-    /* Set accordingly the min reliable speed */
+    /* Set accordingly the min reliable speed
+    相应地设定最小可靠速度*/
     /* 10000 comes from mS and 01Hz
-    * 6 comes from the fact that sensors are toggling each 60 deg  */
+    10000来自mS和01Hz
+    * 6 comes from the fact that sensors are toggling each 60 deg
+    6来自传感器每60度切换一次的事实 */
     pHandle->HallTimeout = 10000u / ( 6u * hMinReliableElSpeed01Hz );
   }
 
-  /* Compute the prescaler to the closet value of the TimeOut (in mS )*/
+  /* Compute the prescaler to the closet value of the TimeOut (in mS )
+  计算预分频器到TimeOut的壁橱值（以mS为单位） */
   pHandle->HALLMaxRatio = ( pHandle->HallTimeout * pHandle->OvfFreq ) / 1000 ;
 
-  /* Align MaxPeriod to a multiple of Overflow.*/
+  /* Align MaxPeriod to a multiple of Overflow.
+  将MaxPeriod对齐为溢出的倍数。*/
   pHandle->MaxPeriod = ( pHandle->HALLMaxRatio ) * 65536uL;
 
   pHandle->SatSpeed = hMaxReliableElSpeed01Hz;
