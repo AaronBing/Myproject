@@ -15,3 +15,4 @@ My code，maybe some very import thing
 3、Customer中存放客户项目信息
 4、FOC_Code中存放foc的项目
 5、Learn中存放我的学习笔记，里面的readme表示当前的学习进度
+6、最近心态差，好像进度慢了好多，怎么办
