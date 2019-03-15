@@ -1,0 +1,57 @@
+型号	类型
+STSPIN32F0	直流无刷
+STSPIN32F0A	直流无刷
+STSPIN32F0B	直流无刷
+
+瑞萨 英飞凌 TI 峰岹 
+
+峰岹
+华大
+灵动
+LKS
+ACTIVE SEmi 技领
+TI
+microchip
+普诚
+昂宝 
+瑞萨
+MPS
+士兰微
+英飞凌
+
+新塘，gd
+
+
+L6205	直流有刷
+L6206Q	直流有刷
+L6227Q	直流有刷
+ti  
+pucheng
+aleegro   有刷
+
+
+无刷TI
+ IR
+mps
+峰岹
+JING FENG MING YUAN 
+L6230	直流无刷
+STSPIN230	直流无刷
+STSPIN830	直流无刷
+
+
+
+ti 主要是
+STSPIN220	步进电机
+STSPIN820	步进电机
+powerSTEP01	步进电机
+
+
+STSPIN240	直流有刷
+STSPIN250	直流有刷
+STSPIN840	直流有刷
+光大
+中微爱芯
+普诚
+低功耗，内阻低，电压要求低
+
