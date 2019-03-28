@@ -549,3 +549,119 @@ STM32F7 系列微控制器 IO 引脚通过一个复用器连接到内置外设�
 如果某个引脚被使用，那么会显示为绿色。    
 
 #### 2、RCC 设置
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 实际应用
+
+
+
+### 跑马灯实验
+
+IO简介
+
+STM32F7 每组通用 I/O 端口包括 4 个 32 位配置寄存器（MODER、 OTYPER、 OSPEEDR 和 PUPDR）、 2 个 32 位数据寄存器（IDR 和 ODR）、 1 个 32 位置位/复位寄存器 (BSRR)、 1 个 32 位锁定寄存器 (LCKR) 和 2 个 32 位复用功能选择寄存器（AFRH 和 AFRL）等。    
+
+8种常用模式
+
+**输入模式**
+
+    -输入浮空（GPIO_Mode_IN_FLOATING）
+
+    -输入上拉(GPIO_Mode_IPU)
+
+    -输入下拉(GPIO_Mode_IPD)
+
+    -模拟输入(GPIO_Mode_AIN)
+
+**输出模式**
+
+    -开漏输出(GPIO_Mode_Out_OD)
+
+    -开漏复用功能(GPIO_Mode_AF_OD)
+
+    -推挽式输出(GPIO_Mode_Out_PP)
+
+    -推挽式复用功能(GPIO_Mode_AF_PP)
+
+
+
+IO 配置常 用的 8 个寄存器： MODER、 OTYPER、 OSPEEDR、 PUPDR、 ODR、 IDR 、 AFRH 和 AFRL。 
+
+ **MODER** 寄存器，该寄存器是 GPIO 端口模式控制寄存器，用于控制 GPIOx （STM32F7 最多有 9 组 IO，分别用大写字母表示，即 x=A/B/C/D/E/F/G/H/I，下同）的工作模 式，该寄存器各位描述如图所示
+
+![1553777585002](C:\Users\ADMINI~1\AppData\Local\Temp\1553777585002.png)
+
+---
+
+**OTYPER** 寄存器，该寄存器用于控制 GPIOx 的输出类型，该寄存器仅用于输出模式，在输入模式（MODER[1:0]=00/11 时）下不起作用。该寄存器 低 16 位有效，每一个位控制一个 IO 口。设置为 0 是推挽输出，设置为 1 是开漏输出。 复位后， 该寄存器值均为 0，也就是在输出模式下 IO 口默认为推挽输出    
+
+![1553777691250](C:\Users\ADMINI~1\AppData\Local\Temp\1553777691250.png)
+
+---
+
+**OSPEEDR** 寄存器，该寄存器用于控制 GPIOx 的输出速度，  该寄存器也仅用于输出模式，在输入模式（MODER[1:0]=00/11 时）下不起作用。该寄存 器每 2 个位控制一个 IO 口，复位后，该寄存器值一般为 0      
+
+![1553777800712](C:\Users\ADMINI~1\AppData\Local\Temp\1553777800712.png)
+
+---
+
+PUPDR 寄存器，该寄存器用于控制 GPIOx 的上拉/下拉，该寄存器每 2 个位控制一个 IO 口，用于设置上下拉，这里提醒大家， STM32F1 是通过 ODR 寄存器控制上下拉的，而 STM32F7 则由单独的寄存器 PUPDR 控制上下拉，使用起来更加灵活。 复位后，该寄存器值一般为 0。    
+
+![1553777912937](C:\Users\ADMINI~1\AppData\Local\Temp\1553777912937.png)
+
+---
+
+GPIO 相 关 的 函 数 和 定 义 分 布 在 HAL 库 文 件 stm32f7xx_hal_gpio.c 和 头 文 件 stm32f7xx_hal_gpio.h 文件中。 在 HAL 库中， 操作四个配置寄存器初始化 GPIO 是通过 HAL_GPIO_Init 函数完成：    
+
+```c
+void HAL_GPIO_Init(GPIO_TypeDef *GPIOx, GPIO_InitTypeDef *GPIO_Init);
+```
+
+该函数有两个参数，第一个参数是用来指定需要初始化的 GPIO 对应的 GPIO 组，取值范 围为 GPIOA~GPIOK。第二个参数为初始化参数结构体指针，结构体类型为 GPIO_InitTypeDef。 下面我们看看这个结构体的定义。首先我们打开我们光盘的跑马灯实验，然后找到 HALLIB 组 下面的 stm32f7xx_hal_gpio.c 文件，定位到 HAL_GPIO_Init 函数体处，双击入口参数类型 GPIO_InitTypeDef 后右键选择“Go to definition of …” 可以查看结构体的定义如下：    
+
+```c
+typedef struct
+{
+	uint32_t Pin; //指定 IO 口
+	uint32_t Mode; //模式设置
+	uint32_t Pull; //上下拉设置
+	uint32_t Speed; //速度设置
+	uint32_t Alternate;//复用映射配置
+}GPIO_InitTypeDef;
+```
+
+
+
+---
+
+**ODR** 寄存器，该寄存器用于控制 GPIOx 的输出电平，   
+
+![1553778212808](C:\Users\ADMINI~1\AppData\Local\Temp\1553778212808.png) 
+
+该寄存器用于设置某个 IO 输出低电平(ODRy=0)还是高电平(ODRy=1)，该寄存器也仅在输 出模式下有效，在输入模式（MODER[1:0]=00/11 时）下不起作用。 该寄存器在 HAL 库中使用 不多，操作这个寄存器的库函数主要是 HAL_GPIO_TogglePin 函数：    该函数是通过操作 ODR 寄存器，达到取反 IO 口输出电平的功能。    
+
+```c
+void HAL_GPIO_TogglePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+```
+
+
+
+
+
