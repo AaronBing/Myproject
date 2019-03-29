@@ -18,7 +18,7 @@
 
 
 
-#  1、STM32Cube
+#  1.STM32Cube
 
 ## stm32固件包介绍
 
@@ -88,7 +88,7 @@ Utilities
 
 
 
-# 2、HAL库笔记
+# 2.HAL库笔记
 
 
 
