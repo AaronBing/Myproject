@@ -1,5 +1,5 @@
 
-/************************ (C) COPYRIGHT 2019 New-Drive *******************************
+/************************ (C) COPYRIGHT 2019 New-Drive *************************
 * File Name          : McState
 * Author             : Aaron_Bing
 * Version            : V0.0.1
@@ -29,7 +29,7 @@ void MCL_Function(void);
 //void MCL_Bkin_Isr(void);
 //void MainISR(void);
 
-//static void MCL_Init(void); 
+static void MCL_Init(void); 
 //static void MCL_Ready(void);
 //static void MCL_Precharge(void);
 //static void MCL_Alignment(void);
@@ -92,8 +92,8 @@ void MCL_Function(void)
 * Output         : None
 * Return         : 
 *******************************************************************************/
-//void MCL_Init(void)
-//{
+void MCL_Init(void)
+{
 //  MCL_ModuleInit();
 
 //  #if(FD6536PIN_EN) 
@@ -111,7 +111,7 @@ void MCL_Function(void)
 
 //  Ctl.State = MOTOR_STOP;
 
-//}
+}
 
 ///*******************************************************************************
 //* Function Name  : MCL_Stop

@@ -1,8 +1,34 @@
+/**
+  ******************************************************************************
+  * @file           : main.c
+  * @brief          : Main program body
+  ******************************************************************************
+  * 
+  *		本程序作为New-Drive的电动车程序
+  *
+  *
+  * 
+  *
+  *
+  ******************************************************************************
+  */
 
+/* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "McState.h"
+/* Private includes ----------------------------------------------------------*/
 
 
+/* Private typedef -----------------------------------------------------------*/
+
+
+/* Private define ------------------------------------------------------------*/
+
+
+/* Private macro -------------------------------------------------------------*/
+
+
+/* Private variables ---------------------------------------------------------*/
 uint8_t send_data[14];
 
 extern Status_TypeDef State;
@@ -19,6 +45,37 @@ extern uint16_t TiaoSuPWM;
 
 extern uint32_t	MsFlag;
 extern uint8_t USART_RX_BUF[25];
+
+/* Private function prototypes -----------------------------------------------*/
+//void SystemClock_Config(void);
+//static void MX_GPIO_Init(void);
+//static void MX_DMA_Init(void);
+//static void MX_ADC_Init(void);
+//static void MX_DMA_Init(void);
+//static void MX_TIM1_Init(void);
+//static void MX_USART1_UART_Init(void);
+//static void MX_NVIC_Init(void);
+
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
+int main(void)
+{	
+	
+	HardwareInit();
+	
+	board_self_test ();
+	
+	State=MOTOR_INIT;
+	
+	while(1)
+	{
+//		TX_data();
+//		states();
+	}
+}
+
 
 
 void SendData(uint8_t Data)
@@ -72,21 +129,7 @@ void states(void)
 
 }
 //-----------------------------------------------------------
-int main(void)
-{	
-	
-	HardwareInit();
-	
-	board_self_test ();
-	
-	State=MOTOR_INIT;
-	
-	while(1)
-	{
-//		TX_data();
-//		states();
-	}
-}
+
 
 
 

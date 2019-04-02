@@ -10,7 +10,7 @@
       <TargetName>STM32F031</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060422::V5.06 update 4 (build 422)::ARMCC</pCCUsed>
+      <pCCUsed>5060300::V5.06 update 3 (build 300)::ARMCC</pCCUsed>
       <TargetOption>
         <TargetCommonOption>
           <Device>STM32F031C6</Device>
@@ -424,11 +424,6 @@
               <FileType>1</FileType>
               <FilePath>..\McState.c</FilePath>
             </File>
-            <File>
-              <FileName>McState.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\McState.h</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -544,11 +539,5 @@
       </Groups>
     </Target>
   </Targets>
-
-  <RTE>
-    <apis/>
-    <components/>
-    <files/>
-  </RTE>
 
 </Project>
