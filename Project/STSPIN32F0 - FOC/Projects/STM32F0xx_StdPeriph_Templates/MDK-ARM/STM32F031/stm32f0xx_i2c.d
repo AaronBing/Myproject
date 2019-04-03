@@ -2,7 +2,7 @@ stm32f031\stm32f0xx_i2c.o: ..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\src\stm
 stm32f031\stm32f0xx_i2c.o: ..\..\..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_i2c.h
 stm32f031\stm32f0xx_i2c.o: ..\..\..\Libraries\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h
 stm32f031\stm32f0xx_i2c.o: ..\..\..\Libraries\CMSIS\Include\core_cm0.h
-stm32f031\stm32f0xx_i2c.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+stm32f031\stm32f0xx_i2c.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 stm32f031\stm32f0xx_i2c.o: ..\..\..\Libraries\CMSIS\Include\core_cmInstr.h
 stm32f031\stm32f0xx_i2c.o: ..\..\..\Libraries\CMSIS\Include\core_cmFunc.h
 stm32f031\stm32f0xx_i2c.o: ..\..\..\Libraries\CMSIS\Device\ST\STM32F0xx\Include\system_stm32f0xx.h

@@ -8,8 +8,12 @@ void rcc_init (void)
 {
 
 }
-
-void port_init (void)
+/**
+  * @brief GPIO Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_GPIO_Init(void)
 {
 		GPIO_InitTypeDef  	GPIO_InitStructure;
     
@@ -19,104 +23,126 @@ void port_init (void)
 		RCC_AHBPeriphClockCmd (RCC_AHBPeriph_GPIOB, ENABLE); 
 		RCC_AHBPeriphClockCmd (RCC_AHBPeriph_GPIOA, ENABLE);
 
-		/* F6,F7 输出	Push-pull*/
+		/* PF6,PF7 输出	Push-pull*/
 		GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7;   
 		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
 		GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
 		GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
 		GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-		GPIO_Init(GPIOF, &GPIO_InitStructure);			//初始化写入
+		GPIO_Init(GPIOF, &GPIO_InitStructure);			
 		GPIO_SetBits(GPIOF,GPIO_Pin_6|GPIO_Pin_7);  //F6,7 = 1 
 	
 	
-		/* A0,A1,A2 	 输入模式*/
+		/* PA0,PA1,PA2 	 输入模式  用于hall检测 */
 		GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2; 
-    GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_IN;	    	
+		GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_IN;	    	
 		GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_NOPULL;
 		GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_Init (GPIOA, &GPIO_InitStructure);			//初始化写入
+		GPIO_Init (GPIOA, &GPIO_InitStructure);			
 	
-		/* A6  输出 Push-pull*/
+		/* PA6  输出 Push-pull  	PWM,ADC 	*/
 		GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6;   
 		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
 		GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
 		GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
 		GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-		GPIO_Init(GPIOA, &GPIO_InitStructure);    //初始化写入
+		GPIO_Init(GPIOA, &GPIO_InitStructure);    
 }
 
-void pwm_init (void)
+static void pwm_init (void)
 {
 	
 		GPIO_InitTypeDef 			GPIO_InitStructure;
 		TIM_TimeBaseInitTypeDef  	TIM_TimeBaseStructure;
 		TIM_OCInitTypeDef  			TIM_OCInitStructure;
-    TIM_BDTRInitTypeDef 		TIM_BDTRInitStruct;
+		TIM_BDTRInitTypeDef 		TIM_BDTRInitStruct;
 	
 		/*初始化外设时钟*/
-    RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA | RCC_AHBPeriph_GPIOB , ENABLE);  
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM1, ENABLE);
+		RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA | RCC_AHBPeriph_GPIOB , ENABLE);  
+		RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM1, ENABLE);
 	
-	
+		/*PA8,PA9,PA10  复用功能 Push-pull 		TIM1 LS*/
 		GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_8|GPIO_Pin_9|GPIO_Pin_10; 
 		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
 		GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 		GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
 		GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
-		GPIO_Init(GPIOA, &GPIO_InitStructure);
+		GPIO_Init(GPIOA, &GPIO_InitStructure);	
+	
+		/*PB13,PB14,PB15  复用功能 Push-pull 	TIM1 HS*/
 		GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15 ; 
 		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
 		GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 		GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
 		GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
-		GPIO_Init(GPIOB, &GPIO_InitStructure);
+		GPIO_Init(GPIOB, &GPIO_InitStructure);	 
+		
+		/*PB12  输入 上拉*/
 		GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_12;
 		GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_IN; 
 		GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
 		GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-		GPIO_Init(GPIOB, &GPIO_InitStructure);    
-    GPIO_PinAFConfig(GPIOA,GPIO_PinSource8,GPIO_AF_2); 
-    GPIO_PinAFConfig(GPIOA,GPIO_PinSource9,GPIO_AF_2);
-    GPIO_PinAFConfig(GPIOA,GPIO_PinSource10,GPIO_AF_2);	
-    GPIO_PinAFConfig(GPIOB,GPIO_PinSource13,GPIO_AF_2);
-    GPIO_PinAFConfig(GPIOB,GPIO_PinSource14,GPIO_AF_2);
-    GPIO_PinAFConfig(GPIOB,GPIO_PinSource15,GPIO_AF_2);	
-    GPIO_PinAFConfig(GPIOB, GPIO_PinSource12,GPIO_AF_2); 
+		GPIO_Init(GPIOB, &GPIO_InitStructure);   
+
+		
+		/*PA8,PA9,PA10 */
+		GPIO_PinAFConfig(GPIOA,GPIO_PinSource8,GPIO_AF_2);   //  TIM2, TIM1, EVENTOUT, TIM16, TIM17,   上面使能了tim1
+		GPIO_PinAFConfig(GPIOA,GPIO_PinSource9,GPIO_AF_2);
+		GPIO_PinAFConfig(GPIOA,GPIO_PinSource10,GPIO_AF_2);
+
+		/*PB13,PB14,PB15 */
+		GPIO_PinAFConfig(GPIOB,GPIO_PinSource13,GPIO_AF_2);
+		GPIO_PinAFConfig(GPIOB,GPIO_PinSource14,GPIO_AF_2);
+		GPIO_PinAFConfig(GPIOB,GPIO_PinSource15,GPIO_AF_2);	
+		//PB12
+		GPIO_PinAFConfig(GPIOB,GPIO_PinSource12,GPIO_AF_2);   //比较器
 	
-		TIM_TimeBaseStructure.TIM_Period        	= 512; 
-		TIM_TimeBaseStructure.TIM_Prescaler     	= 2; 
-		TIM_TimeBaseStructure.TIM_ClockDivision 	= 0; 
+		
+		TIM_TimeBaseStructure.TIM_Period        	= 512; //自动重载计数周期值  21.33us
+		TIM_TimeBaseStructure.TIM_Prescaler     	= 2; 	//分频系数    24mhz
+		TIM_TimeBaseStructure.TIM_ClockDivision 	= 0; 		
 		TIM_TimeBaseStructure.TIM_CounterMode 		= TIM_CounterMode_CenterAligned2;  
 		TIM_TimeBaseStructure.TIM_RepetitionCounter = 0;
-		TIM_TimeBaseInit(TIM1, &TIM_TimeBaseStructure);  
-		TIM_BDTRInitStruct.TIM_OSSRState 		= TIM_OSSRState_Enable;
-		TIM_BDTRInitStruct.TIM_OSSIState 		= TIM_OSSIState_Enable;
-		TIM_BDTRInitStruct.TIM_LOCKLevel 		= TIM_LOCKLevel_OFF;
+		TIM_TimeBaseInit(TIM1, &TIM_TimeBaseStructure); 
+
+		/*断路 死区*/
+		TIM_BDTRInitStruct.TIM_OSSRState 		= TIM_OSSRState_Enable;  //运行
+		TIM_BDTRInitStruct.TIM_OSSIState 		= TIM_OSSIState_Enable;  //关闭
+		TIM_BDTRInitStruct.TIM_LOCKLevel 		= TIM_LOCKLevel_OFF;     //锁存
 		TIM_BDTRInitStruct.TIM_DeadTime        	= 24;		
-		TIM_BDTRInitStruct.TIM_Break           	= TIM_Break_Enable;  
-		TIM_BDTRInitStruct.TIM_BreakPolarity   	= TIM_BreakPolarity_High;
-		TIM_BDTRInitStruct.TIM_AutomaticOutput 	= TIM_AutomaticOutput_Disable;
-		TIM_BDTRConfig( TIM1, &TIM_BDTRInitStruct);   
-		TIM_OCInitStructure.TIM_OCMode       = TIM_OCMode_PWM1; 
-		TIM_OCInitStructure.TIM_OutputState  = TIM_OutputState_Enable; 
-		TIM_OCInitStructure.TIM_OutputNState = TIM_OutputState_Enable; 
-		TIM_OCInitStructure.TIM_OCPolarity   = TIM_OCPolarity_High; 
-		TIM_OCInitStructure.TIM_OCNPolarity  = TIM_OCNPolarity_High;
-		TIM_OCInitStructure.TIM_OCIdleState  = TIM_OCIdleState_Set;
-		TIM_OCInitStructure.TIM_OCNIdleState = TIM_OCNIdleState_Set;	
-		TIM_OCInitStructure.TIM_Pulse = 0;
+		TIM_BDTRInitStruct.TIM_Break           	= TIM_Break_Enable;      //断路控制
+		TIM_BDTRInitStruct.TIM_BreakPolarity   	= TIM_BreakPolarity_High; //断路输入极性
+		TIM_BDTRInitStruct.TIM_AutomaticOutput 	= TIM_AutomaticOutput_Disable;  //自动输出
+		TIM_BDTRConfig( TIM1, &TIM_BDTRInitStruct);  
+
+		/*输出比较*/
+		TIM_OCInitStructure.TIM_OCMode       = TIM_OCMode_PWM1; //比较输出模式
+		TIM_OCInitStructure.TIM_OutputState  = TIM_OutputState_Enable; //比较输出使能
+		TIM_OCInitStructure.TIM_OutputNState = TIM_OutputState_Enable; //比较互补输出使能
+		TIM_OCInitStructure.TIM_OCPolarity   = TIM_OCPolarity_High;   //输出极性
+		TIM_OCInitStructure.TIM_OCNPolarity  = TIM_OCNPolarity_High;  //互补输出极性
+		TIM_OCInitStructure.TIM_OCIdleState  = TIM_OCIdleState_Set;		// 空闲状态下比较输出状态
+		TIM_OCInitStructure.TIM_OCNIdleState = TIM_OCNIdleState_Set;	// 空闲状态下比较互补输出状态
+		TIM_OCInitStructure.TIM_Pulse = 0;	//脉冲宽度
 		TIM_OC1Init(TIM1, &TIM_OCInitStructure);  
+		
+		
 		TIM_OCInitStructure.TIM_Pulse = 0; 
 		TIM_OC2Init(TIM1, &TIM_OCInitStructure);
+		
 		TIM_OCInitStructure.TIM_Pulse = 0; 
 		TIM_OC3Init(TIM1, &TIM_OCInitStructure);		
 		TIM_OCInitStructure.TIM_Pulse = 440;
-		TIM_OC4Init(TIM1, &TIM_OCInitStructure);
-		TIM1->CCER |= 0x04 | 0x40 |0x400|0x1000;
-		TIM_OC1PreloadConfig(TIM1, TIM_OCPreload_Enable);    
+		TIM_OC4Init(TIM1, &TIM_OCInitStructure);  //
+		
+		
+		TIM1->CCER |= 0x04 | 0x40 |0x400|0x1000; //使能tim1比较寄存器
+		
+		TIM_OC1PreloadConfig(TIM1, TIM_OCPreload_Enable);    //开启/禁止TIMx_CCR1寄存器的预装载功能
 		TIM_OC2PreloadConfig(TIM1, TIM_OCPreload_Enable);   
 		TIM_OC3PreloadConfig(TIM1, TIM_OCPreload_Enable); 
 		TIM_OC4PreloadConfig(TIM1, TIM_OCPreload_Enable); 	
+		
 		TIM_ARRPreloadConfig(TIM1, ENABLE);	
 		TIM_ClearFlag(TIM1, TIM_IT_CC4);
 		TIM_ITConfig (TIM1, TIM_IT_CC4, ENABLE);
@@ -124,7 +150,7 @@ void pwm_init (void)
 		TIM_Cmd(TIM1, ENABLE);
 }
 //==============================================================================
-void adc_init (void)
+static void adc_init (void)
 {
 	GPIO_InitTypeDef 	GPIO_InitStructure; 
 	DMA_InitTypeDef		DMA_InitStructure;
@@ -171,7 +197,7 @@ void adc_init (void)
 	ADC_ITConfig(ADC1,ADC_IT_EOC,ENABLE);	
 }
 //==============================================================================
-void nvic_init (void)
+static void nvic_init (void)
 {
     NVIC_InitTypeDef 			NVIC_InitStructure;
     NVIC_InitStructure.NVIC_IRQChannel 			= TIM1_CC_IRQn;
@@ -187,7 +213,7 @@ void nvic_init (void)
 	NVIC_InitStructure.NVIC_IRQChannelCmd 		= ENABLE;     	
 	NVIC_Init(&NVIC_InitStructure); 
 }
-void usart_init (void)
+static void usart_init (void)
 {
 
 	USART_InitTypeDef   	USART_InitStructure;
@@ -230,7 +256,7 @@ void HardwareInit (void)
 		while (i--);
 	
 		rcc_init ();
-		port_init ();
+		MX_GPIO_Init();
 		pwm_init ();
 		adc_init ();
 		nvic_init ();

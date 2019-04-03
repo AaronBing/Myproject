@@ -2,7 +2,7 @@ stm32f031\trig.o: ..\trig.c
 stm32f031\trig.o: ..\main.h
 stm32f031\trig.o: ..\..\..\Libraries\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h
 stm32f031\trig.o: ..\..\..\Libraries\CMSIS\Include\core_cm0.h
-stm32f031\trig.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+stm32f031\trig.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 stm32f031\trig.o: ..\..\..\Libraries\CMSIS\Include\core_cmInstr.h
 stm32f031\trig.o: ..\..\..\Libraries\CMSIS\Include\core_cmFunc.h
 stm32f031\trig.o: ..\..\..\Libraries\CMSIS\Device\ST\STM32F0xx\Include\system_stm32f0xx.h

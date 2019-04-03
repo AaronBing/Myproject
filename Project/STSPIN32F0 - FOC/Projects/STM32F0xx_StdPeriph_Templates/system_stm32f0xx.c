@@ -299,7 +299,7 @@ static void SetSysClock(void)
   }
   
   /* Setting of system clock to 48 MHz */
-  RCC_PLLConfig(RCC_PLLSource_HSI_Div2, RCC_CFGR_PLLMUL12); //8/2*12 = 48MHz
+  RCC_PLLConfig(RCC_PLLSource_HSI_Div2, RCC_CFGR_PLLMUL12); //  8/2*12 = 48MHz
   
   /* Enable PLL */
   RCC_PLLCmd((FunctionalState)ENABLE);

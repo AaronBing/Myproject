@@ -383,20 +383,19 @@ ARM Macro Assembler    Page 6
               00000000 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0 --apcs=interw
-ork --depend=stm32f031\startup_stm32f031.d -ostm32f031\startup_stm32f031.o -I"E
-:\Project\Myproject\Project\STSPIN32F0 - FOC\Projects\STM32F0xx_StdPeriph_Templ
-ates\MDK-ARM\RTE" -ID:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.0.0\Drivers\CMSIS\
-Device\ST\STM32F0xx\Include -ID:\Keil_v5\ARM\CMSIS\Include -ID:\Keil_v5\ARM\PAC
-K\Keil\STM32F0xx_DFP\2.0.0\Device\Include --predefine="__MICROLIB SETA 1" --pre
+ork --depend=stm32f031\startup_stm32f031.d -ostm32f031\startup_stm32f031.o -I.\
+RTE\_STM32F031 -ID:\Software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.0.0\Drivers\
+CMSIS\Device\ST\STM32F0xx\Include -ID:\Software\Keil_v5\ARM\CMSIS\Include -ID:\
+Software\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.0.0\Device\Include --predefine="
+__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 523" --predefine="STM32F
 
 
 
 ARM Macro Assembler    Page 7 
 
 
-define="__UVISION_VERSION SETA 521" --predefine="STM32F031x6 SETA 1" --list=.\s
-tm32f031\startup_stm32f031.lst ..\..\..\Libraries\CMSIS\Device\ST\STM32F0xx\Sou
-rce\Templates\arm\startup_stm32f031.s
+031x6 SETA 1" --list=.\stm32f031\startup_stm32f031.lst ..\..\..\Libraries\CMSIS
+\Device\ST\STM32F0xx\Source\Templates\arm\startup_stm32f031.s
 
 
 
