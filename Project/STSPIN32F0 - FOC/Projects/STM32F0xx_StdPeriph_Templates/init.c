@@ -138,61 +138,75 @@ static void pwm_init (void)
 		
 		TIM1->CCER |= 0x04 | 0x40 |0x400|0x1000; //使能tim1比较寄存器
 		
+		//TIMx_CCRx寄存器能够在任何时候通过软件进行更新以控制波形
 		TIM_OC1PreloadConfig(TIM1, TIM_OCPreload_Enable);    //开启/禁止TIMx_CCR1寄存器的预装载功能
 		TIM_OC2PreloadConfig(TIM1, TIM_OCPreload_Enable);   
 		TIM_OC3PreloadConfig(TIM1, TIM_OCPreload_Enable); 
 		TIM_OC4PreloadConfig(TIM1, TIM_OCPreload_Enable); 	
 		
-		TIM_ARRPreloadConfig(TIM1, ENABLE);	
+		TIM_ARRPreloadConfig(TIM1, ENABLE);	//允许或禁止在定时器工作时向ARR的缓冲器中写入新值，
 		TIM_ClearFlag(TIM1, TIM_IT_CC4);
-		TIM_ITConfig (TIM1, TIM_IT_CC4, ENABLE);
+		TIM_ITConfig (TIM1, TIM_IT_CC4, ENABLE);//
 		TIM_CtrlPWMOutputs(TIM1, ENABLE);
-		TIM_Cmd(TIM1, ENABLE);
+		TIM_Cmd(TIM1, ENABLE);//使能 TIMx
 }
 //==============================================================================
 static void adc_init (void)
 {
+	//初始化变量
 	GPIO_InitTypeDef 	GPIO_InitStructure; 
 	DMA_InitTypeDef		DMA_InitStructure;
 	ADC_InitTypeDef  	ADC_InitStructure;
+	
+	/*初始化外设时钟*/
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA | RCC_AHBPeriph_GPIOB, ENABLE);  
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1 , ENABLE);
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
+	
+	/*PA3,PA4,PA5  Analog In/Out Mode */
 	GPIO_InitStructure.GPIO_Pin =GPIO_Pin_3| GPIO_Pin_4| GPIO_Pin_5;		
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AN;
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
+	
+	/*PB1  Analog In/Out Mode */
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;							
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AN;
 	GPIO_Init(GPIOB, &GPIO_InitStructure);
+	
+	
 	DMA_DeInit(DMA1_Channel1);
-	DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)ADC1_DR_Address;
-	DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)RegularConvData_Tab;
-	DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralSRC;
-	DMA_InitStructure.DMA_BufferSize = 4;
-	DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable; 
-	DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
-	DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
+	DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)ADC1_DR_Address;  //
+	DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)RegularConvData_Tab;  //
+	DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralSRC;//单向传输
+	DMA_InitStructure.DMA_BufferSize = 4;			//4*16bit
+	DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable; //设置DMA的外设递增模式，如果DMA选用的通道（CHx）有多个外设连接，需要使用外设递增模式
+	DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;			//DMA访问多个内存参数
+	DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;//设置DMA在访问时每次操作的数据长度   16bit
 	DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_HalfWord;
-	DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;
-	DMA_InitStructure.DMA_Priority = DMA_Priority_High;
-	DMA_InitStructure.DMA_M2M = DMA_M2M_Disable;
-	DMA_Init(DMA1_Channel1, &DMA_InitStructure);	
-	DMA_Cmd(DMA1_Channel1, ENABLE);	
-	ADC_InitStructure.ADC_ContinuousConvMode   = ENABLE;
-	ADC_InitStructure.ADC_DataAlign 		   = ADC_DataAlign_Right;
-	ADC_InitStructure.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_None;
-	ADC_InitStructure.ADC_ExternalTrigConv 	   = ADC_ExternalTrigConv_T3_TRGO;
-	ADC_InitStructure.ADC_Resolution 		   = ADC_Resolution_12b;
-	ADC_InitStructure.ADC_ScanDirection 	   = ADC_ScanDirection_Upward;
+	DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;//连续不断的循环模式
+	DMA_InitStructure.DMA_Priority = DMA_Priority_High;  //DMA优先级
+	DMA_InitStructure.DMA_M2M = DMA_M2M_Disable;//DMA的2个memory中的变量互相访问的
+	DMA_Init(DMA1_Channel1, &DMA_InitStructure);	//初始化
+	DMA_Cmd(DMA1_Channel1, ENABLE);	//使能
+	
+	
+	ADC_InitStructure.ADC_ContinuousConvMode   = ENABLE;		//使能连续转换
+	ADC_InitStructure.ADC_DataAlign 		   = ADC_DataAlign_Right;//右对齐
+	ADC_InitStructure.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_None;//禁止触发检测
+	ADC_InitStructure.ADC_ExternalTrigConv 	   = ADC_ExternalTrigConv_T3_TRGO;//数模转换外部通道tim3 为触发源
+	ADC_InitStructure.ADC_Resolution 		   = ADC_Resolution_12b;  //12bit 分辨率
+	ADC_InitStructure.ADC_ScanDirection 	   = ADC_ScanDirection_Upward;//扫描通道方向
 	ADC_Init(ADC1, &ADC_InitStructure);
-	ADC_ChannelConfig(ADC1, ADC_Channel_3 , ADC_SampleTime_1_5Cycles); 
+	
+	
+	ADC_ChannelConfig(ADC1, ADC_Channel_3 , ADC_SampleTime_1_5Cycles); //采样延时
 	ADC_ChannelConfig(ADC1, ADC_Channel_4 , ADC_SampleTime_1_5Cycles); 
 	ADC_ChannelConfig(ADC1, ADC_Channel_5,  ADC_SampleTime_1_5Cycles); 
 	ADC_ChannelConfig(ADC1, ADC_Channel_9 , ADC_SampleTime_1_5Cycles); 	
-	ADC_GetCalibrationFactor(ADC1);
-	ADC_DMACmd(ADC1, ENABLE);	
+	ADC_GetCalibrationFactor(ADC1);         //校准adc
+	ADC_DMACmd(ADC1, ENABLE);				//关联DMA
 	ADC_Cmd(ADC1, ENABLE); 	
 	ADC_ITConfig(ADC1,ADC_IT_EOC,ENABLE);	
 }
@@ -200,14 +214,20 @@ static void adc_init (void)
 static void nvic_init (void)
 {
     NVIC_InitTypeDef 			NVIC_InitStructure;
+	
+	
     NVIC_InitStructure.NVIC_IRQChannel 			= TIM1_CC_IRQn;
     NVIC_InitStructure.NVIC_IRQChannelPriority 	= 1;
 	NVIC_InitStructure.NVIC_IRQChannelCmd 		= ENABLE;         
-	NVIC_Init(&NVIC_InitStructure);  
+	NVIC_Init(&NVIC_InitStructure);
+
+	
     NVIC_InitStructure.NVIC_IRQChannel 			= ADC1_COMP_IRQn;
 	NVIC_InitStructure.NVIC_IRQChannelPriority 	= 3;
 	NVIC_InitStructure.NVIC_IRQChannelCmd 		= ENABLE;         
 	NVIC_Init(&NVIC_InitStructure);   	
+	
+	
 	NVIC_InitStructure.NVIC_IRQChannel 			= USART1_IRQn;  
 	NVIC_InitStructure.NVIC_IRQChannelPriority	= 3;
 	NVIC_InitStructure.NVIC_IRQChannelCmd 		= ENABLE;     	

@@ -146,7 +146,7 @@ void MotorCtrlFun (void)
 		(hTimePhB) = 0;
 	if ( hTimePhC < 0 )
 		(hTimePhC) = 0;	
-	TIM1->CCR1 = hTimePhA;
+	TIM1->CCR1 = hTimePhA;		//TIM capture/compare register 1,
 	TIM1->CCR2 = hTimePhB;
 	TIM1->CCR3 = hTimePhC;
 }

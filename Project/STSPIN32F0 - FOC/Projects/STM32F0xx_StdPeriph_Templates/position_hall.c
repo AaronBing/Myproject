@@ -16,8 +16,8 @@ u8 MotorFlagPole6OK;   //霍尔6次完成ok
 u8 MotoSFlagHallChange;//霍尔切换标志位
 u8 MotorPoleCnt;       //相序号
  
-u16 MotorElectricalAngle;
-u16 MotorEleAngleParaA;
+u16 MotorElectricalAngle;		//电角度总值
+u16 MotorEleAngleParaA;			//电角度参数
 u16 MotorEleAngleParaC;
 u16 MotorEleAngleParaD;
 u16 MotorEleAngleParaE;
@@ -26,20 +26,20 @@ u16 MotorEleAngleParaG;
 
 u8 MotorMoveCnt;  
 u16 MotorFlagDir; 
-u16 MotorPosCur; 
+u16 MotorPosCur; 			//位置
 u8 MotorFlagShake;
 u16 MotorUnknownPara1;
 u16 MotorElectricalAngleBak;
-u8 MotorEleAnglePara1;
-u8 MotorCurHall;   
+u8 MotorEleAnglePara1;		//电角度参数1
+u8 MotorCurHall;   			//
 u8 MotorHallCnt;  
-u8 MotorLastHall; 
+u8 MotorLastHall; 			//最后一次hall
 u8 MotorDirFlagLast;  
 u8 MotorErrorPosFlag; 
 s16 MotorEleAngleDiff;
 u16 MotorRollTimeLast;
 
-u8 MotorFlagHallChange;
+u8 MotorFlagHallChange;			//hall变换标志位
 
 //=============================================================================
 void MotorFetAngleFun (void)
@@ -49,17 +49,17 @@ void MotorFetAngleFun (void)
 	signed int i;  
 	s8 		pos_diff;
 	
-	if ( MotorTimePole < 2812 )
+	if ( MotorTimePole < 2812 )			//是否到达单次换向
 		++MotorTimePole;
-	if ( MotorTimePole >= 2812 )
+	if ( MotorTimePole >= 2812 )		//第一次就运行到这里 	16872/2812=6
 	{
-		MotorTimePole6 			= 16872;
+		MotorTimePole6 			= 16872;				
 		MotorFlagHallChange 	= 0;
 		MotorFlagPole6OK 		= 0;
 		MotorPoleCnt 			= 0;
 	}
 	
-	if ( ((signed int)MotorTimePole6 > 1013) || (5 * MotorTimePole > 1012) )
+	if ( ((signed int)MotorTimePole6 > 1013) || (5 * MotorTimePole > 1012) )		
 		MotorEleAngleParaC = MotorEleAngleParaG;
 	
 	if ( ((signed int)MotorTimePole6 <= 1350) && (6 * MotorTimePole <= 1350) )
@@ -71,7 +71,7 @@ void MotorFetAngleFun (void)
 	}
 	else
 	{
-		MotorFlagMove = 1;
+		MotorFlagMove = 1;				//1表示要移动？？
 		MotorMoveCnt  = 0;
 	}
 	if ( MotorFlagDir )
@@ -141,7 +141,12 @@ void MotorFetAngleFun (void)
 	{
 		MotorElectricalAngleBak -= MotorUnknownPara1;
 	}
-	MotorCurHall = GPIOA->IDR  & 7;	
+	
+//-------------------------猜测从这里开始------------------	
+	
+	
+	MotorCurHall = GPIOA->IDR  & 7;//   GPIO port input data register,                            Address offset: 0x10
+	
 	if ( MotorCurHall && (MotorCurHall != 7) )
 	{
 		MotorHallCnt = 0;
@@ -151,12 +156,12 @@ void MotorFetAngleFun (void)
 		++MotorHallCnt;
 		MotorCurHall = MotorLastHall;
 	}
-
+//-----------------------------------------------
 	if ( MotorCurHall != MotorLastHall )
 	{
 		MotorEleAnglePara1 = 0;
 		MotorFlagHallChange = 1;
-		pos_diff = MOTOR_PHASE_SEQUENCE[MotorCurHall] - MotorPosCur;
+		pos_diff = MOTOR_PHASE_SEQUENCE[MotorCurHall] - MotorPosCur;//非常重要的一句话
 		if ( (pos_diff != 1) && (pos_diff != -5) )
 		{
 			if ( (pos_diff == -1) || (pos_diff == 5) )
@@ -175,7 +180,7 @@ void MotorFetAngleFun (void)
 			MotorPoleCnt = 0;
 		}
 		
-		MotorDirFlagLast = MotorFlagDir;
+		MotorDirFlagLast = MotorFlagDir;             //
 		
 		if ( MotorMoveCnt < 6 )
 			++MotorMoveCnt;

@@ -15,8 +15,10 @@ uint16_t	vadc_pwron_bat;
 uint16_t	vadc_ibus;
 uint16_t	vadc_ia, vadc_ib, vadc_ic;
 uint32_t	FocTime64usCnt; 
-uint32_t	FocTime1msFlag;  
-uint32_t	MsFlag; 
+uint32_t	FocTime1msFlag
+;  
+uint32_t	MsFlag; 		//
+
 uint32_t	FocGetAdcCnt;
 uint32_t	FocFlagAdcOK;
 uint16_t 	FocBootVolBuf[4];
@@ -30,12 +32,12 @@ uint8_t res_old1 = 0;
 uint8_t res;
 uint8_t USART_RX_BUF[25];     
 u8 Yibiao_Set, fuzhiwc_flg = 0;
-u8 CiGangShu;
-u16 LunJing;
-u16 TiaoSuPWM = 0;
+u8 CiGangShu;		//极对数？
+u16 LunJing;      //轮径？
+u16 TiaoSuPWM = 0;		//调速？
 u16 TiaoSuPWM1=0;
 u16 TiaoSuPWM2=0;
-u8 Yibiao_CheckBit;
+u8 Yibiao_CheckBit;		//仪表
 u8 zero_run_flg;
 
 uint8_t filter_cnt = 0;  //滤波计数
@@ -70,66 +72,67 @@ extern void Uart_Buff_Clear (void);
 
 void ADC1_IRQHandler (void)
 {
-	ADC_ClearFlag (ADC1, ADC_FLAG_EOC);
-	GPIO_SetBits (GPIOC, GPIO_Pin_13);
-	if (++FocTime64usCnt >= 16)
+	ADC_ClearFlag (ADC1, ADC_FLAG_EOC);		//End of conversion flag
+	GPIO_SetBits (GPIOC, GPIO_Pin_13);      //PC13 设置电平干什么？
+	if (++FocTime64usCnt >= 16)				// 16*64=1024  约等于1ms
 	{
 		FocTime64usCnt = 0;
 		MsFlag ++;
 		FocTime1msFlag = 1;
 	}
-	if (++FocGetAdcCnt >= 3)
+	if (++FocGetAdcCnt >= 3)			//采集4次
 	{
 		FocGetAdcCnt = 0;
 		
 		FocFlagAdcOK = 1;
 	}
-	if (FocSelfCheckOK)
+	if (FocSelfCheckOK)					//自测通过
 	{
-		MotorFetAngleFun ();
+		MotorFetAngleFun ();				//====================================运行 电机角度检测
 	}
-	FocMotorLoadBuf[FocGetAdcCnt]   = RegularConvData_Tab[0];  	
-	FocMotorCurB 					= RegularConvData_Tab[1];	
-	FocMotorCurA 					= RegularConvData_Tab[2];		
-	FocAdcBatteryBuf[FocGetAdcCnt]  = RegularConvData_Tab[3];     
-	MotorCurr_ab.qI_Component1 =    FocMotorPhaseAOffset - FocMotorCurA;
+	FocMotorLoadBuf[FocGetAdcCnt]   = RegularConvData_Tab[0];  	  
+	FocMotorCurB 					= RegularConvData_Tab[1];	    //B相
+	FocMotorCurA 					= RegularConvData_Tab[2];		//A相
+	FocAdcBatteryBuf[FocGetAdcCnt]  = RegularConvData_Tab[3];       //电源电压？？
+	MotorCurr_ab.qI_Component1 =    FocMotorPhaseAOffset - FocMotorCurA;			//先进行自测，再到这里输出自测的差值
 	MotorCurr_ab.qI_Component2 = 	FocMotorPhaseBOffset - FocMotorCurB;
-	MotorAtatVolt_qd.qV_Component1 = 300;//TiaoSuPWM;
+	MotorAtatVolt_qd.qV_Component1 = 300;			//TiaoSuPWM;之前是从窗口获得初值
 	if ( FocSelfCheckOK )
 	{
-		if ( MotorFlagMove )
+		if ( MotorFlagMove )			//检测到启动位置
 		{	
 			MotorInitParaFun();
 		}
-		else if (  (FocMotorCurA < 3848) 
+		else if (  (FocMotorCurA < 3848) 				//当两相的电流都小于
 				&& (FocMotorCurB < 3848) )
 		{
-			MotorClarkeFun();
-			MotorParkFun();
+			MotorClarkeFun();		//克拉克，帕克变换
+			MotorParkFun();		
 			MotorFlowRegFun();
 		}
-		MotorRevParkFun();
+		MotorRevParkFun();			//反park变化？？
 		MotorCtrlFun();
 	}
 }
 void TIM1_CC_IRQHandler (void)
 {
 	
-	if (TIM1->SR & 0X0010)					
+	if (TIM1->SR & 0X0010)		//TIM status register,      			
 	{		
-		ADC_StartOfConversion(ADC1);	
+		ADC_StartOfConversion(ADC1);		//开始连续采	
 
-		if(RegularConvData_Tab[0] > 310) 
+		if(RegularConvData_Tab[0] > 310) 		//DMA里存储的adc采样值，		320次大于310
 		{
 			X ++;
 			if(X > 320)
-			TIM1->BDTR &= (~0x8000);
+			TIM1->BDTR &= (~0x8000);	//TIM break and dead-time register,  
 		}
 		else  X = 0;
 		
 		if(MsFlag > 50)
-			MsFlag = 0;				
-		TIM1->SR &= 0XFFEF;
+			MsFlag = 0;
+		
+		TIM1->SR &= 0XFFEF;			//
 	}	
 }
 void Uart_Buff_Clear (void)  
