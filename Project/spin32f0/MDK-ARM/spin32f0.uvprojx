@@ -387,9 +387,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>::CMSIS</GroupName>
-        </Group>
-        <Group>
           <GroupName>Application/User</GroupName>
           <Files>
             <File>
@@ -713,6 +710,9 @@
               <FilePath>../MCSDK_v5.3.3-Full/MotorControl/MCSDK/UILibrary/Src/usart_frame_communication_protocol.c</FilePath>
             </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
     </Target>
