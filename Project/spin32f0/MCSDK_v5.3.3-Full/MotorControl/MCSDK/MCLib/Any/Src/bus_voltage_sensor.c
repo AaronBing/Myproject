@@ -8,13 +8,6 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2018 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
   *
   ******************************************************************************
   */
@@ -31,21 +24,20 @@
 /** @defgroup BusVoltageSensor Bus Voltage Sensor
   * @brief Bus Voltage Sensor components of the Motor Control SDK
   *
-  * Two Bus Voltage Sensor implementations are provided:
+  * 	提供两种总线电压传感器实现：
   *
-  * - The @ref RDividerBusVoltageSensor "Resistor Divider Bus Voltage Sensor" operates as the name suggests
-  * - The @ref VirtualBusVoltageSensor "Virtual Bus Voltage Sensor" does not make measurement but rather
-  *   returns a fixed, application defined value.
+  * - The @ref RDividerBusVoltageSensor "Resistor Divider Bus Voltage Sensor"电阻分压器母线电压传感器---》按照顾名思义运作
+  * - The @ref VirtualBusVoltageSensor "Virtual Bus Voltage Sensor"虚拟总线电压传感器---》不进行测量，而是返回固定的应用程序定义值。
   *
   * @todo Document the Bus Voltage Sensor "module".
-  *
+  *			记录总线电压传感器
   * @{
   */
 
 /**
-  * @brief  It return latest Vbus conversion result expressed in u16Volt
-  * @param  pHandle related Handle of BusVoltageSensor_Handle_t
-  * @retval uint16_t Latest Vbus conversion result in digit
+  * @brief  It return latest Vbus conversion result expressed in u16Volt     它返回以u16Volt表示的最新Vbus转换结果
+  * @param  pHandle related Handle of BusVoltageSensor_Handle_t           pHandle相关BusVoltageSensor_Handle_t的句柄
+  * @retval uint16_t Latest Vbus conversion result in digit                uint16_t最新的Vbus转换结果为数字
   */
 uint16_t VBS_GetBusVoltage_d( BusVoltageSensor_Handle_t * pHandle )
 {
@@ -60,9 +52,9 @@ __attribute__( ( section ( ".ccmram" ) ) )
 #endif
 #endif
 /**
-  * @brief  It return latest averaged Vbus measurement expressed in u16Volt
-  * @param  pHandle related Handle of BusVoltageSensor_Handle_t
-  * @retval uint16_t Latest averaged Vbus measurement in digit
+  * @brief  It return latest averaged Vbus measurement expressed in u16Volt  它返回以u16Volt表示的最新平均Vbus测量值
+  * @param  pHandle related Handle of BusVoltageSensor_Handle_t   pHandle相关BusVoltageSensor_Handle_t的句柄
+  * @retval uint16_t Latest averaged Vbus measurement in digit   uint16_t最新的平均Vbus测量值
   */
 uint16_t VBS_GetAvBusVoltage_d( BusVoltageSensor_Handle_t * pHandle )
 {
@@ -70,9 +62,9 @@ uint16_t VBS_GetAvBusVoltage_d( BusVoltageSensor_Handle_t * pHandle )
 }
 
 /**
-  * @brief  It return latest averaged Vbus measurement expressed in Volts
-  * @param  pHandle related Handle of BusVoltageSensor_Handle_t
-  * @retval uint16_t Latest averaged Vbus measurement in Volts
+  * @brief  It return latest averaged Vbus measurement expressed in Volts  它返回以伏特表示的最新平均Vbus测量值
+  * @param  pHandle related Handle of BusVoltageSensor_Handle_t           pHandle相关BusVoltageSensor_Handle_t的句柄
+  * @retval uint16_t Latest averaged Vbus measurement in Volts				uint16_t以伏特为单位的最新平均Vbus测量值		
   */
 uint16_t VBS_GetAvBusVoltage_V( BusVoltageSensor_Handle_t * pHandle )
 {
@@ -87,9 +79,9 @@ uint16_t VBS_GetAvBusVoltage_V( BusVoltageSensor_Handle_t * pHandle )
 
 /**
   * @brief  It returns MC_OVER_VOLT, MC_UNDER_VOLT or MC_NO_ERROR depending on
-  *         bus voltage and protection threshold values
-  * @param  pHandle related Handle of BusVoltageSensor_Handle_t
-  * @retval uint16_t Fault code error
+  *         bus voltage and protection threshold values				它根据总线电压和保护阈值返回MC_OVER_VOLT，MC_UNDER_VOLT或MC_NO_ERROR
+  * @param  pHandle related Handle of BusVoltageSensor_Handle_t			pHandle相关BusVoltageSensor_Handle_t的句柄
+  * @retval uint16_t Fault code error    uint16_t故障代码错误
   */
 uint16_t VBS_CheckVbus( BusVoltageSensor_Handle_t * pHandle )
 {

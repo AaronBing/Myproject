@@ -2,19 +2,11 @@
   ******************************************************************************
   * @file    circle_limitation.c
   * @author  Motor Control SDK Team, ST Microelectronics
-  * @brief   This file provides the functions that implement the circle
-  *          limitation feature of the STM32 Motor Control SDK.
+  * @brief   该文件提供了实现STM32电机控制SDK的circle限制功能的功能。
   *
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2018 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
   *
   ******************************************************************************
   */
@@ -40,9 +32,14 @@
   * @brief Check whether Vqd.qV_Component1^2 + Vqd.qV_Component2^2 <= 32767^2
   *        and if not it applies a limitation keeping constant ratio
   *        Vqd.qV_Component1 / Vqd.qV_Component2
-  * @param  pHandle pointer on the related component instance
-  * @param  Vqd Voltage in qd reference frame
-  * @retval Volt_Components Limited Vqd vector
+		
+		检查Vqd.qV_Component1 ^ 2 + Vqd.qV_Component2 ^ 2 <= 32767 ^ 2 ，
+		如果不是，则应用限制保持常数比* Vqd.qV_Component1 / Vqd.qV_Component2
+		
+		
+  * @param  pHandle pointer on the related component instance   相关组件实例上的pHandle指针
+  * @param  Vqd Voltage in qd reference frame   qd参考帧中的Vqd电压
+  * @retval Volt_Components Limited Vqd vector  Volt_Components受限Vqd向量
   */
 Volt_Components Circle_Limitation( CircleLimitation_Handle_t * pHandle, Volt_Components Vqd )
 {

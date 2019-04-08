@@ -106,7 +106,7 @@ typedef struct
 } Curr_Components;
 
 /**
-  * @brief  Two components stator voltage type definition
+  * @brief  Two components stator voltage type definition  两个元件定子电压型定义
   */
 typedef struct
 {
@@ -127,6 +127,7 @@ typedef struct
 /**
   * @brief  SensorType_t type definition, it's used in BusVoltageSensor and TemperatureSensor component parameters structures
   *       to specify whether the sensor is real or emulated by SW
+			SensorType_t类型定义，它在BusVoltageSensor和TemperatureSensor组件参数结构中用于指定传感器是真实的还是由SW模拟的
   */
 typedef enum
 {

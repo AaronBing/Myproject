@@ -2,19 +2,11 @@
   ******************************************************************************
   * @file    digital_output.c
   * @author  Motor Control SDK Team, ST Microelectronics
-  * @brief   This file provides firmware functions that implement the Digital
-  *          Output component of the Motor Control SDK:
+  * @brief   此文件提供实现Motor Control SDK的Digital Output组件的固件功能:
   *
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2018 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
   *
   ******************************************************************************
   */
@@ -35,10 +27,9 @@
 
 
 /**
-* @brief Accordingly with selected polarity, it sets to active or inactive the
-*        digital output
-* @param pHandle handler address of the digital output component.
-* @param OutputState_t New requested state
+* @brief 因此，通过选择极性，它将数字输出设置为有效或无效
+* @param pHandle数字输出组件的处理程序地址。
+* @param OutputState_t新请求的状态
 * @retval none
 */
 void DOUT_SetOutputState( DOUT_handle_t * pHandle, DOutputState_t State )
