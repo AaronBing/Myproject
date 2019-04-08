@@ -93,7 +93,7 @@ void MotorFetAngleFun (void)
 				MotorElectricalAngleBak += MotorUnknownPara1;
 			}
 		}
-		else if ( MotorEleAnglePara1 )
+		else if ( MotorEleAnglePara1 )         //ÅÐ¶ÏSVPWM
 		{
 			if ( (0xFFFF - MotorUnknownPara1) < MotorElectricalAngleBak )
 				MotorEleAnglePara1 = 0;
