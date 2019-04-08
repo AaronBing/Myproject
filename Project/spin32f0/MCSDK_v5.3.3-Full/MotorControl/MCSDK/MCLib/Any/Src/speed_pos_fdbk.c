@@ -2,8 +2,7 @@
   ******************************************************************************
   * @file    speed_pos_fdbk.c
   * @author  Motor Control SDK Team, ST Microelectronics
-  * @brief   This file provides firmware functions that implement the  features
-  *          of the Speed & Position Feedback component of the Motor Control SDK.
+  * @brief   此文件提供固件功能，可实现Motor Control SDK的速度和位置反馈组件的功能。
   *
   ******************************************************************************
   * @attention

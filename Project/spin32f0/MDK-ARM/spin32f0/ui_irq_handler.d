@@ -1,8 +1,8 @@
 spin32f0\ui_irq_handler.o: ../MCSDK_v5.3.3-Full/MotorControl/MCSDK/UILibrary/Src/ui_irq_handler.c
 spin32f0\ui_irq_handler.o: ../MCSDK_v5.3.3-Full/MotorControl/MCSDK/UILibrary/Inc/ui_irq_handler.h
 spin32f0\ui_irq_handler.o: ../MCSDK_v5.3.3-Full/MotorControl/MCSDK/MCLib/Any/Inc/mc_type.h
-spin32f0\ui_irq_handler.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-spin32f0\ui_irq_handler.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+spin32f0\ui_irq_handler.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+spin32f0\ui_irq_handler.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 spin32f0\ui_irq_handler.o: ../Inc/mc_stm_types.h
 spin32f0\ui_irq_handler.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_bus.h
 spin32f0\ui_irq_handler.o: ../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h
@@ -17,7 +17,7 @@ spin32f0\ui_irq_handler.o: ../Inc/stm32f0xx_hal_conf.h
 spin32f0\ui_irq_handler.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h
 spin32f0\ui_irq_handler.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h
 spin32f0\ui_irq_handler.o: ../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h
-spin32f0\ui_irq_handler.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+spin32f0\ui_irq_handler.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 spin32f0\ui_irq_handler.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h
 spin32f0\ui_irq_handler.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h
 spin32f0\ui_irq_handler.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h

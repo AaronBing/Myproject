@@ -2,9 +2,7 @@
   ******************************************************************************
   * @file    sto_speed_pos_fdbk.c
   * @author  Motor Control SDK Team, ST Microelectronics
-  * @brief   This file provides firmware functions that implement the features
-  *          of the State Observer + PLL Speed & Position Feedback component of the
-  *          Motor Control SDK.
+  * @brief  该文件提供固件功能，实现Motor Control SDK的状态观察器+ PLL速度和位置反馈组件的功能。
   *
   ******************************************************************************
   * @attention
