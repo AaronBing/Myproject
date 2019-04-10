@@ -73,7 +73,7 @@ extern void Uart_Buff_Clear (void);
 void ADC1_IRQHandler (void)
 {
 	ADC_ClearFlag (ADC1, ADC_FLAG_EOC);		//End of conversion flag
-	GPIO_SetBits (GPIOC, GPIO_Pin_13);      //PC13 设置电平干什么？
+	//GPIO_SetBits (GPIOC, GPIO_Pin_13);      //PC13 设置电平干什么？
 	if (++FocTime64usCnt >= 16)				// 16*64=1024  约等于1ms
 	{
 		FocTime64usCnt = 0;
@@ -90,7 +90,7 @@ void ADC1_IRQHandler (void)
 	{
 		MotorFetAngleFun ();				//====================================运行 电机角度检测
 	}
-	FocMotorLoadBuf[FocGetAdcCnt]   = RegularConvData_Tab[0];  	  
+	FocMotorLoadBuf[FocGetAdcCnt]   = RegularConvData_Tab[0];  	  	//过流
 	FocMotorCurB 					= RegularConvData_Tab[1];	    //B相
 	FocMotorCurA 					= RegularConvData_Tab[2];		//A相
 	FocAdcBatteryBuf[FocGetAdcCnt]  = RegularConvData_Tab[3];       //电源电压？？
@@ -103,15 +103,15 @@ void ADC1_IRQHandler (void)
 		{	
 			MotorInitParaFun();
 		}
-		else if (  (FocMotorCurA < 3848) 				//当两相的电流都小于
-				&& (FocMotorCurB < 3848) )
+		else if (  (FocMotorCurA <5000) 				//当两相的电流都小于   3848
+				&& (FocMotorCurB < 5000) )
 		{
 			MotorClarkeFun();		//克拉克，帕克变换
 			MotorParkFun();		
 			MotorFlowRegFun();
 		}
 		MotorRevParkFun();			//反park变化？？
-		MotorCtrlFun();
+ 		MotorCtrlFun();
 	}
 }
 void TIM1_CC_IRQHandler (void)
@@ -122,7 +122,7 @@ void TIM1_CC_IRQHandler (void)
 		ADC_StartOfConversion(ADC1);		//开始连续采	
 
 		if(RegularConvData_Tab[0] > 310) 		//DMA里存储的adc采样值，		320次大于310
-		{
+		{										//过流保护的值
 			X ++;
 			if(X > 320)
 			TIM1->BDTR &= (~0x8000);	//TIM break and dead-time register,  
@@ -190,7 +190,33 @@ void USART1_IRQHandler (void)
             res_old = 0;
             res_old1 = 0;
         }		
-		if(USART_RX_BUF[0]==0x01)
+		/*	0地址				0x01
+			1帧长				20
+			2命令号				0x01
+			3驱动方式			1-3				0助力驱动，1电驱动，2助力驱动和电驱动同时
+			4助力设定			0-15			
+			5控制器控制设定		
+			6测速磁钢数			
+			7轮径		0.1英寸
+			8
+			9助力灵敏度
+			10助力启动强度
+			11限速专用hall
+			12限速值
+			13控制器限流值
+			14控制器欠压值
+			15控制器欠压值
+			16转把调速PWM掌控比
+			17转把调速PWM掌控比
+			18	控制器设定2
+			19	助力磁钢盘类型选择
+			20	校验和
+			
+			
+		
+		
+		*/
+		if(USART_RX_BUF[0]==0x01)		
 		{
 		 if((USART_RX_BUF[19]))
 		 {

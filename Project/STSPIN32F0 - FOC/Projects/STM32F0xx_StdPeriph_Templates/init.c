@@ -23,7 +23,7 @@ static void MX_GPIO_Init(void)
 		RCC_AHBPeriphClockCmd (RCC_AHBPeriph_GPIOB, ENABLE); 
 		RCC_AHBPeriphClockCmd (RCC_AHBPeriph_GPIOA, ENABLE);
 
-		/* PF6,PF7 输出	Push-pull*/
+		/* PF6,PF7 输出	Push-pull*/				//用于过流的参数设置
 		GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7;   
 		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
 		GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
@@ -40,7 +40,7 @@ static void MX_GPIO_Init(void)
 		GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 		GPIO_Init (GPIOA, &GPIO_InitStructure);			
 	
-		/* PA6  输出 Push-pull  	PWM,ADC 	*/
+		/* PA6  输出 Push-pull  	PWM,ADC 	找下是否有使用*/
 		GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6;   
 		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
 		GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
@@ -77,7 +77,7 @@ static void pwm_init (void)
 		GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
 		GPIO_Init(GPIOB, &GPIO_InitStructure);	 
 		
-		/*PB12  输入 上拉*/
+		/*PB12  输入 上拉				OC_COMP_INT		,TIM1 BRK  */
 		GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_12;
 		GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_IN; 
 		GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
@@ -163,13 +163,13 @@ static void adc_init (void)
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1 , ENABLE);
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
 	
-	/*PA3,PA4,PA5  Analog In/Out Mode */
+	/*PA3,PA4,PA5  Analog In/Out Mode */			//PA5 U相电流		PA4  V相电流     PA3母线电流
 	GPIO_InitStructure.GPIO_Pin =GPIO_Pin_3| GPIO_Pin_4| GPIO_Pin_5;		
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AN;
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
 	
-	/*PB1  Analog In/Out Mode */
+	/*PB1  Analog In/Out Mode */				//母线电压检测
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;							
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AN;
@@ -204,7 +204,7 @@ static void adc_init (void)
 	ADC_ChannelConfig(ADC1, ADC_Channel_3 , ADC_SampleTime_1_5Cycles); //采样延时
 	ADC_ChannelConfig(ADC1, ADC_Channel_4 , ADC_SampleTime_1_5Cycles); 
 	ADC_ChannelConfig(ADC1, ADC_Channel_5,  ADC_SampleTime_1_5Cycles); 
-	ADC_ChannelConfig(ADC1, ADC_Channel_9 , ADC_SampleTime_1_5Cycles); 	
+	ADC_ChannelConfig(ADC1, ADC_Channel_9 , ADC_SampleTime_1_5Cycles); 		//PB1	ADC_IN9
 	ADC_GetCalibrationFactor(ADC1);         //校准adc
 	ADC_DMACmd(ADC1, ENABLE);				//关联DMA
 	ADC_Cmd(ADC1, ENABLE); 	
@@ -240,18 +240,25 @@ static void usart_init (void)
 	GPIO_InitTypeDef 		GPIO_InitStructure;
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOB , ENABLE);  
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);	
+	
+	
 	GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_6;   
 	GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AF;
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
 	GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_NOPULL;
 	GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_UP;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
+	
+	
 	GPIO_Init(GPIOB, &GPIO_InitStructure);	
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7;  
 	GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AF;
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_OD;
 	GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_UP;
 	GPIO_Init(GPIOB, &GPIO_InitStructure);		
+	
+	
+	
 	GPIO_PinAFConfig(GPIOB,GPIO_PinSource6,GPIO_AF_0); 
     GPIO_PinAFConfig(GPIOB,GPIO_PinSource7,GPIO_AF_0);
 	USART_InitStructure.USART_BaudRate = 9600;
