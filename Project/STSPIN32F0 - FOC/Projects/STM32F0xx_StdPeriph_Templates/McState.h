@@ -28,7 +28,11 @@ typedef enum
   MOTOR_FAILURE    = 9      //´íÎó    9
 }Status_TypeDef;
 
-
+typedef struct
+{
+  Status_TypeDef State;             //ÏµÍ³×´Ì¬
+  
+} MCL_TypeDef;
 
 //typedef enum
 //{ 
@@ -236,3 +240,7 @@ typedef enum
 //#endif /* __MAIN_H */
 
 ///******************* (C) COPYRIGHT 2014 FT *****END OF FILE****/
+
+extern Status_TypeDef Ctl;
+extern void MCL_Function(void);
+

@@ -15,7 +15,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "McState.h"
+
 /* Private includes ----------------------------------------------------------*/
 
 
@@ -31,7 +31,6 @@
 /* Private variables ---------------------------------------------------------*/
 uint8_t send_data[14];
 
-extern Status_TypeDef State;
 
 uint8_t  State1 = 0;    
 uint8_t  State2 = 0XC0;   
@@ -68,12 +67,15 @@ int main(void)
 	
 	board_self_test ();
 	
-	State=MOTOR_INIT;
+	Ctl=MOTOR_INIT;
 	
 	while(1)
-	{
-		TX_data();
-		states();
+	{	
+		//UI();			这部分作为和上位机的通讯
+		MCL_Function();
+		
+		//TX_data();		原先有的，先留着
+		//states();
 	}
 }
 

@@ -80,7 +80,7 @@ void ADC1_IRQHandler (void)
 		MsFlag ++;
 		FocTime1msFlag = 1;
 	}
-	if (++FocGetAdcCnt >= 3)			//采集4次
+	if (++FocGetAdcCnt >= 3)			//采集3次
 	{
 		FocGetAdcCnt = 0;
 		
@@ -124,8 +124,10 @@ void TIM1_CC_IRQHandler (void)
 		if(RegularConvData_Tab[0] > 310) 		//DMA里存储的adc采样值，		320次大于310
 		{										//过流保护的值
 			X ++;
-			if(X > 320)
-			TIM1->BDTR &= (~0x8000);	//TIM break and dead-time register,  
+			if(X > 100)
+			TIM1->BDTR &= (~0x8000);	//TIM break and dead-time register,   关掉pwm输出
+			
+			//TIM1->BDTR |= (0x8000);
 		}
 		else  X = 0;
 		

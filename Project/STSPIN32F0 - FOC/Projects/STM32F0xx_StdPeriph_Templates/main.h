@@ -1,7 +1,7 @@
 
 #include "stm32f0xx.h"
 #include "stdint.h"
-
+#include "McState.h"
 
 #define u32 unsigned int 
 #define u16 unsigned short 
@@ -29,9 +29,9 @@ typedef struct
 } Trig_Components;
 
 //==============================================================================
+
 void HardwareInit(void);
 void board_self_test (void);
-
 void MotorInitParaFun (void);
 void MotorClarkeFun (void);
 void MotorParkFun (void);

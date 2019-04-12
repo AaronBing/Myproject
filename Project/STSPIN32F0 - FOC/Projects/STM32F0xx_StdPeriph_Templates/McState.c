@@ -15,27 +15,29 @@
 /* Includes ------------------------------------------------------------------*/
 
 #include "main.h"
-#include "McState.h"
+
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-Status_TypeDef State;
+Status_TypeDef Ctl;
 
 
 /* Private function prototypes -----------------------------------------------*/
 
 void MCL_Function(void);
+
 //void MCL_Bkin_Isr(void);
 //void MainISR(void);
 
 static void MCL_Init(void); 
+static void MCL_Stop(void);
 //static void MCL_Ready(void);
 //static void MCL_Precharge(void);
 //static void MCL_Alignment(void);
 //static void MCL_OpenLoop(void);
 //static void MCL_Normal(void);
-//static void MCL_Stop(void);
+
 //static void MCL_Failure(void);
 
 //static void U_Task_Ptr(void);
@@ -54,13 +56,13 @@ static void MCL_Init(void);
 *******************************************************************************/
 void MCL_Function(void)
 {
-  switch(State)
+  switch(Ctl)
   {
     case MOTOR_INIT:
       MCL_Init();
       break;
     case MOTOR_STOP:
-      //MCL_Stop();
+      MCL_Stop();
       break;
     case MOTOR_READY:
       //MCL_Ready();
@@ -110,7 +112,7 @@ void MCL_Init(void)
 //  #endif
 
 //  Ctl.State = MOTOR_STOP;
-
+	Ctl= MOTOR_STOP;
 }
 
 ///*******************************************************************************
@@ -121,8 +123,8 @@ void MCL_Init(void)
 //* Output         : None
 //* Return         : 
 //*******************************************************************************/
-//void MCL_Stop(void)
-//{
+void MCL_Stop(void)
+{
 //  u16 tValue;                         
 //  #if (POS_FB_MODE == SensorLess) 
 //  if((CMP_SAMR != 0)||(TIM1_CR4 != 7))
@@ -162,7 +164,10 @@ void MCL_Init(void)
 //    Ctl.State =  MOTOR_READY;
 //    DRV_OE_ON;
 //  }
-//}
+
+	Ctl=MOTOR_READY;
+
+}
 
 ///*******************************************************************************
 //* Function Name  : MCL_Ready
