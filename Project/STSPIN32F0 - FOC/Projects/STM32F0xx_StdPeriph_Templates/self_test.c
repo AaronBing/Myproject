@@ -17,7 +17,7 @@ void board_self_test (void)
 	uint16_t 	i;
 	uint16_t 	sum; 
 	uint16_t 	sum1; 
-	for (i = 0; i < 50; i++)
+	for (i = 0; i < 50; i++)    //所以这个是50ms延迟？
 	{
 		while ( !FocTime1msFlag );
 		FocTime1msFlag = 0;
@@ -38,8 +38,8 @@ void board_self_test (void)
       || (FocMotorPhaseBOffset > 2234) 
       || (FocMotorPhaseBOffset < 1614) )
 	{
-		FocFlagMotorErrorElVol = 1;
-		TIM1->BDTR &= (~0x8000);
+		Ctl.State=MOTOR_FAILURE;
+		TIM1->BDTR &= (~0x8000);		//关闭pwm
 	}	
 	FocSelfCheckOK = 1;
 }

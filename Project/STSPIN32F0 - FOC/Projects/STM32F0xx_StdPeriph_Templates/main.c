@@ -67,11 +67,11 @@ int main(void)
 	
 	board_self_test ();
 	
-	Ctl=MOTOR_INIT;
+	Ctl.State=MOTOR_INIT;
 	
 	while(1)
 	{	
-		//UI();			这部分作为和上位机的通讯
+		//UI();			//这部分作为和上位机的通讯
 		MCL_Function();
 		
 		//TX_data();		原先有的，先留着

@@ -31,7 +31,7 @@ u8 MotorFlagShake;
 u16 MotorUnknownPara1;
 u16 MotorElectricalAngleBak;
 u8 MotorEleAnglePara1;		//电角度参数1
-u8 MotorCurHall;   			//
+u8 MotorCurHall;   			//6种hall状态
 u8 MotorHallCnt;  
 u8 MotorLastHall; 			//最后一次hall
 u8 MotorDirFlagLast;  
@@ -145,9 +145,9 @@ void MotorFetAngleFun (void)
 //-------------------------猜测从这里开始------------------	
 	
 	
-	MotorCurHall = GPIOA->IDR  & 7;//   GPIO port input data register,                            Address offset: 0x10
+	MotorCurHall = GPIOA->IDR  & 7;//   GPIO port input data register,           A0,A1,A2读取值
 	
-	if ( MotorCurHall && (MotorCurHall != 7) )
+	if ( MotorCurHall && (MotorCurHall != 7) )      //排除0和第七种状态
 	{
 		MotorHallCnt = 0;
 	}
@@ -204,7 +204,7 @@ void MotorFetAngleFun (void)
 			else
 			{
 				MotorTimePole6 = 16872;
-				MotorFlagMove = 1;
+				MotorFlagMove = 1;			//表示有偏转
 			}
 			if ( MotorPoleCnt == 5 )
 				MotorFlagPole6OK = 1;
@@ -223,8 +223,9 @@ void MotorFetAngleFun (void)
 
 		if ( MotorPosCur ==0 )
 		{
-			MotorErrorPosFlag = 1;
-			TIM1->BDTR &= 0x7FFF;
+			Ctl.State=MOTOR_FAILURE;
+			//MotorErrorPosFlag = 1;			//错误标志位
+			TIM1->BDTR &= 0x7FFF;			//关闭pwm
 		}
 		else
 		{

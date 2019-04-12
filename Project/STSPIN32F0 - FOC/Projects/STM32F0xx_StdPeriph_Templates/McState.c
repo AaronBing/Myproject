@@ -20,7 +20,7 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-Status_TypeDef Ctl;
+MCL_TypeDef Ctl;
 
 
 /* Private function prototypes -----------------------------------------------*/
@@ -56,7 +56,7 @@ static void MCL_Stop(void);
 *******************************************************************************/
 void MCL_Function(void)
 {
-  switch(Ctl)
+  switch(Ctl.State)
   {
     case MOTOR_INIT:
       MCL_Init();
@@ -112,7 +112,8 @@ void MCL_Init(void)
 //  #endif
 
 //  Ctl.State = MOTOR_STOP;
-	Ctl= MOTOR_STOP;
+	
+	Ctl.State= MOTOR_STOP;
 }
 
 ///*******************************************************************************
@@ -165,7 +166,7 @@ void MCL_Stop(void)
 //    DRV_OE_ON;
 //  }
 
-	Ctl=MOTOR_READY;
+	Ctl.State=MOTOR_READY;
 
 }
 

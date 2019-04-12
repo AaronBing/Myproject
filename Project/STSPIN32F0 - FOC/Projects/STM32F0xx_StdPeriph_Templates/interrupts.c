@@ -86,6 +86,8 @@ void ADC1_IRQHandler (void)
 		
 		FocFlagAdcOK = 1;
 	}
+	
+	//当自测通过后，开始测试hall角度，有位置偏转后开始输出
 	if (FocSelfCheckOK)					//自测通过
 	{
 		MotorFetAngleFun ();				//====================================运行 电机角度检测
@@ -97,6 +99,8 @@ void ADC1_IRQHandler (void)
 	MotorCurr_ab.qI_Component1 =    FocMotorPhaseAOffset - FocMotorCurA;			//先进行自测，再到这里输出自测的差值
 	MotorCurr_ab.qI_Component2 = 	FocMotorPhaseBOffset - FocMotorCurB;
 	MotorAtatVolt_qd.qV_Component1 = 300;			//TiaoSuPWM;之前是从窗口获得初值
+	
+	//自测通过，并且有hall角度变动后，开始输出
 	if ( FocSelfCheckOK )
 	{
 		if ( MotorFlagMove )			//检测到启动位置
@@ -126,7 +130,7 @@ void TIM1_CC_IRQHandler (void)
 			X ++;
 			if(X > 100)
 			TIM1->BDTR &= (~0x8000);	//TIM break and dead-time register,   关掉pwm输出
-			
+			Ctl.State=MOTOR_FAILURE;
 			//TIM1->BDTR |= (0x8000);
 		}
 		else  X = 0;
@@ -134,7 +138,7 @@ void TIM1_CC_IRQHandler (void)
 		if(MsFlag > 50)
 			MsFlag = 0;
 		
-		TIM1->SR &= 0XFFEF;			//
+		TIM1->SR &= 0XFFEF;			//置位
 	}	
 }
 void Uart_Buff_Clear (void)  

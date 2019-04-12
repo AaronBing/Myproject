@@ -28,11 +28,22 @@ typedef enum
   MOTOR_FAILURE    = 9      //错误    9
 }Status_TypeDef;
 
+typedef enum
+{ 
+  NONE      = 0,          //无故障           0
+  E_FAIL    = 1,          //模块保护         1
+  E_OC      = 2,          //过流保护         2
+  E_OL      = 3,          //过载保护         3
+  E_OV      = 4,          //过压保护         4
+  E_UV      = 5,          //欠压保护         5
+}Error_TypeDef;
+
+
 typedef struct
 {
-  Status_TypeDef State;             //系统状态
-  
-} MCL_TypeDef;
+	Status_TypeDef State;             //系统状态
+	Error_TypeDef	Error;
+}MCL_TypeDef;
 
 //typedef enum
 //{ 
@@ -241,6 +252,6 @@ typedef struct
 
 ///******************* (C) COPYRIGHT 2014 FT *****END OF FILE****/
 
-extern Status_TypeDef Ctl;
+extern MCL_TypeDef Ctl;
 extern void MCL_Function(void);
 
