@@ -28,11 +28,13 @@ typedef enum
 typedef enum
 { 
   NONE      = 0,          //无故障           0
-  E_FAIL    = 1,          //模块保护         1
+  E_HALL    = 1,          //HALL保护         1
   E_OC      = 2,          //过流保护         2
   E_OL      = 3,          //过载保护         3
   E_OV      = 4,          //过压保护         4
   E_UV      = 5,          //欠压保护         5
+  E_INPUT   = 6,		  //速度输入         6
+  E_CURR    = 7,		  //基准电流			7
 }Error_TypeDef;
 
 

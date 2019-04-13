@@ -18,7 +18,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 MCL_TypeDef Ctl;
-
+u8 Tabflag=0;
 /* Private define ------------------------------------------------------------*/
 
 
@@ -90,7 +90,61 @@ void MCL_Function(void)
 *******************************************************************************/
 void UI(void)
 {
+	//建立一个tab09标志位，当有输入09的时候使能，便输出当前状态，并且复位。
+	if(Tabflag){
+		if(Ctl.State != MOTOR_FAILURE){	//正常运行时输入当前状态
+			 switch(Ctl.State)
+			{
+				case MOTOR_INIT:
+					
+					break;
+				case MOTOR_STOP:
+      
+					break;
+				case MOTOR_OPENLOOP:     
+					
+					break;
+				case MOTOR_NORMAL:
+					
+					break;
+				case MOTOR_FAILURE:
+					
+					break;
+				default:
+					break;
+			}
+		}else{									//输出错误原因
+			   switch(Ctl.Error){
+					case E_HALL:		 //HALL保护         1
+
+						break;
+					case  E_OC :         //过流保护         2
+      
+						break;
+					case  E_OL:          //过载保护         3    
+						
+						break;
+					case E_OV:           //过压保护         4
+						
+						break;
+					case E_UV:           //欠压保护         5
+						
+						break;
+					case E_INPUT:		  //速度输入         6
+						
+						break;
+					case E_CURR:		  //基准电流			7
+						
+						break;
+
+					default:
+						break;
+				}
+		}
+		Tabflag=0;			//输出置位
+	}
 	
+
 }
 
 
@@ -105,6 +159,7 @@ void UI(void)
 void MCL_Init(void)
 {
 	
+	while(MsCnt<50){}//先延迟50ms，然后进入stop模式，开始检测基准电流
 	Ctl.State= MOTOR_STOP;
 }
 
@@ -118,13 +173,7 @@ void MCL_Init(void)
 void MCL_Stop(void)
 {
 		
-	if(MsCnt>50)
-	{
-		
-		
-		
-		
-	}
+
 	
 	
 	
@@ -200,8 +249,10 @@ void MCL_Stop(void)
 //    Ctl.State =  MOTOR_READY;
 //    DRV_OE_ON;
 //  }
+
+
 	TIM1->BDTR &= (~0x8000);		//pwm不输出
-	Ctl.State=MOTOR_OPENLOOP;
+	//Ctl.State=MOTOR_OPENLOOP;
 
 }
 
@@ -309,19 +360,40 @@ void MCL_Normal(void)
 	if((MotorCurHall == 7) || (MotorCurHall == 0)) 
 	{
 		Ctl.State= MOTOR_FAILURE;
+		Ctl.Error=E_HALL;
 	}	
 	
 	//电位器检测
 	if( SpeedPWM == 0 )  
 	{
 		Ctl.State= MOTOR_FAILURE;
+		Ctl.Error=E_INPUT;
 	}
 	
-	//过压，欠压判断
-	if((RegularConvData_Tab[3] < 2314) || (RegularConvData_Tab[3] > 3400) )  //过压，欠压保护
+	//过压
+	if((RegularConvData_Tab[3] > 3400) )  //过压，欠压保护
 	{
 		Ctl.State= MOTOR_FAILURE;
+		Ctl.Error=E_OV;
 	}
+	
+	//欠压判
+	if((RegularConvData_Tab[3] < 2314) )  //过压，欠压保护
+	{
+		Ctl.State= MOTOR_FAILURE;
+		Ctl.Error=E_UV;
+	}
+	
+	//过流保护
+	if((RegularConvData_Tab[0] > 314) )  //过压，欠压保护
+	{
+		Ctl.State= MOTOR_FAILURE;
+		Ctl.Error=E_OC;
+	}
+	
+	
+	
+	
 	
 	
 //  if(Ctl.gStartC == FALSE)

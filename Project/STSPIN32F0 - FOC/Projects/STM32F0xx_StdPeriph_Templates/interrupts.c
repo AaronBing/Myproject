@@ -3,8 +3,8 @@
 
 
 uint32_t MsCnt=0;
-
-
+uint16_t sumA=0,sumB=0;
+uint16_t sumCnt=0;
 //extern uint32_t	FocSelfCheckOK;
 extern int16_t 	MotorFlagMove;
 extern Curr_Components 		MotorCurr_ab;
@@ -83,8 +83,36 @@ void ADC1_IRQHandler (void)
 	{
 		FocTime64usCnt = 0;
 		MsCnt++;
-//  		MsFlag ++;
-//		FocTime1msFlag = 1;
+
+		if(Ctl.State == MOTOR_STOP)
+		{
+			if(sumCnt<16)		//累加16次，
+			{
+				sumA += FocMotorCurA;	
+				sumB += FocMotorCurB;			
+			}
+			else
+			{
+				FocMotorPhaseAOffset = sumA >> 4;	
+				FocMotorPhaseBOffset = sumB >> 4;		
+				if ( (FocMotorPhaseAOffset > 2234) 		//基准电流不在1614-2234这个范围内
+					|| (FocMotorPhaseAOffset < 1614) 
+					|| (FocMotorPhaseBOffset > 2234) 
+					|| (FocMotorPhaseBOffset < 1614) )
+				{
+					Ctl.State=MOTOR_FAILURE;
+					Ctl.Error= E_CURR;			//基准电流保护
+					
+				}else{
+					Ctl.State=MOTOR_OPENLOOP;
+				}
+				
+				
+			}
+		}
+		
+		
+		
 	}
 	if (++FocGetAdcCnt >= 3)			//采集3次
 	{
