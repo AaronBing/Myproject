@@ -17,34 +17,37 @@
 #include "main.h"
 
 /* Private typedef -----------------------------------------------------------*/
-/* Private define ------------------------------------------------------------*/
-/* Private macro -------------------------------------------------------------*/
-/* Private variables ---------------------------------------------------------*/
 MCL_TypeDef Ctl;
 
+/* Private define ------------------------------------------------------------*/
 
+
+/* Private macro -------------------------------------------------------------*/
+
+
+/* Private variables ---------------------------------------------------------*/
+extern u8 MotorCurHall;
+extern u16 SpeedPWM;
+extern uint16_t RegularConvData_Tab[4];   
+extern uint32_t MsCnt;
 /* Private function prototypes -----------------------------------------------*/
-
 void MCL_Function(void);
+void UI(void);
+
+static void MCL_Init(void); 
+static void MCL_Stop(void);
+static void MCL_OpenLoop(void);
+static void MCL_Normal(void);
+static void MCL_Failure(void);
 
 //void MCL_Bkin_Isr(void);
 //void MainISR(void);
 
-static void MCL_Init(void); 
-static void MCL_Stop(void);
-//static void MCL_Ready(void);
-//static void MCL_Precharge(void);
-//static void MCL_Alignment(void);
-//static void MCL_OpenLoop(void);
-//static void MCL_Normal(void);
 
-//static void MCL_Failure(void);
 
-//static void U_Task_Ptr(void);
-//static void A_Task_Ptr(void);  
-//static void B_Task_Ptr(void);
-//static void C_Task_Ptr(void);
-//static void D_Task_Ptr(void);
+
+
+
 
 /* Private functions ---------------------------------------------------------*/
 /*******************************************************************************
@@ -64,28 +67,33 @@ void MCL_Function(void)
     case MOTOR_STOP:
       MCL_Stop();
       break;
-    case MOTOR_READY:
-      //MCL_Ready();
-      break; 
-    case MOTOR_PRECHARGE:
-      //MCL_Precharge();
-      break;
-    case MOTOR_ALIGNMENGT:
-      //MCL_Alignment();
-      break;
     case MOTOR_OPENLOOP:     
-      //MCL_OpenLoop();
+      MCL_OpenLoop();
       break;
     case MOTOR_NORMAL:
-      //MCL_Normal();
+      MCL_Normal();
       break;
     case MOTOR_FAILURE:
-      //MCL_Failure();
+      MCL_Failure();
       break;
     default:
       break;
   }
 }
+
+/*******************************************************************************
+* Function Name  : UI
+* Description    : 
+* Input          : None
+* Output         : None
+* Return         : 
+*******************************************************************************/
+void UI(void)
+{
+	
+}
+
+
 
 /*******************************************************************************
 * Function Name  : MCL_Init
@@ -96,22 +104,6 @@ void MCL_Function(void)
 *******************************************************************************/
 void MCL_Init(void)
 {
-//  MCL_ModuleInit();
-
-//  #if(FD6536PIN_EN) 
-//  FD6536_EN;
-//  #endif
-
-//  #if (EFAL == FO_CMP)
-//  SetBit(CMP_CR1, CMP3EN);  //下桥打开，自举电容充电导致硬件过流
-//  #elif (EFAL == FO_INT)
-//  EX0 = 1;
-//  #elif (EFAL == FO_CMPINT)
-//  SetBit(CMP_CR1, CMP3EN);
-//  EX0 = 1;
-//  #endif
-
-//  Ctl.State = MOTOR_STOP;
 	
 	Ctl.State= MOTOR_STOP;
 }
@@ -119,13 +111,56 @@ void MCL_Init(void)
 ///*******************************************************************************
 //* Function Name  : MCL_Stop
 //* Description    : 
-//无HALL停机模式，打开6个边沿检测，SAMR=0
 //* Input          : None
 //* Output         : None
 //* Return         : 
 //*******************************************************************************/
 void MCL_Stop(void)
 {
+		
+	if(MsCnt>50)
+	{
+		
+		
+		
+		
+	}
+	
+	
+	
+
+	//	while ( !FocTime1msFlag );
+//		FocTime1msFlag = 0;
+	
+	
+	
+//	sum1 = 0;
+//	sum  = 0;	
+//	for ( i = 0; i < 16; i++ )		//累加16次，
+//	{
+//		sum1 += FocMotorCurA;	
+//		sum  += FocMotorCurB;			
+////		while ( !FocTime1msFlag );
+////		FocTime1msFlag = 0;
+//	}
+//	FocMotorPhaseAOffset = sum1 >> 4;	
+//	FocMotorPhaseBOffset = sum  >> 4;		
+//	if ( (FocMotorPhaseAOffset > 2234) 		//基准电流不在1614-2234这个范围内
+//      || (FocMotorPhaseAOffset < 1614) 
+//      || (FocMotorPhaseBOffset > 2234) 
+//      || (FocMotorPhaseBOffset < 1614) )
+//	{
+//		Ctl.State=MOTOR_FAILURE;
+//		TIM1->BDTR &= (~0x8000);		//关闭pwm
+//	}	
+//	FocSelfCheckOK = 1;
+	
+	
+	
+	
+	
+	
+	
 //  u16 tValue;                         
 //  #if (POS_FB_MODE == SensorLess) 
 //  if((CMP_SAMR != 0)||(TIM1_CR4 != 7))
@@ -165,183 +200,10 @@ void MCL_Stop(void)
 //    Ctl.State =  MOTOR_READY;
 //    DRV_OE_ON;
 //  }
-
-	Ctl.State=MOTOR_READY;
+	TIM1->BDTR &= (~0x8000);		//pwm不输出
+	Ctl.State=MOTOR_OPENLOOP;
 
 }
-
-///*******************************************************************************
-//* Function Name  : MCL_Ready
-//* Description    : 
-//* Input          : None
-//* Output         : None
-//* Return         : 
-//*******************************************************************************/
-//void MCL_Ready(void)
-//{
-//  #if (POS_FB_MODE == HallSensor)
-//  MCL_ModuleDefault();
-//  giEventCounter = 0;
-//  Ctl.State =  MOTOR_PRECHARGE ;
-
-//  #elif (POS_FB_MODE == SensorLess)
-//  if(Drv.Stk.Calcnms == 0x7F)
-//  { 
-//    MCL_ModuleDefault();
-//    
-//    Drv.Stk.Calcnms = 0;
-//    
-//    if((CMP_SAMR != 0)||(TIM1_CR4 != 7))
-//    {
-//      CMP_SAMR = 0;
-//      ANGLE_MASK(0);
-//      ClrBit(TIM1_CR3, T1TIS1);       //TIM1_DBR7
-//      SetBit(TIM1_CR3, T1TIS0);       //CMP
-//      TIM1_CR4 = 0x07;                //选择 TIM1_DBRx 1 2 3 4 5 6 7
-//    }    
-//    
-//    giEventCounter = 0;
-//    Drv.Stk.Calcnms = 0;
-//    SetBit(TIM1_CR2, T1BRS);         
-//  }
-//  else
-//  {
-//    Drv_PosTrack();
-//  }
-
-//  #endif
-//  if(Ctl.gStartC == FALSE) 
-//  {
-//    Ctl.State = MOTOR_STOP;
-//  }
-//     
-//}
-
-///*******************************************************************************
-//* Function Name  : MCL_Precharge
-//* Description    : 20170825验证
-//* Input          : None
-//* Output         : None
-//* Return         : 
-//*******************************************************************************/
-//void MCL_Precharge(void)
-//{
-//  #if (CHARGENMS != 0)
-//  u8 temp = CHARGENMS;
-//  if(temp >= 10)
-//    temp = 10;
-//  Drv.PWM.DutyCur = CHARGEDUTY;      //充电占空比
-//  Drv_PWM_Update(Drv.PWM.DutyCur);   //占空比给定
-//  EA = 0;
-//  DRV_DR = MDU_MULA_U16(MDUControl.DutyCur,Drv.PWM.DutyArr+2,15);
-//  DRV_CMR = PWM_UL_PWM;    //PWM_UL_ON;
-//  gDelayms(temp);
-//  DRV_CMR = PWM_ULVL_PWM;  //PWM_VL_ON; //TPWM_UVL_PWM
-//  gDelayms(temp);
-//  DRV_CMR = PWM_ULVLWL_PWM;//PWM_WL_ON; //PWM_ULVLWL_ON
-//  gDelayms(temp);
-//  DRV_CMR = PWMOUT_OFF;
-//  gDelayms(1);
-//  EA = 1;
-//  #endif
-
-//  #if (POS_FB_MODE == HallSensor)
-//    #if(SPEED_CLOSE_EN)
-//    pid_spd.Out = 0;
-//    #endif
-//    Ctl.Tim.STAnms = 0;
-//    Ctl.Spd.refTar = SPEED_REF_TAR;
-//    Ctl.Spd.refCur = SPEED_REF_INIT; 
-//    Drv.PWM.DutyTar = MOTOR_INIT_DUTY;          //充电占空比
-//    Drv.PWM.DutyCur = Drv.PWM.DutyTar;
-//    Drv_PWM_Update(Drv.PWM.DutyCur);           //占空比给定
-
-//    Hall_IRQHandler();                             //hall读取  
-//    TIM1_CR4 = Ctl.gStepCur;
-//    Ctl.State = MOTOR_NORMAL;                          
-
-//  #elif (POS_FB_MODE == SensorLess)
-//  Ctl.Alig.NmsCount = 0;
-//  Drv.PWM.DutyTar = Ctl.Alig.duty;
-//  Drv.PWM.DutyCur = Drv.PWM.DutyTar; 
-//  Drv_PWM_Update(Drv.PWM.DutyCur);  //占空比给定
-//  Ctl.State = MOTOR_ALIGNMENGT; 
-
-//  #endif
-
-//  if(Ctl.gStartC == FALSE)
-//  {
-//    Ctl.State = MOTOR_STOP;
-//  }    
-//}
-
-///*******************************************************************************
-//* Function Name  : MCL_Alignment
-//* Description    : 
-//* Input          : None
-//* Output         : None
-//* Return         : 
-//*******************************************************************************/
-//void MCL_Alignment(void)
-//{
-//#if (POS_FB_MODE == SensorLess )
-//  if(Ctl.Alig.NmsCount < Ctl.Alig.timNms)     // 1000ms   2*Ctl.Alig.timNms
-//  {
-//    //AH->BL,CL    U->V/W         
-//    DRV_CMR = PWM_UHVL_PWM;//PWM_WHVL_PWM;
-//    Drv.PWM.DutyCur = Ctl.Alig.duty; 
-//    Drv_PWM_Update(Ctl.Alig.duty);     //占空比给定
-//  }
-//  else
-//  {
-//    DRV_CMR = PWMOUT_OFF;
-
-//    Drv.PWM.DutyTar = Ctl.Ramp.DutySta;
-//    Drv.PWM.DutyCur = Ctl.Ramp.DutySta; 
-
-//    #if (MOTORROTORCALC ==2)        
-//    Ctl.gStepCur = DRV_IRPD_F(5,20,2);    //12 24 10
-//    #else
-//    Ctl.gStepPre = 0;
-
-//    if (Ctl.gDirectionC == CW) //U->W
-//    {
-//      Ctl.gStepCur = 1;          //1
-//    }
-//    else if (Ctl.gDirectionC == CCW)
-//    {                        //W->V
-//      Ctl.gStepCur = 1;        //2
-//    }    
-//    #endif
-//    
-//    CMP_SAMR = (PWM_MASK+PWM_DELAY)<<4;
-//    CMP_SAMR += PWM_MASK;
-//    //ClrBit(TIM1_IER, T1PDIE);     //位置检测中断
-//    SetBit(CMP_CR3, SAMSEL1);     // 使能ON 采样
-//    ClrBit(CMP_CR3, SAMSEL0);  
-//    
-//    TIM1_CR4 = 1;                   //选择TIM1_DBRx  
-//    ANGLE_MASK(60);                   //BCCR7 -> 60 度
-
-//    Drv.PWM.DutyArr = RAMP_PWMARR;
-//    DRV_ARR = Drv.PWM.DutyArr;
-//    DRV_COMR = PWM_FLOW;
-//    //Ctl.Ramp.cpNmsCount = Ctl.Ramp.cpNms; 
-//    Drv.PWM.DutyIncValue = Ctl.Ramp.Dutystep;   //loop INC DEC
-//    Drv.PWM.DutyDecValue = Ctl.Ramp.Dutystep;
-//    Drv.PWM.DutyTar = Ctl.Ramp.DutyEnd;
-//    Drv.PWM.DutyCur = Ctl.Ramp.DutySta;
-//    MDUControl.DutyCur = Drv.PWM.DutyCur;
-//    DRV_DR = MDU_MULA_U16(MDUControl.DutyCur,Drv.PWM.DutyArr+2,15);
-//    //NSS_ONOFF;
-//    Ctl.State = MOTOR_OPENLOOP;
-//  }
-//  if(Ctl.gStartC == FALSE)
-//  {
-//    Ctl.State = MOTOR_STOP;
-//  }    
-//#endif  
-//}
 
 ///*******************************************************************************
 //* Function Name  : MCL_OpenLoop  RampUp
@@ -350,8 +212,8 @@ void MCL_Stop(void)
 //* Output         : None
 //* Return         : 
 //*******************************************************************************/
-//void MCL_OpenLoop(void)
-//{  
+void MCL_OpenLoop(void)
+{  
 //  Drv_SmartStartCalc();                 
 //#if (POS_FB_MODE == SensorLess)
 //  #if (WAIT_STEP == WAIT_RAMPUP)
@@ -430,8 +292,9 @@ void MCL_Stop(void)
 //    Ctl.State = MOTOR_STOP;
 //  }  
 //#endif  
-
-//}
+	TIM1->BDTR |= (0x8000);		//启动输出PWM
+	Ctl.State=MOTOR_NORMAL;
+}
 
 ///*******************************************************************************
 //* Function Name  : MCL_Normal
@@ -440,8 +303,27 @@ void MCL_Stop(void)
 //* Output         : None
 //* Return         : 
 //*******************************************************************************/
-//void MCL_Normal(void)
-//{ 
+void MCL_Normal(void)
+{ 
+	//hall检测，
+	if((MotorCurHall == 7) || (MotorCurHall == 0)) 
+	{
+		Ctl.State= MOTOR_FAILURE;
+	}	
+	
+	//电位器检测
+	if( SpeedPWM == 0 )  
+	{
+		Ctl.State= MOTOR_FAILURE;
+	}
+	
+	//过压，欠压判断
+	if((RegularConvData_Tab[3] < 2314) || (RegularConvData_Tab[3] > 3400) )  //过压，欠压保护
+	{
+		Ctl.State= MOTOR_FAILURE;
+	}
+	
+	
 //  if(Ctl.gStartC == FALSE)
 //  {
 //    DRV_CMR = PWMOUT_OFF;
@@ -471,8 +353,8 @@ void MCL_Stop(void)
 //      Ctl.Stall.u8Num = 0;                     //清除堵转故障 次数标记     
 //    }
 //  #endif
-
-//}
+	
+}
 
 ///*******************************************************************************
 //* Function Name  : MCL_Failure
@@ -481,8 +363,8 @@ void MCL_Stop(void)
 //* Output         : None
 //* Return         : 
 //*******************************************************************************/
-//void MCL_Failure(void)
-//{
+void MCL_Failure(void)
+{
 //  DRV_CMR = PWMOUT_OFF;
 //  DRV_OE_OFF;             //
 //  Ctl.gStartC = FALSE;
@@ -576,7 +458,7 @@ void MCL_Stop(void)
 //  }
 //  #endif
 
-//}
+}
 
 ///*******************************************************************************
 //* Function Name  : MCL_Bkin_Isr

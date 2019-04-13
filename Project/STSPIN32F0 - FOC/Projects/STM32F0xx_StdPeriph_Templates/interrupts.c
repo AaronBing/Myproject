@@ -1,7 +1,11 @@
 
 #include "main.h"
 
-extern uint32_t	FocSelfCheckOK;
+
+uint32_t MsCnt=0;
+
+
+//extern uint32_t	FocSelfCheckOK;
 extern int16_t 	MotorFlagMove;
 extern Curr_Components 		MotorCurr_ab;
 extern Volt_Components 		MotorAtatVolt_qd;
@@ -15,17 +19,18 @@ uint16_t	vadc_pwron_bat;
 uint16_t	vadc_ibus;
 uint16_t	vadc_ia, vadc_ib, vadc_ic;
 uint32_t	FocTime64usCnt; 
-uint32_t	FocTime1msFlag
-;  
-uint32_t	MsFlag; 		//
+//uint32_t	FocTime1msFlag;  
+//uint32_t	MsFlag; 		//
 
 uint32_t	FocGetAdcCnt;
 uint32_t	FocFlagAdcOK;
-uint16_t 	FocBootVolBuf[4];
+//uint16_t 	FocBootVolBuf[4];
 uint16_t	FocAdcBatteryBuf[4] = {0};
 uint16_t    FocMotorLoadBuf[4] = {0};
 uint16_t	FocMotorCurA;
 uint16_t	FocMotorCurB;
+
+
 uint8_t cnt = 0;
 uint8_t res_old = 0;
 uint8_t res_old1 = 0;
@@ -34,9 +39,9 @@ uint8_t USART_RX_BUF[25];
 u8 Yibiao_Set, fuzhiwc_flg = 0;
 u8 CiGangShu;		//极对数？
 u16 LunJing;      //轮径？
-u16 TiaoSuPWM = 0;		//调速？
-u16 TiaoSuPWM1=0;
-u16 TiaoSuPWM2=0;
+u16 SpeedPWM = 0;		//调速？
+u16 SpeedPWM1=0;
+u16 SpeedPWM2=0;
 u8 Yibiao_CheckBit;		//仪表
 u8 zero_run_flg;
 
@@ -55,7 +60,7 @@ extern void Uart_Buff_Clear (void);
 //	uint16_t filter_max;
 //	for(filter_cnt = 0;filter_cnt < 5;filter_cnt ++)
 //	{
-//		 filter_pwm[filter_cnt] = TiaoSuPWM;
+//		 filter_pwm[filter_cnt] = SpeedPWM;
 //		filter_max = filter_pwm[0];
 //		if( filter_pwm[filter_cnt] >  filter_max)	
 //			filter_max = filter_pwm[filter_cnt];
@@ -77,8 +82,9 @@ void ADC1_IRQHandler (void)
 	if (++FocTime64usCnt >= 16)				// 16*64=1024  约等于1ms
 	{
 		FocTime64usCnt = 0;
-		MsFlag ++;
-		FocTime1msFlag = 1;
+		MsCnt++;
+//  		MsFlag ++;
+//		FocTime1msFlag = 1;
 	}
 	if (++FocGetAdcCnt >= 3)			//采集3次
 	{
@@ -88,7 +94,7 @@ void ADC1_IRQHandler (void)
 	}
 	
 	//当自测通过后，开始测试hall角度，有位置偏转后开始输出
-	if (FocSelfCheckOK)					//自测通过
+	if (Ctl.State == MOTOR_NORMAL)					//自测通过
 	{
 		MotorFetAngleFun ();				//====================================运行 电机角度检测
 	}
@@ -98,10 +104,10 @@ void ADC1_IRQHandler (void)
 	FocAdcBatteryBuf[FocGetAdcCnt]  = RegularConvData_Tab[3];       //电源电压？？
 	MotorCurr_ab.qI_Component1 =    FocMotorPhaseAOffset - FocMotorCurA;			//先进行自测，再到这里输出自测的差值
 	MotorCurr_ab.qI_Component2 = 	FocMotorPhaseBOffset - FocMotorCurB;
-	MotorAtatVolt_qd.qV_Component1 = 300;			//TiaoSuPWM;之前是从窗口获得初值
+	MotorAtatVolt_qd.qV_Component1 = 300;			//SpeedPWM;之前是从窗口获得初值
 	
 	//自测通过，并且有hall角度变动后，开始输出
-	if ( FocSelfCheckOK )
+	if ( Ctl.State == MOTOR_NORMAL )
 	{
 		if ( MotorFlagMove )			//检测到启动位置
 		{	
@@ -114,7 +120,7 @@ void ADC1_IRQHandler (void)
 			MotorParkFun();		
 			MotorFlowRegFun();
 		}
-		MotorRevParkFun();			//反park变化？？
+		MotorRevParkFun();			//反park变化
  		MotorCtrlFun();
 	}
 }
@@ -125,18 +131,18 @@ void TIM1_CC_IRQHandler (void)
 	{		
 		ADC_StartOfConversion(ADC1);		//开始连续采	
 
-		if(RegularConvData_Tab[0] > 310) 		//DMA里存储的adc采样值，		320次大于310
-		{										//过流保护的值
-			X ++;
-			if(X > 100)
-			TIM1->BDTR &= (~0x8000);	//TIM break and dead-time register,   关掉pwm输出
-			Ctl.State=MOTOR_FAILURE;
-			//TIM1->BDTR |= (0x8000);
-		}
-		else  X = 0;
-		
-		if(MsFlag > 50)
-			MsFlag = 0;
+//		if(RegularConvData_Tab[0] > 310) 		//DMA里存储的adc采样值，		320次大于310
+//		{										//过流保护的值
+//			X ++;
+//			if(X > 100)
+//			TIM1->BDTR &= (~0x8000);	//TIM break and dead-time register,   关掉pwm输出
+//			Ctl.State=MOTOR_FAILURE;
+//			//TIM1->BDTR |= (0x8000);
+//		}
+//		else  X = 0;
+//		
+//		if(MsFlag > 50)
+//			MsFlag = 0;
 		
 		TIM1->SR &= 0XFFEF;			//置位
 	}	
@@ -229,7 +235,7 @@ void USART1_IRQHandler (void)
 			 Yibiao_Set=USART_RX_BUF[5];
 			 CiGangShu=USART_RX_BUF[6];
 			 LunJing=(USART_RX_BUF[7]<<8)+USART_RX_BUF[8];
-			 TiaoSuPWM=(USART_RX_BUF[16]<<8)+USART_RX_BUF[17];
+			 SpeedPWM=(USART_RX_BUF[16]<<8)+USART_RX_BUF[17];
 			 Yibiao_CheckBit=USART_RX_BUF[19];
 			 fuzhiwc_flg = 1;			 
 			 if(USART_RX_BUF[5] & 0x40)

@@ -20,12 +20,9 @@ typedef enum
   MOTOR_NONE       = 0,     //        0
   MOTOR_INIT       = 1,     //初始化  1
   MOTOR_STOP       = 2,     //停止    2
-  MOTOR_READY      = 3,     //准备    3
-  MOTOR_PRECHARGE  = 5,     //充电    5
-  MOTOR_ALIGNMENGT = 6,     //定位    6
-  MOTOR_OPENLOOP   = 7,     //启动    7
-  MOTOR_NORMAL     = 8,     //正常    8
-  MOTOR_FAILURE    = 9      //错误    9
+  MOTOR_OPENLOOP   = 3,     //启动    3
+  MOTOR_NORMAL     = 4,     //正常    4			在正常模式中检测是否异常
+  MOTOR_FAILURE    = 5      //错误    5			在错误模式中输出异常信息，设置各种错误重启			
 }Status_TypeDef;
 
 typedef enum
@@ -253,5 +250,7 @@ typedef struct
 ///******************* (C) COPYRIGHT 2014 FT *****END OF FILE****/
 
 extern MCL_TypeDef Ctl;
+
 extern void MCL_Function(void);
+extern void	UI(void);
 

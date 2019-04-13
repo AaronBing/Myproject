@@ -2,7 +2,7 @@
 
 
 #include "main.h"
-extern uint16_t 	MotorFinalEleAngle;
+extern uint16_t 	MotorFinalEleAngle;			//外部来的，那这个是最新的电角度吗
 Curr_Components 	MotorCurr_ab;
 Volt_Components 	MotorAtatVolt_qd;
 Curr_Components  	MotorCurrAlfaBeta;
