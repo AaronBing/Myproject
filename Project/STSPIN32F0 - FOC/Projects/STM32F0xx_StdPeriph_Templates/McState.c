@@ -28,8 +28,17 @@ u8 Tabflag=0;
 /* Private variables ---------------------------------------------------------*/
 extern u8 MotorCurHall;
 extern u16 SpeedPWM;
-extern uint16_t RegularConvData_Tab[4];   
+extern uint16_t RegularConvData_Tab[5];   
 extern uint32_t MsCnt;
+extern uint16_t FocSpeedRef;
+extern  uint32_t	FocTime1msFlag;
+
+uint16_t FocSpeedAdd;
+uint16_t FocSpeedIN;
+uint16_t FocSpeedout;
+uint16_t FocMotorAdd;
+uint16_t FocMotorIn;
+extern uint16_t   FocMotorRef;
 /* Private function prototypes -----------------------------------------------*/
 void MCL_Function(void);
 void UI(void);
@@ -159,7 +168,7 @@ void UI(void)
 void MCL_Init(void)
 {
 	
-	while(MsCnt<50){}//先延迟50ms，然后进入stop模式，开始检测基准电流
+	//while(MsCnt<50){}//先延迟50ms，然后进入stop模式，开始检测基准电流
 	Ctl.State= MOTOR_STOP;
 }
 
@@ -178,11 +187,11 @@ void MCL_Stop(void)
 	
 	
 
-	//	while ( !FocTime1msFlag );
+//	//	while ( !FocTime1msFlag );
 //		FocTime1msFlag = 0;
-	
-	
-	
+//	
+//	
+//	
 //	sum1 = 0;
 //	sum  = 0;	
 //	for ( i = 0; i < 16; i++ )		//累加16次，
@@ -203,7 +212,7 @@ void MCL_Stop(void)
 //		TIM1->BDTR &= (~0x8000);		//关闭pwm
 //	}	
 //	FocSelfCheckOK = 1;
-	
+//	
 	
 	
 	
@@ -356,45 +365,69 @@ void MCL_OpenLoop(void)
 //*******************************************************************************/
 void MCL_Normal(void)
 { 
+	uint16_t 	i;
 	//hall检测，
-	if((MotorCurHall == 7) || (MotorCurHall == 0)) 
-	{
-		Ctl.State= MOTOR_FAILURE;
-		Ctl.Error=E_HALL;
-	}	
+//	if((MotorCurHall == 7) || (MotorCurHall == 0)) 
+//	{
+//		Ctl.State= MOTOR_FAILURE;
+//		Ctl.Error=E_HALL;
+//	}	
 	
 	//电位器检测
-	if( SpeedPWM == 0 )  
-	{
-		Ctl.State= MOTOR_FAILURE;
-		Ctl.Error=E_INPUT;
-	}
+//	if( SpeedPWM == 0 )  
+//	{
+//		Ctl.State= MOTOR_FAILURE;
+//		Ctl.Error=E_INPUT;
+//	}
 	
 	//过压
-	if((RegularConvData_Tab[3] > 3400) )  //过压，欠压保护
-	{
-		Ctl.State= MOTOR_FAILURE;
-		Ctl.Error=E_OV;
-	}
+//	if((RegularConvData_Tab[4] > 3400) )  //过压，欠压保护
+//	{
+//		Ctl.State= MOTOR_FAILURE;
+//		Ctl.Error=E_OV;
+//	}
+//	
+//	//欠压判
+//	if((RegularConvData_Tab[4] < 2314) )  //过压，欠压保护
+//	{
+//		Ctl.State= MOTOR_FAILURE;
+//		Ctl.Error=E_UV;
+//	}
 	
-	//欠压判
-	if((RegularConvData_Tab[3] < 2314) )  //过压，欠压保护
-	{
-		Ctl.State= MOTOR_FAILURE;
-		Ctl.Error=E_UV;
-	}
 	
+
 	//过流保护
-	if((RegularConvData_Tab[0] > 314) )  //过压，欠压保护
-	{
-		Ctl.State= MOTOR_FAILURE;
-		Ctl.Error=E_OC;
+//	for(i=0;i<8;i++){
+//		FocMotorAdd+=FocMotorRef;
+//		while ( !FocTime1msFlag )
+//			FocTime1msFlag = 0;				
+//	}
+//	
+//	FocMotorIn = FocMotorAdd/8;	//经过滤波后的初始值，范围应该再290-800之间。
+//	FocMotorAdd=0;
+//	if((FocMotorIn> 3314) )  //过压，欠压保护
+//	{
+//		Ctl.State= MOTOR_FAILURE;
+//		Ctl.Error=E_OC;
+//	}
+	
+	
+	
+//	RegularConvData_Tab[3];/////////////////////////
+	for(i=0;i<4;i++){
+		FocSpeedAdd+=FocSpeedRef;
+		while ( !FocTime1msFlag )
+			FocTime1msFlag = 0;				
 	}
 	
-	
-	
-	
-	
+	FocSpeedIN = FocSpeedAdd/4;	//经过滤波后的初始值，范围应该再290-800之间。
+	FocSpeedAdd=0;
+	if(FocSpeedIN>310)		//启动初始值
+	{
+		FocSpeedout=(FocSpeedIN-295)*1.8;
+	}else{
+		FocSpeedout=0;
+	}	
 	
 //  if(Ctl.gStartC == FALSE)
 //  {

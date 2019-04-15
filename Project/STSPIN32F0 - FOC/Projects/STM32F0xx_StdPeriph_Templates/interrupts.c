@@ -5,31 +5,36 @@
 uint32_t MsCnt=0;
 uint16_t sumA=0,sumB=0;
 uint16_t sumCnt=0;
-//extern uint32_t	FocSelfCheckOK;
+
+extern uint32_t	FocSelfCheckOK;
 extern int16_t 	MotorFlagMove;
 extern Curr_Components 		MotorCurr_ab;
 extern Volt_Components 		MotorAtatVolt_qd;
 extern uint16_t 	FocMotorPhaseAOffset;
 extern uint16_t 	FocMotorPhaseBOffset;
 extern uint16_t 	MotorFinalEleAngle;
-extern uint16_t     RegularConvData_Tab[4];
+extern uint16_t     RegularConvData_Tab[5];
 extern void TX_data(void);
 uint16_t	vadc_pwroff_bat;
 uint16_t	vadc_pwron_bat;
 uint16_t	vadc_ibus;
 uint16_t	vadc_ia, vadc_ib, vadc_ic;
 uint32_t	FocTime64usCnt; 
-//uint32_t	FocTime1msFlag;  
+uint32_t	FocTime1msFlag;  
 //uint32_t	MsFlag; 		//
 
 uint32_t	FocGetAdcCnt;
 uint32_t	FocFlagAdcOK;
 //uint16_t 	FocBootVolBuf[4];
 uint16_t	FocAdcBatteryBuf[4] = {0};
-uint16_t    FocMotorLoadBuf[4] = {0};
+//uint16_t    FocMotorLoadBuf[4] = {0};
+uint16_t 	FocSpeedRef=0;
 uint16_t	FocMotorCurA;
 uint16_t	FocMotorCurB;
+uint16_t   FocMotorRef;
 
+
+extern uint16_t FocSpeedout;
 
 uint8_t cnt = 0;
 uint8_t res_old = 0;
@@ -78,38 +83,38 @@ extern void Uart_Buff_Clear (void);
 void ADC1_IRQHandler (void)
 {
 	ADC_ClearFlag (ADC1, ADC_FLAG_EOC);		//End of conversion flag
-	//GPIO_SetBits (GPIOC, GPIO_Pin_13);      //PC13 设置电平干什么？
+	GPIO_SetBits (GPIOC, GPIO_Pin_13);      //PC13 设置电平干什么？
 	if (++FocTime64usCnt >= 16)				// 16*64=1024  约等于1ms
 	{
 		FocTime64usCnt = 0;
-		MsCnt++;
-
-		if(Ctl.State == MOTOR_STOP)
-		{
-			if(sumCnt<16)		//累加16次，
-			{
-				sumA += FocMotorCurA;	
-				sumB += FocMotorCurB;			
-			}
-			else
-			{
-				FocMotorPhaseAOffset = sumA >> 4;	
-				FocMotorPhaseBOffset = sumB >> 4;		
-				if ( (FocMotorPhaseAOffset > 2234) 		//基准电流不在1614-2234这个范围内
-					|| (FocMotorPhaseAOffset < 1614) 
-					|| (FocMotorPhaseBOffset > 2234) 
-					|| (FocMotorPhaseBOffset < 1614) )
-				{
-					Ctl.State=MOTOR_FAILURE;
-					Ctl.Error= E_CURR;			//基准电流保护
-					
-				}else{
-					Ctl.State=MOTOR_OPENLOOP;
-				}
-				
-				
-			}
-		}
+		//MsCnt++;
+		FocTime1msFlag = 1;
+		
+//		if(Ctl.State == MOTOR_STOP)
+//		{
+//			if(sumCnt<16)		//累加16次，
+//			{
+//				sumA += FocMotorCurA;	
+//				sumB += FocMotorCurB;		
+//				sumCnt++;
+//			}
+//			else
+//			{
+//				FocMotorPhaseAOffset = sumA >> 4;	
+//				FocMotorPhaseBOffset = sumB >> 4;		
+//				if ( (FocMotorPhaseAOffset > 2234) 		//基准电流不在1614-2234这个范围内
+//					|| (FocMotorPhaseAOffset < 1614) 
+//					|| (FocMotorPhaseBOffset > 2234) 
+//					|| (FocMotorPhaseBOffset < 1614) )
+//				{
+//					Ctl.State=MOTOR_FAILURE;
+//					Ctl.Error= E_CURR;			//基准电流保护
+//					
+//				}else{
+//					Ctl.State=MOTOR_OPENLOOP;
+//				}
+//			}
+//		}
 		
 		
 		
@@ -122,20 +127,23 @@ void ADC1_IRQHandler (void)
 	}
 	
 	//当自测通过后，开始测试hall角度，有位置偏转后开始输出
-	if (Ctl.State == MOTOR_NORMAL)					//自测通过
+	if (FocSelfCheckOK)					//自测通过
 	{
 		MotorFetAngleFun ();				//====================================运行 电机角度检测
 	}
-	FocMotorLoadBuf[FocGetAdcCnt]   = RegularConvData_Tab[0];  	  	//过流
+	//FocMotorLoadBuf[FocGetAdcCnt]   = RegularConvData_Tab[0];  	  	//过流
+	
+	FocMotorRef					    = RegularConvData_Tab[0]; 
 	FocMotorCurB 					= RegularConvData_Tab[1];	    //B相
 	FocMotorCurA 					= RegularConvData_Tab[2];		//A相
-	FocAdcBatteryBuf[FocGetAdcCnt]  = RegularConvData_Tab[3];       //电源电压？？
+	FocSpeedRef 				    = RegularConvData_Tab[3]>>2;       //电位器
+	FocAdcBatteryBuf[FocGetAdcCnt]  = RegularConvData_Tab[4];		//母线电压
 	MotorCurr_ab.qI_Component1 =    FocMotorPhaseAOffset - FocMotorCurA;			//先进行自测，再到这里输出自测的差值
 	MotorCurr_ab.qI_Component2 = 	FocMotorPhaseBOffset - FocMotorCurB;
-	MotorAtatVolt_qd.qV_Component1 = 300;			//SpeedPWM;之前是从窗口获得初值
+	MotorAtatVolt_qd.qV_Component1 = FocSpeedout;			//SpeedPWM;之前是从窗口获得初值	
 	
 	//自测通过，并且有hall角度变动后，开始输出
-	if ( Ctl.State == MOTOR_NORMAL )
+	if ( FocSelfCheckOK )
 	{
 		if ( MotorFlagMove )			//检测到启动位置
 		{	

@@ -54,9 +54,11 @@ int main(void)
 	
 	HardwareInit();
 	
+	Ctl.State=MOTOR_INIT;
+	board_self_test ();
 	//board_self_test ();
 	
-	Ctl.State=MOTOR_INIT;
+	
 	
 	while(1)
 	{	

@@ -6,7 +6,8 @@ int16_t 	MotorFlagMove;
 uint16_t 	MotorFinalEleAngle;
 
 //-----------------------------------------------------------------------------
-u8 MOTOR_PHASE_SEQUENCE[7] = {0,2,4,3,6,1,5}; //120度无刷电机 相位顺序表
+//u8 MOTOR_PHASE_SEQUENCE[7] = {0,2,4,3,6,1,5}; //120度无刷电机 相位顺序表
+u8 MOTOR_PHASE_SEQUENCE[7] = {5,7,6,4,0,1,3}; //60 相位顺序表
 
 u16 MotorTimePoleBuf[6]; //角度数组
 
@@ -223,7 +224,7 @@ void MotorFetAngleFun (void)
 
 		if ( MotorPosCur ==0 )
 		{
-			Ctl.State=MOTOR_FAILURE;
+  			Ctl.State=MOTOR_FAILURE;
 			//MotorErrorPosFlag = 1;			//错误标志位
 			TIM1->BDTR &= 0x7FFF;			//关闭pwm
 		}

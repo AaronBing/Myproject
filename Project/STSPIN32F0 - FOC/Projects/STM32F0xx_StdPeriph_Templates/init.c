@@ -2,12 +2,15 @@
 #include "main.h"
 
 #define ADC1_DR_Address	   0x40012440
-uint16_t RegularConvData_Tab[4];
+uint16_t RegularConvData_Tab[5];
+
 
 void rcc_init (void)
 {
 
 }
+
+
 /**
   * @brief GPIO Initialization Function
   * @param None
@@ -164,10 +167,16 @@ static void adc_init (void)
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
 	
 	/*PA3,PA4,PA5  Analog In/Out Mode */			//PA5 U相电流		PA4  V相电流     PA3母线电流
-	GPIO_InitStructure.GPIO_Pin =GPIO_Pin_3| GPIO_Pin_4| GPIO_Pin_5;		
+//	GPIO_InitStructure.GPIO_Pin =GPIO_Pin_3| GPIO_Pin_4| GPIO_Pin_5;		
+//	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+//	GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AN;
+//	GPIO_Init(GPIOA, &GPIO_InitStructure);
+	
+	GPIO_InitStructure.GPIO_Pin =GPIO_Pin_3| GPIO_Pin_4| GPIO_Pin_5|GPIO_Pin_6;		
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AN;
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
+	
 	
 	/*PB1  Analog In/Out Mode */				//母线电压检测
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;							
@@ -180,10 +189,11 @@ static void adc_init (void)
 	DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)ADC1_DR_Address;  //
 	DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)RegularConvData_Tab;  //
 	DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralSRC;//单向传输
-	DMA_InitStructure.DMA_BufferSize = 4;			//4*16bit
+	DMA_InitStructure.DMA_BufferSize = 5;			//4*16bit		/////////////////////////////////修改5为
 	DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable; //设置DMA的外设递增模式，如果DMA选用的通道（CHx）有多个外设连接，需要使用外设递增模式
 	DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;			//DMA访问多个内存参数
-	DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;//设置DMA在访问时每次操作的数据长度   16bit
+	//DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;//设置DMA在访问时每次操作的数据长度   16bit
+	DMA_InitStructure.DMA_PeripheralDataSize =DMA_PeripheralDataSize_Word	;		
 	DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_HalfWord;
 	DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;//连续不断的循环模式
 	DMA_InitStructure.DMA_Priority = DMA_Priority_High;  //DMA优先级
@@ -205,6 +215,7 @@ static void adc_init (void)
 	ADC_ChannelConfig(ADC1, ADC_Channel_4 , ADC_SampleTime_1_5Cycles); 
 	ADC_ChannelConfig(ADC1, ADC_Channel_5,  ADC_SampleTime_1_5Cycles); 
 	ADC_ChannelConfig(ADC1, ADC_Channel_9 , ADC_SampleTime_1_5Cycles); 		//PB1	ADC_IN9
+	ADC_ChannelConfig(ADC1, ADC_Channel_6,  ADC_SampleTime_1_5Cycles);
 	ADC_GetCalibrationFactor(ADC1);         //校准adc
 	ADC_DMACmd(ADC1, ENABLE);				//关联DMA
 	ADC_Cmd(ADC1, ENABLE); 	
