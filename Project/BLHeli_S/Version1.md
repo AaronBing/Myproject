@@ -74,71 +74,6 @@ $NOMOD51
 
 
 
-枚举支持的ESC列表
-
-```asm
-A_ EQU 1 ; X X RC X MC MB MA CC X X Cc Cp Bc Bp Ac Ap
-B_ EQU 2 ; X X RC X MC MB MA CC X X Ap Ac Bp Bc Cp Cc
-C_ EQU 3 ; Ac Ap MC MB MA CC X RC X X X X Cc Cp Bc Bp
-D_ EQU 4 ; X X RC X CC MA MC MB X X Cc Cp Bc Bp Ac Ap Com fets inverted
-E_ EQU 5 ; L1 L0 RC X MC MB MA CC X L2 Cc Cp Bc Bp Ac Ap A with LEDs
-F_ EQU 6 ; X X RC X MA MB MC CC X X Cc Cp Bc Bp Ac Ap
-G_ EQU 7 ; X X RC X CC MA MC MB X X Cc Cp Bc Bp Ac Ap Like D, but
-noninverted com fets
-H_ EQU 8 ; RC X X X MA MB CC MC X Ap Bp Cp X Ac Bc Cc
-I_ EQU 9 ; X X RC X MC MB MA CC X X Ac Bc Cc Ap Bp Cp
-J_ EQU 10 ; L2 L1 L0 RC CC MB MC MA X X Cc Bc Ac Cp Bp Ap LEDs
-K_ EQU 11 ; X X MC X MB CC MA RC X X Ap Bp Cp Cc Bc Ac Com fets inverted
-L_ EQU 12 ; X X RC X CC MA MB MC X X Ac Bc Cc Ap Bp Cp
-M_ EQU 13 ; MA MC CC MB RC L0 X X X Cc Bc Ac Cp Bp Ap X LED
-N_ EQU 14 ; X X RC X MC MB MA CC X X Cp Cc Bp Bc Ap Ac
-O_ EQU 15 ; X X RC X CC MA MC MB X X Cc Cp Bc Bp Ac Ap Like D, but low side
-pwm
-P_ EQU 16 ; X X RC MA CC MB MC X X Cc Bc Ac Cp Bp Ap X
-Q_
-EQU 17 ; Cp Bp Ap L1 L0 X RC X X MA MB MC CC Cc Bc Ac LEDs
-R_ EQU 18 ; X X RC X MC MB MA CC X X Ac Bc Cc Ap Bp Cp
-S_ EQU 19 ; X X RC X CC MA MC MB X X Cc Cp Bc Bp Ac Ap Like O, but
-com fets inverted
-T_ EQU 20 ; RC X MA X MB CC MC X X X Cp Bp Ap Ac Bc Cc
-U_ EQU 21 ; MA MC CC MB RC L0 L1 L2 X Cc Bc Ac Cp Bp Ap X Like M, but with 3 LEDs
-V_ EQU 22 ; Cc X RC X MC CC MB MA X Ap Ac Bp X X Bc Cp
-W_ EQU 23 ; RC MC MB X CC MA X X X Ap Bp Cp X X X X Tristate
-gate driver
-```
-
-
-
-选择要使用的端口映射（或取消选择全部用于外部批处理编译文件）
-
-```asm
-;ESCNO EQU A_
-;ESCNO EQU B_
-;ESCNO EQU C_
-;ESCNO EQU D_
-;ESCNO EQU E_
-;ESCNO EQU F_
-;ESCNO EQU G_
-;ESCNO EQU H_
-;ESCNO EQU I_
-;ESCNO EQU J_
-;ESCNO EQU K_
-;ESCNO EQU L_
-;ESCNO EQU M_
-;ESCNO EQU N_
-;ESCNO EQU O_
-;ESCNO EQU P_
-;ESCNO EQU Q_
-;ESCNO EQU R_
-;ESCNO EQU S_
-;ESCNO EQU T_
-;ESCNO EQU U_
-;ESCNO EQU V_
-;ESCNO EQU W_
-```
-
-
-
 选择MCU类型（或取消选择以与外部批处理编译文件一起使用）
 
 ```asm
@@ -152,12 +87,6 @@ MCU_48MHZ EQU 0
 ```asm
 FETON_DELAY EQU 15;每步20.4ns
 ```
-
-
-
-ESC选择陈述
-
-----此处省略
 
 
 
@@ -178,15 +107,59 @@ DEFAULT_PGM_BEACON_DELAY EQU 4 ; 1=1m 2=2m 3=5m
 
 
 
+COMMON    
+
+```asm
+DEFAULT_PGM_ENABLE_TX_PROGRAM EQU 1 ; 1=Enabled 0=Disabled
+DEFAULT_PGM_MIN_THROTTLE EQU 37 ; 4*37+1000=1148
+DEFAULT_PGM_MAX_THROTTLE EQU 208 ; 4*208+1000=1832
+DEFAULT_PGM_CENTER_THROTTLE EQU 122 ; 4*122+1000=1488 (用于双向模式)
+DEFAULT_PGM_ENABLE_TEMP_PROT EQU 7 ; 0=Disabled 1=80C 2=90C 3=100C 4=110C 5=120C 6=130C 7=140C
+DEFAULT_PGM_ENABLE_POWER_PROT EQU 1 ; 1=Enabled 0=Disabled
+DEFAULT_PGM_BRAKE_ON_STOP EQU 0 ; 1=Enabled 0=Disabled
+DEFAULT_PGM_LED_CONTROL EQU 0 ; 用于LED控制的字节。每个LED 2bits, 0=Off, 1=On
+```
 
 
 
+临时寄存器定义
+
+```asm
+Temp1 EQU R0
+Temp2 EQU R1
+Temp3 EQU R2
+Temp4 EQU R3
+Temp5 EQU R4
+Temp6 EQU R5
+Temp7 EQU R6
+Temp8 EQU R7
+```
+
+  
+
+寄存器定义
+
+```asm
+DSEG AT 20h	;变量段
+
+Bit_Access：DS 1;必须在这个地址。位可访问地址变量（非中断例程）
+Bit_Access_Int：DS 1;位可访问地址变量（用于中断）
+
+Rcp_Outside_Range_Cnt：DS 1; RC脉冲外部范围计数器（递增）
+Rcp_Timeout_Cntd：DS 1 ; RC脉冲超时计数器（递减）
+
+Flags0：DS 1;州旗。在init_start时复位
+T3_PENDING EQU 0;定时器3挂起标志
+DEMAG_DETECTED EQU 1;检测到过多的demag时间时设置
+COMP_TIMED_OUT EQU 2;比较器读数超时时设置
+```
 
 
 
-
-
-
+```asm
+标志2：DS 1;州旗。在init_start
+RCP_UPDATED EQU 0;时不复位;新的RC脉冲长度值可用RCP_ONESHOT125 EQU 1; RC脉冲输入为OneShot125（125-250us）RCP_ONESHOT42 EQU 2; RC脉冲输入为OneShot42（41.67-83us）RCP_MULTISHOT EQU 3; RC脉冲输入为Multishot（5-25us）RCP_DSHOT EQU 4; RC脉冲输入是数字镜头RCP_DIR_REV EQU 5;双向模式下的RC脉冲方向RCP_FULL_RANGE EQU 6;设置完全输入信号范围（10002000us）时，忽略存储的校准值
+```
 
 
 
