@@ -33,8 +33,11 @@ uint16_t	FocMotorCurA;
 uint16_t	FocMotorCurB;
 uint16_t   FocMotorRef;
 
+//--------------------速度反馈
+extern uint16_t FocSpeedout;//最终期望的速度
+uint16_t FocSpeednow=0;		//当前设定的速度
+uint8_t DelaySpeed = 0;
 
-extern uint16_t FocSpeedout;
 
 uint8_t cnt = 0;
 uint8_t res_old = 0;
@@ -88,6 +91,17 @@ void ADC1_IRQHandler (void)
 	{
 		FocTime64usCnt = 0;
 		//MsCnt++;
+		
+		if(DelaySpeed<3)				//缓慢加速的阈值
+			DelaySpeed++;
+		else{
+			if(FocSpeednow<FocSpeedout)
+				FocSpeednow++;
+			else if((FocSpeednow>FocSpeedout)&&((FocSpeednow>1)))
+				FocSpeednow--;
+			DelaySpeed=0;
+		}
+		
 		FocTime1msFlag = 1;
 		
 //		if(Ctl.State == MOTOR_STOP)
@@ -140,7 +154,7 @@ void ADC1_IRQHandler (void)
 	FocAdcBatteryBuf[FocGetAdcCnt]  = RegularConvData_Tab[4];		//母线电压
 	MotorCurr_ab.qI_Component1 =    FocMotorPhaseAOffset - FocMotorCurA;			//先进行自测，再到这里输出自测的差值
 	MotorCurr_ab.qI_Component2 = 	FocMotorPhaseBOffset - FocMotorCurB;
-	MotorAtatVolt_qd.qV_Component1 = FocSpeedout;			//SpeedPWM;之前是从窗口获得初值	
+	MotorAtatVolt_qd.qV_Component1 = FocSpeednow;			//SpeedPWM;之前是从窗口获得初值	
 	
 	//自测通过，并且有hall角度变动后，开始输出
 	if ( FocSelfCheckOK )

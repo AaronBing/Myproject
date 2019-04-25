@@ -118,7 +118,6 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGUARM</Key>
-          <Name>鲤?</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -197,6 +196,11 @@
           <count>7</count>
           <WinNumber>1</WinNumber>
           <ItemText>FocSpeedout,0x0A</ItemText>
+        </Ww>
+        <Ww>
+          <count>8</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>FocSpeednow,0x0A</ItemText>
         </Ww>
       </WatchWindow1>
       <MemoryWindow1>
