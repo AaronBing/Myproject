@@ -1,0 +1,1132 @@
+2019-04-02 21:46:29,389 DEBUG [Main.lambda$run$0] Arguments: [-ioc, C:\Users\Aaron\Desktop\stspin\spin32f0\spin32f0.ioc, -xdm, C:\Users\Aaron\Desktop\stspin\spin32f0\spin32f0.wb_def]
+2019-04-02 21:46:29,421 DEBUG [ArgsValue.readPropertiesFile] [AppConfig] pack.source = "D:\software\STMicroelectronics\MC_SDK_5.3.3FUL\Middlewares\ST\MotorControl" 
+2019-04-02 21:46:29,421 DEBUG [ArgsValue.readPropertiesFile] [UserConfig] do not exist in "C:\Users\Aaron\.st_motor_control\wb2mx.properties" 
+2019-04-02 21:46:29,421 DEBUG [ArgsValue.getConfigProperties] pack.source = "../../../../Middlewares/ST/MotorControl"
+2019-04-02 21:46:29,421 DEBUG [ArgsValue.lambda$retrieve$2] CLI_ARG[xdm]: C:\Users\Aaron\Desktop\stspin\spin32f0\spin32f0.wb_def
+2019-04-02 21:46:29,436 DEBUG [ArgsValue.lambda$retrieve$2] CLI_ARG[ioc]: C:\Users\Aaron\Desktop\stspin\spin32f0\spin32f0.ioc
+2019-04-02 21:46:29,436 DEBUG [ArgsValue.retrieve] {xdm=C:\Users\Aaron\Desktop\stspin\spin32f0\spin32f0.wb_def, updftl=templates/wb_ioc_mc-middleware.ftl, mx_timeout=-1, exp=templates/wb-defines_where_and_what.txt, ioc=C:\Users\Aaron\Desktop\stspin\spin32f0\spin32f0.ioc, pack=../../../../Middlewares/ST/MotorControl, ftl=templates/wb_ioc_template.ftl}
+2019-04-02 21:46:29,499 DEBUG [Main.run] Targeted MCU family = F0
+2019-04-02 21:46:29,561 DEBUG [Main.run] Minimum associated CubeMx to the `F0` targeted MCU family is `4.25.0-a0`
+2019-04-02 21:46:29,592 DEBUG [WindowsCubeMxFinder.lambda$findThem$2] Found 32-bit subkey HKEY_LOCAL_MACHINE\~~~\Uninstall\STM32CubeMX
+2019-04-02 21:46:29,592 DEBUG [CubeMxCtx.EXE_version] Loaded path: 'D:\software\STMicroelectronics\CubeMX\STM32CubeMX.exe'
+2019-04-02 21:46:29,592 DEBUG [CubeMxCtx.EXE_version] Loaded updater jar: 'D:\software\STMicroelectronics\CubeMX\plugins\updater.jar'
+2019-04-02 21:46:29,608 DEBUG [CubeMxCtx.EXE_version] Loaded path: 'D:\software\STMicroelectronics\CubeMX\STM32CubeMX.exe'
+2019-04-02 21:46:29,608 DEBUG [CubeMxCtx.EXE_version] Loaded updater jar: 'D:\software\STMicroelectronics\CubeMX\plugins\updater.jar'
+2019-04-02 21:46:29,639 DEBUG [CubeMxCtx.EXE_version] Loaded path: 'D:\software\STMicroelectronics\CubeMX\STM32CubeMX.exe'
+2019-04-02 21:46:29,639 DEBUG [CubeMxCtx.EXE_version] Loaded updater jar: 'D:\software\STMicroelectronics\CubeMX\plugins\updater.jar'
+2019-04-02 21:46:48,307 DEBUG [CubeMxCtx.EXE_version] Loaded path: 'D:\software\STMicroelectronics\CubeMX\STM32CubeMX.exe'
+2019-04-02 21:46:48,307 DEBUG [CubeMxCtx.EXE_version] Loaded updater jar: 'D:\software\STMicroelectronics\CubeMX\plugins\updater.jar'
+2019-04-02 21:46:48,385 DEBUG [EnvironmentChecker.checkPack] STM32CubeMX.Version: 5.0.1-RC1
+2019-04-02 21:46:48,947 DEBUG [MxUpdaterFactory.lambda$create$3] Updater instantiated
+2019-04-02 21:46:48,947 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:49,010 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:49,073 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:49,135 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:49,197 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:49,260 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:49,322 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:49,385 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:49,447 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:49,510 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:49,572 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:49,634 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:49,697 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:49,759 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:49,822 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:49,885 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:49,947 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:50,009 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:50,072 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:50,135 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:50,197 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:50,260 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:50,322 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:50,385 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:50,447 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:50,510 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:50,572 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:50,635 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:50,697 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:50,760 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:50,822 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:50,885 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:50,947 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:51,010 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:51,072 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:51,135 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:51,197 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:51,260 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:51,322 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:51,385 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:51,447 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:51,510 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:51,572 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:51,634 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:51,697 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:51,759 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:51,822 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:51,884 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:51,947 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:52,009 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:52,072 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:52,134 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:52,197 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:52,259 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:52,322 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:52,384 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:52,447 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:52,509 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:52,572 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:52,634 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:52,697 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:52,759 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:52,821 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:52,884 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:52,947 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:53,009 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:53,071 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:53,134 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:53,197 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:53,259 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:53,321 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:53,384 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:53,447 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:53,509 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:53,571 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:53,634 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:53,697 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:53,759 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:53,821 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:53,884 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:53,946 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:54,009 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:54,071 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:54,134 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:54,196 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:54,259 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:54,321 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:54,384 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:54,446 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:54,509 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:54,571 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:54,634 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:54,696 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:54,759 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:54,821 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:54,884 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:54,946 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:55,009 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:55,071 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:55,134 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:55,196 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:55,259 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:55,321 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:55,384 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:55,446 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:55,509 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:55,571 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:55,634 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:55,696 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:55,759 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:55,821 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:55,883 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:55,946 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:56,008 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:56,071 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:56,133 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:56,196 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:56,258 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:56,321 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:56,383 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:56,446 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:56,508 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:56,571 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:56,633 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:56,696 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:56,758 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:56,821 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:56,883 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:56,946 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:57,008 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:57,071 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:57,133 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:57,196 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:57,258 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:57,321 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:57,383 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:57,446 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:57,508 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:57,571 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:57,633 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:57,696 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:57,758 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:57,820 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:57,883 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:57,945 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:58,008 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:58,070 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:58,133 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:58,195 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:58,258 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:58,320 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:58,382 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:58,445 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:58,508 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:58,570 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:58,632 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:58,695 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:58,758 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:58,820 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:58,882 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:58,945 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:59,008 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:59,070 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:59,132 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:59,195 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:59,258 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:59,320 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:59,382 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:59,445 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:59,507 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:59,570 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:59,632 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:59,683 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:59,735 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:59,797 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:59,860 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:59,922 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:46:59,985 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:00,047 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:00,110 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:00,172 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:00,235 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:00,297 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:00,360 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:00,422 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:00,485 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:00,547 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:00,610 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:00,672 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:00,734 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:00,797 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:00,859 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:00,922 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:00,985 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:01,047 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:01,110 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:01,172 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:01,234 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:01,297 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:01,359 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:01,422 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:01,484 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:01,547 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:01,610 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:01,672 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:01,735 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:01,797 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:01,859 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:01,922 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:01,984 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:02,047 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:02,109 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:02,172 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:02,234 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:02,297 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:02,359 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:02,422 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:02,485 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:02,547 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:02,609 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:02,672 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:02,734 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:02,796 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:02,859 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:02,922 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:02,984 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:03,046 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:03,109 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:03,171 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:03,234 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:03,296 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:03,359 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:03,421 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:03,484 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:03,546 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:03,609 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:03,672 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:03,734 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:03,796 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:03,859 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:03,921 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:03,984 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:04,046 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:04,109 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:04,171 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:04,234 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:04,296 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:04,359 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:04,421 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:04,484 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:04,546 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:04,609 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:04,671 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:04,734 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:04,796 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:04,859 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:04,921 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:04,984 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:05,046 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:05,108 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:05,171 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:05,233 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:05,296 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:05,358 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:05,421 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:05,484 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:05,546 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:05,609 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:05,671 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:05,733 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:05,796 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:05,858 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:05,937 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:05,999 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:06,061 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:06,124 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:06,186 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:06,249 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:06,312 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:06,374 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:06,437 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:06,499 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:06,562 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:06,624 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:06,687 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:06,749 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:06,812 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:06,874 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:06,937 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:06,999 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:07,061 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:07,124 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:07,186 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:07,249 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:07,311 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:07,374 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:07,436 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:07,499 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:07,561 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:07,623 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:07,686 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:07,748 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:07,811 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:07,873 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:07,936 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:07,999 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:08,061 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:08,124 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:08,186 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:08,249 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:08,311 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:08,373 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:08,436 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:08,499 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:08,561 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:08,623 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:08,686 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:08,748 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:08,811 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:08,873 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:08,936 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:08,998 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:09,061 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:09,123 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:09,186 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:09,248 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:09,311 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:09,373 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:09,436 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:09,498 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:09,561 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:09,623 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:09,686 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:09,748 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:09,811 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:09,873 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:09,936 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:09,998 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:10,061 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:10,123 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:10,185 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:10,248 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:10,310 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:10,373 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:10,435 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:10,498 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:10,560 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:10,623 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:10,685 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:10,748 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:10,811 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:10,873 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:10,936 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:10,998 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:11,060 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:11,123 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:11,186 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:11,248 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:11,311 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:11,373 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:11,435 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:11,498 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:11,560 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:11,623 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:11,685 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:11,748 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:11,810 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:11,873 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:11,935 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:11,998 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:12,060 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:12,123 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:12,185 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:12,247 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:12,310 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:12,373 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:12,435 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:12,498 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:12,560 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:12,623 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:12,685 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:12,748 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:12,810 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:12,873 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:12,935 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:12,998 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:13,060 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:13,123 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:13,185 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:13,247 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:13,310 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:13,372 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:13,435 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:13,497 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:13,560 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:13,622 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:13,685 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:13,747 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:13,810 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:13,872 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:13,935 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:14,013 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:14,075 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:14,138 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:14,200 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:14,263 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:14,325 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:14,388 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:14,450 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:14,513 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:14,575 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:14,638 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:14,700 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:14,763 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:14,825 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:14,888 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:14,950 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:15,012 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:15,075 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:15,138 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:15,200 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:15,262 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:15,325 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:15,388 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:15,450 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:15,513 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:15,575 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:15,637 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:15,700 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:15,762 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:15,825 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:15,888 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:15,950 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:16,013 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:16,075 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:16,137 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:16,200 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:16,262 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:16,325 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:16,387 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:16,449 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:16,512 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:16,575 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:16,637 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:16,699 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:16,762 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:16,824 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:16,887 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:16,949 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:17,012 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:17,074 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:17,137 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:17,199 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:17,262 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:17,325 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:17,387 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:17,449 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:17,512 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:17,575 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:17,637 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:17,699 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:17,762 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:17,825 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:17,887 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:17,949 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:18,012 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:18,075 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:18,137 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:18,199 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:18,262 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:18,325 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:18,387 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:18,449 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:18,512 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:18,574 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:18,637 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:18,699 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:18,762 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:18,824 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:18,887 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:18,949 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:19,012 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:19,074 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:19,137 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:19,199 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:19,262 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:19,324 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:19,387 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:19,449 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:19,511 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:19,574 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:19,637 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:19,699 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:19,751 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:19,816 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:19,879 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:19,941 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:20,004 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:20,066 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:20,129 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:20,191 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:20,253 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:20,316 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:20,379 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:20,441 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:20,503 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:20,566 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:20,628 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:20,691 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:20,753 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:20,815 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:20,878 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:20,940 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:21,003 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:21,066 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:21,128 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:21,191 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:21,253 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:21,315 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:21,378 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:21,441 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:21,503 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:21,565 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:21,628 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:21,690 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:21,753 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:21,815 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:21,878 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:21,941 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:22,003 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:22,065 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:22,128 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:22,190 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:22,253 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:22,315 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:22,378 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:22,440 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:22,503 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:22,565 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:22,628 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:22,690 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:22,753 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:22,816 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:22,878 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:22,941 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:23,003 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:23,066 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:23,128 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:23,191 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:23,253 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:23,316 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:23,378 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:23,441 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:23,504 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:23,566 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:23,628 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:23,691 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:23,754 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:23,816 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:23,878 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:23,941 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:24,003 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:24,066 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:24,128 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:24,191 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:24,253 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:24,314 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:24,376 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:24,439 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:24,502 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:24,564 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:24,626 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:24,689 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:24,751 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:24,814 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:24,876 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:24,939 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:25,001 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:25,064 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:25,126 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:25,189 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:25,251 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:25,314 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:25,376 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:25,439 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:25,501 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:25,564 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:25,626 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:25,688 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:25,751 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:25,814 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:25,876 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:25,938 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:26,001 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:26,064 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:26,126 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:26,189 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:26,251 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:26,314 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:26,376 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:26,438 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:26,501 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:26,564 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:26,626 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:26,685 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:26,747 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:26,809 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:26,872 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:26,935 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:27,013 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:27,075 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:27,138 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:27,200 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:27,263 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:27,325 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:27,388 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:27,450 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater still busy - await for 50 milliseconds before to retry
+2019-04-02 21:47:27,512 DEBUG [MxUpdater.lambda$whait_while_busy$12] MxUpdater no more busy
+2019-04-02 21:47:27,512 DEBUG [MxUpdaterFactory.lambda$create$4] Updater initialization complete
+2019-04-02 21:47:27,512 DEBUG [MxUpdaterValidator.lambda$getVerifiedRepositoryFolder$e68017fb$1] Repository Folder Exist: C:\Users\Aaron\STM32Cube\Repository
+2019-04-02 21:47:27,528 DEBUG [RetrieveFirmwareVersion.from_PackConfig_xfile] Looking for version from MotorControl_Configs.xml: D:\software\STMicroelectronics\MC_SDK_5.3.3FUL\Middlewares\ST\MotorControl\MotorControl_Configs.xml
+2019-04-02 21:47:27,544 DEBUG [RetrieveFirmwareVersion.minimum_supporte_version] minimum_supporte_version MotorControlFirmware.Version: 5.3.0
+2019-04-02 21:47:27,544 DEBUG [PackInfoFactory.deploy_MCPack_to_MxRepo] Deployment strategy class: VersionedFolderStyle_MCPackDeployer
+2019-04-02 21:47:27,544 DEBUG [PackInfoFactory.deploy_MCPack_to_MxRepo] Expected MC Pack 5.3.3-Full already deployed
+2019-04-02 21:47:27,622 DEBUG [DataSetUpdater.update] Updating data set
+2019-04-02 21:47:27,622 DEBUG [DataSetUpdater.update] Update done
+2019-04-02 21:47:27,622 INFO  [IocGenerator.logModulesVersionInfo] Version info: 
+2019-04-02 21:47:27,622 INFO  [IocGenerator.logModulesVersionInfo]   MC Workbench       : 5.3.2.18569
+2019-04-02 21:47:27,622 INFO  [IocGenerator.logModulesVersionInfo]   WB_to_Mx           : 0.15.6.template-19-01-16
+2019-04-02 21:47:27,622 INFO  [IocGenerator.logModulesVersionInfo]   STM32CubeMX        : 5.0.1
+2019-04-02 21:47:27,637 INFO  [IocGenerator.logModulesVersionInfo]   MC Firmware Library: 5.3.3-Full
+2019-04-02 21:47:27,637 INFO  [IocGenerator.logModulesVersionInfo] Generation options: 
+2019-04-02 21:47:27,637 INFO  [IocGenerator.logModulesVersionInfo]   Target Toolchain   : Keil MDK-ARM V5
+2019-04-02 21:47:27,637 INFO  [IocGenerator.logModulesVersionInfo]   Target Driver      : LL - Low Level
+2019-04-02 21:47:27,637 INFO  [IocGenerator.logModulesVersionInfo]   Target STM32 FW    : 1.9.0
+
+2019-04-02 21:47:27,637 DEBUG [IocGenerator.process] Generating ioc file: C:\Users\Aaron\Desktop\stspin\spin32f0\spin32f0.ioc
+2019-04-02 21:47:27,637 DEBUG [IocGenerator.createOutput] Generating file from template templates\wb_ioc_template.ftl
+2019-04-02 21:47:28,340 DEBUG [IocGenerator.process] Generated ioc file C:\Users\Aaron\Desktop\stspin\spin32f0\spin32f0.ioc
+2019-04-02 21:47:28,340 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated ioc: C:\Users\Aaron\Desktop\stspin\spin32f0\spin32f0.ioc
+2019-04-02 21:47:28,340 INFO  [Wb2MxProcess.lambda$create_extSettings_file_in$82c805cd$1] Generated C:\Users\Aaron\Desktop\stspin\spin32f0\.extSettings
+2019-04-02 21:47:28,356 DEBUG [CubeMxRunner.create_code_generation_script_for] Generated CubeMx script file: C:\Users\Aaron\AppData\Local\Temp\WB_to_Mx-spinf-7638015901013421820.script
+2019-04-02 21:47:28,403 DEBUG [SignalCatcher.listenTo] Listen to signal INT
+2019-04-02 21:47:28,403 DEBUG [SignalCatcher.listenTo] Listen to signal TERM
+2019-04-02 21:47:28,403 INFO  [CubeMxRunner.run$] Code generation started
+2019-04-02 21:47:29,737 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:29,737 [INFO] MicroXplorer:486 - Detected Java Version = 1.8.0_201
+2019-04-02 21:47:29,753 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:29,753 [INFO] ApplicationProperties:181 - Using Application install path: D:\software\STMicroelectronics\CubeMX
+2019-04-02 21:47:29,753 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:29,753 [INFO] DbMcusXml:68 - Set database path to: D:\software\STMicroelectronics\CubeMX\\db\/mcu/
+2019-04-02 21:47:29,753 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:29,753 [INFO] DbBoardsPdsc:54 - Set plugin database path to: D:\software\STMicroelectronics\CubeMX\\db\/plugins/boardmanager/
+2019-04-02 21:47:29,753 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:29,753 [INFO] DbMcus:262 - Set plugin images path to: D:\software\STMicroelectronics\CubeMX\\db\/plugins/mcufinder/images/
+2019-04-02 21:47:29,753 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:29,753 [INFO] DbBoards:224 - Set plugin images path to: D:\software\STMicroelectronics\CubeMX\\db\/plugins/mcufinder/images/
+2019-04-02 21:47:29,769 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:29,769 [INFO] APIGFXSelector:72 - Set database path to: D:\software\STMicroelectronics\CubeMX\\db\/plugins/mcufinder/mcu/
+2019-04-02 21:47:29,847 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:29,847 [INFO] DbMcusAds:72 - Set database path to: C:\Users\Aaron\.stmcufinder\plugins\mcufinder//mcu/
+2019-04-02 21:47:29,847 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:29,847 [INFO] DbMcusDocs:90 - Set database path to: C:\Users\Aaron\.stmcufinder\plugins\mcufinder//mcu/
+2019-04-02 21:47:29,847 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:29,847 [INFO] DbMcusJson:58 - Set database path to: C:\Users\Aaron\.stmcufinder\plugins\mcufinder//mcu/
+2019-04-02 21:47:29,847 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:29,847 [INFO] DbBoardsDocs:82 - Set database path to: C:\Users\Aaron\.stmcufinder\plugins\mcufinder//mcu/
+2019-04-02 21:47:29,847 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:29,847 [INFO] DbBoardsJson:51 - Set database path to: C:\Users\Aaron\.stmcufinder\plugins\mcufinder//mcu/
+2019-04-02 21:47:30,113 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,113 [INFO] CrossReferenceDbSqlite:197 - Set database path to: C:\Users\Aaron\.stmcufinder\plugins\mcufinder//mcu/
+2019-04-02 21:47:30,190 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,190 [INFO] RulesReader:53 - Compatibility file has been processed (127 Rules)
+2019-04-02 21:47:30,222 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,222 [INFO] STM32CubeMX:31 - Starting STM32CubeMX
+2019-04-02 21:47:30,628 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,628 [INFO] MainPanel:139 - HeapMemory: 16252928
+2019-04-02 21:47:30,722 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,722 [INFO] DbMcusXml:68 - Set database path to: D:\software\STMicroelectronics\CubeMX\\db\/mcu/
+2019-04-02 21:47:30,722 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,722 [INFO] DbBoardsPdsc:54 - Set plugin database path to: D:\software\STMicroelectronics\CubeMX\\db\/plugins/boardmanager/
+2019-04-02 21:47:30,722 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,722 [INFO] DbMcus:262 - Set plugin images path to: D:\software\STMicroelectronics\CubeMX\\db\/plugins/mcufinder/images/
+2019-04-02 21:47:30,722 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,722 [INFO] DbBoards:224 - Set plugin images path to: D:\software\STMicroelectronics\CubeMX\\db\/plugins/mcufinder/images/
+2019-04-02 21:47:30,722 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,722 [INFO] APIGFXSelector:72 - Set database path to: D:\software\STMicroelectronics\CubeMX\\db\/plugins/mcufinder/mcu/
+2019-04-02 21:47:30,722 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,722 [INFO] DbMcusAds:72 - Set database path to: C:\Users\Aaron\.stmcufinder\plugins\mcufinder//mcu/
+2019-04-02 21:47:30,722 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,722 [INFO] DbMcusDocs:90 - Set database path to: C:\Users\Aaron\.stmcufinder\plugins\mcufinder//mcu/
+2019-04-02 21:47:30,722 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,722 [INFO] DbMcusJson:58 - Set database path to: C:\Users\Aaron\.stmcufinder\plugins\mcufinder//mcu/
+2019-04-02 21:47:30,722 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,722 [INFO] DbBoardsDocs:82 - Set database path to: C:\Users\Aaron\.stmcufinder\plugins\mcufinder//mcu/
+2019-04-02 21:47:30,722 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,722 [INFO] DbBoardsJson:51 - Set database path to: C:\Users\Aaron\.stmcufinder\plugins\mcufinder//mcu/
+2019-04-02 21:47:30,722 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,722 [INFO] CrossReferenceDbSqlite:197 - Set database path to: C:\Users\Aaron\.stmcufinder\plugins\mcufinder//mcu/
+2019-04-02 21:47:30,737 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,737 [INFO] ApplicationProperties:181 - Using Application install path: D:\software\STMicroelectronics\CubeMX
+2019-04-02 21:47:30,737 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,737 [INFO] PluginManage:167 - Search for loadable plugins [exclusion list=]
+2019-04-02 21:47:30,737 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,737 [INFO] PluginManage:289 - Check plugin analytics
+2019-04-02 21:47:30,862 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,862 [INFO] UserProfileFactory:23 - /com/st/library/analyticscore
+2019-04-02 21:47:30,862 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,862 [INFO] UserProfileFactory:25 - 28f76ecb_611c_4a6c_afb4_ee408de42546
+2019-04-02 21:47:30,878 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,862 [INFO] AnalyticsPlugin:190 - Accepted Software Licenses: STM32CubeMX.5.0.1
+2019-04-02 21:47:30,878 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,878 [INFO] AnalyticsPlugin:192 - Accepted CMSIS Pack Licenses: 
+2019-04-02 21:47:30,878 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,878 [INFO] AnalyticsPlugin:194 - Accepted Firmware Licenses: 
+2019-04-02 21:47:30,878 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,878 [INFO] PluginManage:339 - Loaded plugin analytics (category:tool,tabindex:-1)
+2019-04-02 21:47:30,878 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,878 [INFO] PluginManage:289 - Check plugin clock
+2019-04-02 21:47:30,878 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,878 [INFO] PluginManage:339 - Loaded plugin clock (category:base,tabindex:2)
+2019-04-02 21:47:30,878 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,878 [INFO] PluginManage:289 - Check plugin filemanager
+2019-04-02 21:47:30,971 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,971 [INFO] PluginManage:339 - Loaded plugin filemanager (category:base,tabindex:10)
+2019-04-02 21:47:30,971 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,971 [INFO] PluginManage:289 - Check plugin ipmanager
+2019-04-02 21:47:30,971 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,971 [INFO] PluginManage:339 - Loaded plugin ipmanager (category:base,tabindex:5)
+2019-04-02 21:47:30,971 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,971 [INFO] PluginManage:289 - Check plugin pinoutandconfiguration
+2019-04-02 21:47:30,971 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,971 [INFO] PluginManage:339 - Loaded plugin pinoutandconfiguration (category:base,tabindex:1)
+2019-04-02 21:47:30,971 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,971 [INFO] PluginManage:289 - Check plugin pinoutconfig
+2019-04-02 21:47:30,987 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,987 [INFO] PluginManage:339 - Loaded plugin pinoutconfig (category:base,tabindex:0)
+2019-04-02 21:47:30,987 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:30,987 [INFO] PluginManage:289 - Check plugin power
+2019-04-02 21:47:31,003 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,003 [INFO] PluginManage:339 - Loaded plugin power (category:power,tabindex:4)
+2019-04-02 21:47:31,003 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,003 [INFO] PluginManage:289 - Check plugin projectmanager
+2019-04-02 21:47:31,034 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,034 [INFO] PluginManage:339 - Loaded plugin projectmanager (category:projectmanager,tabindex:3)
+2019-04-02 21:47:31,034 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,034 [INFO] PluginManage:289 - Check plugin thirdparty
+2019-04-02 21:47:31,081 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,081 [INFO] ThirdPartyDb:293 - Open Third Party DataBase File (C:/Users/Aaron/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 16 ms. number of Sw pack : 4
+2019-04-02 21:47:31,096 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,096 [INFO] PluginManage:339 - Loaded plugin thirdparty (category:base,tabindex:-1)
+2019-04-02 21:47:31,096 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,096 [INFO] PluginManage:289 - Check plugin tools
+2019-04-02 21:47:31,096 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,096 [INFO] PluginManage:339 - Loaded plugin tools (category:base,tabindex:5)
+2019-04-02 21:47:31,096 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,096 [INFO] PluginManage:289 - Check plugin updater
+2019-04-02 21:47:31,096 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,096 [INFO] PluginManage:339 - Loaded plugin updater (category:base,tabindex:12)
+2019-04-02 21:47:31,096 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,096 [INFO] PluginManage:262 - PluginManage : ReOrganize retry [14x]
+2019-04-02 21:47:31,253 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,253 [INFO] PinOutPanel:1236 - setPackage(No Configuration,No Configuration)
+2019-04-02 21:47:31,300 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,300 [INFO] PluginManager:200 - loadIPPluginJar : add adc
+2019-04-02 21:47:31,300 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,300 [INFO] PluginManager:200 - loadIPPluginJar : add can
+2019-04-02 21:47:31,315 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,300 [INFO] PluginManager:200 - loadIPPluginJar : add comp
+2019-04-02 21:47:31,315 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,315 [INFO] PluginManager:200 - loadIPPluginJar : add cryp
+2019-04-02 21:47:31,315 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,315 [INFO] PluginManager:200 - loadIPPluginJar : add dfsdm
+2019-04-02 21:47:31,315 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,315 [INFO] PluginManager:200 - loadIPPluginJar : add dma
+2019-04-02 21:47:31,315 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,315 [INFO] PluginManager:200 - loadIPPluginJar : add fatfs
+2019-04-02 21:47:31,315 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,315 [INFO] PluginManager:200 - loadIPPluginJar : add fmc
+2019-04-02 21:47:31,315 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,315 [INFO] PluginManager:200 - loadIPPluginJar : add freertos
+2019-04-02 21:47:31,315 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,315 [INFO] PluginManager:200 - loadIPPluginJar : add genericplugin
+2019-04-02 21:47:31,315 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,315 [INFO] PluginManager:200 - loadIPPluginJar : add gfxmmu
+2019-04-02 21:47:31,315 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,315 [INFO] PluginManager:200 - loadIPPluginJar : add gfxsimulator
+2019-04-02 21:47:31,331 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,331 [INFO] PluginManager:200 - loadIPPluginJar : add gpio
+2019-04-02 21:47:31,331 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,331 [INFO] PluginManager:200 - loadIPPluginJar : add hash
+2019-04-02 21:47:31,331 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,331 [INFO] PluginManager:200 - loadIPPluginJar : add i2c
+2019-04-02 21:47:31,331 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,331 [INFO] PluginManager:200 - loadIPPluginJar : add i2s
+2019-04-02 21:47:31,331 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,331 [INFO] PluginManager:200 - loadIPPluginJar : add ltdc
+2019-04-02 21:47:31,331 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,331 [INFO] PluginManager:200 - loadIPPluginJar : add mdma
+2019-04-02 21:47:31,331 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,331 [INFO] PluginManager:200 - loadIPPluginJar : add nvic
+2019-04-02 21:47:31,331 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,331 [INFO] PluginManager:200 - loadIPPluginJar : add opamp
+2019-04-02 21:47:31,331 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,331 [INFO] PluginManager:200 - loadIPPluginJar : add pdm2pcm
+2019-04-02 21:47:31,346 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,346 [INFO] PluginManager:200 - loadIPPluginJar : add plateformsettings
+2019-04-02 21:47:31,346 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,346 [INFO] PluginManager:200 - loadIPPluginJar : add quadspi
+2019-04-02 21:47:31,346 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,346 [INFO] PluginManager:200 - loadIPPluginJar : add resmgrutility
+2019-04-02 21:47:31,346 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,346 [INFO] PluginManager:200 - loadIPPluginJar : add sai
+2019-04-02 21:47:31,346 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,346 [INFO] PluginManager:200 - loadIPPluginJar : add spi
+2019-04-02 21:47:31,346 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,346 [INFO] PluginManager:200 - loadIPPluginJar : add tim
+2019-04-02 21:47:31,346 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,346 [INFO] PluginManager:200 - loadIPPluginJar : add touchsensing
+2019-04-02 21:47:31,346 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,346 [INFO] PluginManager:200 - loadIPPluginJar : add ts
+2019-04-02 21:47:31,346 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,346 [INFO] PluginManager:200 - loadIPPluginJar : add tsc
+2019-04-02 21:47:31,362 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,362 [INFO] PluginManager:200 - loadIPPluginJar : add ucpd
+2019-04-02 21:47:31,362 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,362 [INFO] PluginManager:200 - loadIPPluginJar : add usart
+2019-04-02 21:47:31,362 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,362 [INFO] Updater:739 - Updater Version found : 5.0.1
+2019-04-02 21:47:31,378 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,378 [INFO] ApplicationProperties:181 - Using Application install path: D:\software\STMicroelectronics\CubeMX
+2019-04-02 21:47:31,440 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,440 [INFO] MainUpdater:212 - Updater Check For Update Now.
+2019-04-02 21:47:31,440 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,440 [INFO] MicroXplorer:366 - Change Database Version : DB.5.0.1
+2019-04-02 21:47:31,456 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,456 [INFO] CheckServerUpdateThread:121 - End of CheckServer Thread
+2019-04-02 21:47:31,734 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,734 [INFO] DbMcusAds:130 - JSON generation date=Tue Jan 08 17:24:13 CST 2019 (1546939453)
+2019-04-02 21:47:31,734 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,734 [INFO] LoadUrlFilesThread:147 - End of LoadServerUrlFiles without Thread
+2019-04-02 21:47:31,812 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,812 [INFO] McuDetailPanel:180 - Set advertising image to C:/Users/Aaron/STM32Cube/Repository/\en_STM32Cube_P4116S_big.jpg
+2019-04-02 21:47:31,812 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,812 [INFO] LoadUrlFilesThread:147 - End of LoadServerUrlFiles without Thread
+2019-04-02 21:47:31,812 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,812 [INFO] McuDetailPanel:180 - Set advertising image to C:/Users/Aaron/STM32Cube/Repository/\en_STM32Cube_P4116S_big.jpg
+2019-04-02 21:47:31,828 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,828 [INFO] MicroXplorer:336 - Change Database Path : 
+2019-04-02 21:47:31,828 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,828 [INFO] MicroXplorer:366 - Change Database Version : DB.5.0.1
+2019-04-02 21:47:31,828 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,828 [INFO] PinOutPanel:1236 - setPackage(No Configuration,No Configuration)
+2019-04-02 21:47:31,875 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:31,875 [INFO] New_gui_TipPanel:170 - scale :0.2748306997742664
+2019-04-02 21:47:32,015 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:32,015 [INFO] MicroXplorer:336 - Change Database Path : 
+2019-04-02 21:47:32,015 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:32,015 [INFO] MicroXplorer:366 - Change Database Version : DB.5.0.1
+2019-04-02 21:47:32,015 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:32,015 [INFO] PinOutPanel:1236 - setPackage(No Configuration,No Configuration)
+2019-04-02 21:47:32,015 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:32,015 [INFO] UtilMem:74 - Begin LoadConfig() Used Memory: 25220816 Bytes (33992704)
+2019-04-02 21:47:32,015 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:32,015 [INFO] MicroXplorer:336 - Change Database Path : 
+2019-04-02 21:47:32,015 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:32,015 [INFO] MicroXplorer:366 - Change Database Version : DB.5.0.1
+2019-04-02 21:47:32,015 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:32,015 [INFO] OpenFileManager:263 - Change cursor
+2019-04-02 21:47:33,741 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,741 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) Unable to find key (Mcu.ThirdPartyNb) in loaded IOC file
+2019-04-02 21:47:33,741 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,741 [INFO] ImportTextPane:157 - (OptionalMessage_WARN) Unknown mode (AF_PP) for pin (PB6)
+2019-04-02 21:47:33,741 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,741 [INFO] ImportTextPane:157 - (OptionalMessage_WARN) Unknown mode (AF_PP) for pin (PB7)
+2019-04-02 21:47:33,803 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,803 [INFO] ImportTextPane:157 - (OptionalMessage_INFO) Successful Mode recovery for pin (PB7) with mode (Asynchronous)
+2019-04-02 21:47:33,803 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,803 [INFO] ImportTextPane:157 - (OptionalMessage_INFO) Successful Mode recovery for pin (PB6) with mode (Asynchronous)
+2019-04-02 21:47:33,897 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,897 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (DMA) : Parameter (Instance) has Id (ADC) currently not set
+2019-04-02 21:47:33,897 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,897 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (DMA) : Parameter (Direction) has Id (ADC) currently not set
+2019-04-02 21:47:33,897 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,897 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphInc) has Id (ADC) currently not set
+2019-04-02 21:47:33,897 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,897 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemInc) has Id (ADC) currently not set
+2019-04-02 21:47:33,897 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,897 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (DMA) : Parameter (PeriphDataAlignment) has Id (ADC) currently not set
+2019-04-02 21:47:33,897 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,897 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (DMA) : Parameter (MemDataAlignment) has Id (ADC) currently not set
+2019-04-02 21:47:33,897 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,897 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (DMA) : Parameter (Mode) has Id (ADC) currently not set
+2019-04-02 21:47:33,897 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,897 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (DMA) : Parameter (Priority) has Id (ADC) currently not set
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (ADC_AHBPERIPH)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (ADC_CLOCK_WB_FREQ)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (BKIN_MODE)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (BKIN1_FILTER)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (BKIN2_FILTER)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (BRKIN_GPIO_AF)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (BRKIN2_GPIO_AF)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (CLOCK_FREQUENCY)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (CLOCK_SOURCE)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (CPU_CLK_48_MHZ)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (DAC_TIMER_REMAPPING)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (DC_CURRENT_RS_MEAS)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (DEFAULT_DAC_MOTOR)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (DRIVES_NUMBER_SELECTION)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (EMERGENCY_STOP_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (EMERGENCY_STOP_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (EMERGENCY2_STOP_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (EMERGENCY2_STOP_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (ENC_A_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (ENC_A_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (ENC_B_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (ENC_B_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (ENC_INVERT_SPEED)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (ENC_TIMER_REMAPPING)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (ENCODER_AVAILABLE)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (EXT_CLOCK_FREQUENCY)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (FEEDBACK_NET_FILTERING)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (H1_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (H1_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (H2_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (H2_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (H3_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (H3_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (HALL_SENSORS_AVAILABLE)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (HALL_TIMER_REMAPPING)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (HFI_DEBUG_MODE)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (HFI_IDH_DELAY)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (HFI_MAXANGLEDIFF)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (HFI_RESTART_RPM_TH)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (HFI_RESTARTTIMESEC)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (HFI_REVERT_DIRECTION)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (HFI_STEPANGLE)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (HFI_WAITSYNCH)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (HFI_WAITTRACK)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (HIGH_SIDE_BRAKE_STATE)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (HW_COMPLEMENTED_LOW_SIDE)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Parameter (INRUSH_CURRLIMIT_AT_POWER_ON) has invalid value (true)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (INRUSH_CURRLIMIT_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (INRUSH_CURRLIMIT_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (INT_RC_OSC)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (LCD_JOYSTICK_FUNCTIONALITY)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (LCD_MODE)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (LDLQ_RATIO)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (LOW_SIDE_BRAKE_STATE)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (MAX_MODULATION_94_PER_CENT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (MC_WORKBENCH_VERSION)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (MCU)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (MCU_TYPE)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (MOTOR_TYPE)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCP_COMP_THRESHOLD)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCP_FILTER)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCP_INVERTINGINPUT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCP_INVERTINGINPUT_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCP_INVERTINGINPUT_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCP_NONINVERTINGINPUT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCP_NONINVERTINGINPUT_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCP_NONINVERTINGINPUT_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCP_OUTPUT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCP_OUTPUT_GPIO_AF)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCP_OUTPUT_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCP_OUTPUT_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCP_OUTPUT_MODE)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCP_OUTPUTPOL)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPA_INVERTINGINPUT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPA_INVERTINGINPUT_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPA_INVERTINGINPUT_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPA_NONINVERTINGINPUT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPA_NONINVERTINGINPUT_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPA_NONINVERTINGINPUT_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPA_OUTPUT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPA_OUTPUT_GPIO_AF)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPA_OUTPUT_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPA_OUTPUT_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPA_OUTPUT_MODE)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPA_OUTPUTPOL)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPB_INVERTINGINPUT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPB_INVERTINGINPUT_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPB_INVERTINGINPUT_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPB_NONINVERTINGINPUT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPB_NONINVERTINGINPUT_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPB_NONINVERTINGINPUT_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPB_OUTPUT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPB_OUTPUT_GPIO_AF)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPB_OUTPUT_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPB_OUTPUT_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPB_OUTPUT_MODE)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPB_OUTPUTPOL)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPC_INVERTINGINPUT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPC_INVERTINGINPUT_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPC_INVERTINGINPUT_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPC_NONINVERTINGINPUT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPC_NONINVERTINGINPUT_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPC_NONINVERTINGINPUT_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPC_OUTPUT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPC_OUTPUT_GPIO_AF)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPC_OUTPUT_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPC_OUTPUT_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPC_OUTPUT_MODE)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OCPC_OUTPUTPOL)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP_INVERTINGINPUT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP_INVERTINGINPUT_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP_INVERTINGINPUT_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP_INVERTINGINPUT_MODE)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP_NONINVERTINGINPUT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP_NONINVERTINGINPUT_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP_NONINVERTINGINPUT_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP_OUT_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP_OUT_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP_PGACONNECT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP_PGAGAIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP_TYPE_GAIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP1_INVERTINGINPUT_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP1_INVERTINGINPUT_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP1_INVERTINGINPUT_MODE)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP1_NONINVERTINGINPUT_PHA_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP1_NONINVERTINGINPUT_PHA_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP1_NONINVERTINGINPUT_PHB_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP1_NONINVERTINGINPUT_PHB_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP1_OUT_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP1_OUT_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP2_INVERTINGINPUT_GPIO_PIN)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP2_INVERTINGINPUT_GPIO_PORT)
+2019-04-02 21:47:33,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP2_INVERTINGINPUT_MODE)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP2_NONINVERTINGINPUT_PHA_GPIO_PIN)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP2_NONINVERTINGINPUT_PHA_GPIO_PORT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP2_NONINVERTINGINPUT_PHB_GPIO_PIN)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP2_NONINVERTINGINPUT_PHB_GPIO_PORT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP2_NONINVERTINGINPUT_PHC_GPIO_PIN)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP2_NONINVERTINGINPUT_PHC_GPIO_PORT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP2_OUT_GPIO_PIN)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPAMP2_OUT_GPIO_PORT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPEN_LOOP_K)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPEN_LOOP_OFF)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPEN_LOOP_SPEED_RAMP_DURATION_MS)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPEN_LOOP_SPEED_RPM)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPEN_LOOP_VF)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OPEN_LOOP_VOLTAGE_d)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OV_CURR_BYPASS_GPIO_PIN)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OV_CURR_BYPASS_GPIO_PORT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OVERCURR_FEEDBACK_POLARITY)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OVP_FILTER)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OVP_INVERTINGINPUT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OVP_INVERTINGINPUT_GPIO_PIN)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OVP_INVERTINGINPUT_GPIO_PORT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OVP_INVERTINGINPUT_MODE)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,928 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OVP_NONINVERTINGINPUT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OVP_NONINVERTINGINPUT_GPIO_PIN)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OVP_NONINVERTINGINPUT_GPIO_PORT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OVP_OUTPUT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OVP_OUTPUT_GPIO_AF)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OVP_OUTPUT_GPIO_PIN)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OVP_OUTPUT_GPIO_PORT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OVP_OUTPUT_MODE)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OVP_OUTPUTPOL)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (OVP_SELECTION)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_CURRENTS_ADC)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_CURRENTS_GPIO_PIN)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_CURRENTS_GPIO_PORT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_U_CURR_ADC)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_U_GPIO_PIN)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_U_GPIO_PORT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_UH_GPIO_AF)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_UH_GPIO_PIN)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_UH_GPIO_PORT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_UH_POLARITY)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_UL_GPIO_AF)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_UL_GPIO_PIN)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_UL_GPIO_PORT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_UL_POLARITY)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_V_CURR_ADC)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_V_GPIO_PIN)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_V_GPIO_PORT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_VH_GPIO_AF)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_VH_GPIO_PIN)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_VH_GPIO_PORT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_VH_POLARITY)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_VL_GPIO_AF)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_VL_GPIO_PIN)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_VL_GPIO_PORT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_VL_POLARITY)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_W_CURR_ADC)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_W_GPIO_PIN)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_W_GPIO_PORT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_WH_GPIO_AF)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_WH_GPIO_PIN)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_WH_GPIO_PORT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_WH_POLARITY)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_WL_GPIO_AF)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_WL_GPIO_PIN)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_WL_GPIO_PORT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PHASE_WL_POLARITY)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (PWM_TIMER_REMAPPING)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (R_BRAKE_GPIO_PIN)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (R_BRAKE_GPIO_PORT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (SPD_DIFFERENTIAL_TERM_ENABLING)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (START_STOP_POLARITY)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (START_STOP_POLARITY_EDGE)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (STSPIN32F0)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (TEMP_FDBK_GPIO_PIN)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (TEMP_FDBK_GPIO_PORT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (TFDIFFERENTIAL_TERM_ENABLING)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (USART_REMAPPING)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (USART_RX_GPIO_PIN)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (USART_RX_GPIO_PORT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (USART_SPEED)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (USART_TX_GPIO_PIN)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (USART_TX_GPIO_PORT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (VBUS_GPIO_PIN)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (VBUS_GPIO_PORT)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (WB_to_Mx_template_version)
+2019-04-02 21:47:33,944 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,944 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (MotorControl) : Invalid parameter (WB_to_Mx_version)
+2019-04-02 21:47:33,991 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,991 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (TIM1) : Parameter (Pulse) has Id (PWM Generation1 CH1) currently not set
+2019-04-02 21:47:33,991 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,991 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (TIM1) : Parameter (Pulse) has Id (PWM Generation2 CH2) currently not set
+2019-04-02 21:47:33,991 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:33,991 [INFO] ImportTextPane:157 - (OptionalMessage_ERROR) IP (TIM1) : Parameter (Pulse) has Id (PWM Generation3 CH3) currently not set
+2019-04-02 21:47:34,085 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:34,085 [INFO] ThirdPartyDb:263 - Close Third Party DataBase File (C:/Users/Aaron/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml)
+2019-04-02 21:47:34,100 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:34,100 [INFO] ThirdPartyDb:293 - Open Third Party DataBase File (C:/Users/Aaron/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 0 ms. number of Sw pack : 4
+2019-04-02 21:47:34,100 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:34,100 [INFO] ThirdPartyDb:263 - Close Third Party DataBase File (C:/Users/Aaron/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml)
+2019-04-02 21:47:34,100 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:34,100 [INFO] IntegrityCheckThread:94 - End integrity checks thread
+2019-04-02 21:47:34,178 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:34,163 [INFO] UtilMem:74 - End LoadConfig() Used Memory: 99593784 Bytes (132382720)
+2019-04-02 21:47:34,288 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:34,288 [INFO] ThirdPartyDb:293 - Open Third Party DataBase File (C:/Users/Aaron/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 0 ms. number of Sw pack : 4
+2019-04-02 21:47:34,756 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:34,756 [INFO] ThirdParty:1138 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 4.3.0
+2019-04-02 21:47:34,756 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:34,756 [INFO] ThirdParty:1138 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 6.0.1
+2019-04-02 21:47:34,756 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:34,756 [INFO] ThirdParty:1138 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 1.3.0
+2019-04-02 21:47:34,924 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:34,924 [INFO] CategoriesPane:241 - IPTable is NULL for IP MotorControl
+2019-04-02 21:47:34,924 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:34,924 [INFO] PinOutPanel:1236 - setPackage(No Configuration,No Configuration)
+2019-04-02 21:47:34,924 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:34,924 [INFO] PinOutPanel:1236 - setPackage(STM32F031C6Tx,LQFP48)
+2019-04-02 21:47:35,384 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:35,384 [INFO] CategoriesPane:241 - IPTable is NULL for IP MotorControl
+2019-04-02 21:47:35,896 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:35,896 [INFO] UtilMem:74 - Before build in PCC Used Memory: 103159736 Bytes (132382720)
+2019-04-02 21:47:36,652 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:36,652 [INFO] SharedServices:66 - Folder for power plug-in: C:/Users/Aaron/.stm32cubemx/plugins/power
+2019-04-02 21:47:36,652 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:36,652 [INFO] UtilMem:74 - After build in PCC Used Memory: 114067304 Bytes (132382720)
+2019-04-02 21:47:37,136 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:37,136 [INFO] CategoriesPane:241 - IPTable is NULL for IP MotorControl
+2019-04-02 21:47:37,928 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:37,928 [INFO] CategoriesPane:241 - IPTable is NULL for IP MotorControl
+2019-04-02 21:47:37,950 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:37,950 [INFO] OpenFileManager:283 - Restore cursor
+2019-04-02 21:47:37,981 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:37,981 [INFO] DbMcusXml:106 - Load MCU database from D:\software\STMicroelectronics\CubeMX\\db\/mcu/families.xml
+2019-04-02 21:47:38,637 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:38,637 [INFO] DbMcusJson:86 - JSON generation date=Tue Jan 08 16:24:13 CST 2019 (1546935853)
+2019-04-02 21:47:39,090 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:39,090 [INFO] DbMcus:192 - Found 1253 MCUs (1211 are supported by CubeMX, 1211 are visible in CubeMX)
+2019-04-02 21:47:39,090 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:39,090 [INFO] ApiDb:158 - Load user favorites file C:\Users\Aaron/.stm32cubemx/favorites.mcus.txt: 0 item(s)
+2019-04-02 21:47:39,090 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:39,090 [INFO] ApiDb:163 - User favorites MCUs=[]
+2019-04-02 21:47:39,090 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:39,090 [INFO] DbMcus:203 - Set 0 / 0 favorites MCUs
+2019-04-02 21:47:39,309 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:39,309 [INFO] CategoriesPane:241 - IPTable is NULL for IP MotorControl
+2019-04-02 21:47:39,528 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:39,528 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 163094432 Bytes (253624320)
+2019-04-02 21:47:39,543 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:39,543 [INFO] BlockDiagram:1534 - set Specific Code input for plugin: ADC
+2019-04-02 21:47:39,543 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:39,543 [INFO] BlockDiagram:1534 - set Specific Code input for plugin: NVIC
+2019-04-02 21:47:39,543 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:39,543 [INFO] BlockDiagram:1534 - set Specific Code input for plugin: MotorControl
+2019-04-02 21:47:39,543 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:39,543 [INFO] BlockDiagram:1534 - set Specific Code input for plugin: SYS
+2019-04-02 21:47:39,543 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:39,543 [INFO] BlockDiagram:1534 - set Specific Code input for plugin: USART
+2019-04-02 21:47:39,543 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:39,543 [INFO] BlockDiagram:1534 - set Specific Code input for plugin: DMA
+2019-04-02 21:47:39,543 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:39,543 [INFO] BlockDiagram:1534 - set Specific Code input for plugin: TIM1_8F0
+2019-04-02 21:47:39,559 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:39,559 [INFO] CodeGenerator:532 - code generatio: config db path: D:\software\STMicroelectronics\CubeMX\\db\
+2019-04-02 21:47:39,919 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:39,919 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\MXTmpFiles\license.tmp_save
+2019-04-02 21:47:40,137 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:40,137 [INFO] CodeEngine:202 - Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\MXTmpFiles\license.tmp
+2019-04-02 21:47:40,746 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:40,746 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\MXTmpFiles\gpio.tmp_save
+2019-04-02 21:47:40,840 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:40,840 [INFO] CodeEngine:202 - Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\MXTmpFiles\gpio.tmp
+2019-04-02 21:47:43,020 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:43,020 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\MXTmpFiles\dma.tmp_save
+2019-04-02 21:47:43,067 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:43,067 [INFO] CodeEngine:202 - Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\MXTmpFiles\dma.tmp
+2019-04-02 21:47:43,082 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:43,082 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\MXTmpFiles\dma_GV.tmp_save
+2019-04-02 21:47:43,129 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:43,129 [INFO] CodeEngine:202 - Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\MXTmpFiles\dma_GV.tmp
+2019-04-02 21:47:43,348 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:43,348 [INFO] ApiDbMcu:439 - Load IP Config File for MotorControl
+2019-04-02 21:47:43,379 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:43,379 [INFO] Middleware:939 - No code input for Bsp Dependency
+2019-04-02 21:47:43,457 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:43,457 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Src\motorcontrol.c_save
+2019-04-02 21:47:43,504 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Src\motorcontrol.c
+2019-04-02 21:47:43,520 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:43,520 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\motorcontrol.h_save
+2019-04-02 21:47:43,598 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\motorcontrol.h
+2019-04-02 21:47:43,629 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:43,629 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\drive_parameters.h_save
+2019-04-02 21:47:43,707 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\drive_parameters.h
+2019-04-02 21:47:43,738 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:43,738 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\mc_tasks.h_save
+2019-04-02 21:47:43,801 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\mc_tasks.h
+2019-04-02 21:47:43,816 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:43,816 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Src\mc_api.c_save
+2019-04-02 21:47:43,879 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Src\mc_api.c
+2019-04-02 21:47:43,895 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:43,895 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Src\motor_control_protocol.c_save
+2019-04-02 21:47:43,941 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Src\motor_control_protocol.c
+2019-04-02 21:47:43,957 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:43,957 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\mc_api.h_save
+2019-04-02 21:47:44,004 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\mc_api.h
+2019-04-02 21:47:44,020 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:44,020 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Src\mc_config.c_save
+2019-04-02 21:47:44,098 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Src\mc_config.c
+2019-04-02 21:47:44,113 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:44,113 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\mc_config.h_save
+2019-04-02 21:47:44,176 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\mc_config.h
+2019-04-02 21:47:44,207 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:44,207 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\mc_stm_types.h_save
+2019-04-02 21:47:44,254 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\mc_stm_types.h
+2019-04-02 21:47:44,269 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:44,269 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Src\mc_tasks.c_save
+2019-04-02 21:47:44,379 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Src\mc_tasks.c
+2019-04-02 21:47:44,410 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:44,410 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Src\regular_conversion_manager.c_save
+2019-04-02 21:47:44,473 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Src\regular_conversion_manager.c
+2019-04-02 21:47:44,504 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:44,504 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\regular_conversion_manager.h_save
+2019-04-02 21:47:44,566 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\regular_conversion_manager.h
+2019-04-02 21:47:44,597 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:44,597 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\parameters_conversion.h_save
+2019-04-02 21:47:44,660 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\parameters_conversion.h
+2019-04-02 21:47:44,691 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:44,676 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\parameters_conversion_f0xx.h_save
+2019-04-02 21:47:44,738 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\parameters_conversion_f0xx.h
+2019-04-02 21:47:44,754 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:44,754 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\pmsm_motor_parameters.h_save
+2019-04-02 21:47:44,801 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\pmsm_motor_parameters.h
+2019-04-02 21:47:44,816 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:44,816 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\power_stage_parameters.h_save
+2019-04-02 21:47:44,863 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\power_stage_parameters.h
+2019-04-02 21:47:44,879 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:44,879 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Src\stm32f0xx_mc_it.c_save
+2019-04-02 21:47:44,926 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Src\stm32f0xx_mc_it.c
+2019-04-02 21:47:44,957 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:44,957 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\mc_parameters.h_save
+2019-04-02 21:47:45,004 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\mc_parameters.h
+2019-04-02 21:47:45,035 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:45,035 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Src\mc_parameters.c_save
+2019-04-02 21:47:45,113 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Src\mc_parameters.c
+2019-04-02 21:47:45,113 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:45,113 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Src\ui_task.c_save
+2019-04-02 21:47:45,175 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Src\ui_task.c
+2019-04-02 21:47:45,207 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:45,207 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\ui_task.h_save
+2019-04-02 21:47:45,254 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\ui_task.h
+2019-04-02 21:47:45,269 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:45,269 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Src\user_interface.c_save
+2019-04-02 21:47:45,347 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Src\user_interface.c
+2019-04-02 21:47:45,363 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:45,363 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\user_interface.h_save
+2019-04-02 21:47:45,410 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\user_interface.h
+2019-04-02 21:47:45,441 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:45,441 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Src\stm32f0xx_it.c_save
+2019-04-02 21:47:45,519 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Src\stm32f0xx_it.c
+2019-04-02 21:47:45,519 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:45,519 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\stm32f0xx_it.h_save
+2019-04-02 21:47:45,582 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\stm32f0xx_it.h
+2019-04-02 21:47:45,597 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:45,597 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Src\stm32f0xx_hal_msp.c_save
+2019-04-02 21:47:45,675 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Src\stm32f0xx_hal_msp.c
+2019-04-02 21:47:45,691 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:45,691 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\MXTmpFiles\system.tmp_save
+2019-04-02 21:47:45,738 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:45,738 [INFO] CodeEngine:202 - Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\MXTmpFiles\system.tmp
+2019-04-02 21:47:45,753 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:45,753 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\stm32_assert.h_save
+2019-04-02 21:47:45,800 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\stm32_assert.h
+2019-04-02 21:47:45,847 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:45,847 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\stm32f0xx_hal_conf.h_save
+2019-04-02 21:47:45,910 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\stm32f0xx_hal_conf.h
+2019-04-02 21:47:46,003 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:46,003 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\main.h_save
+2019-04-02 21:47:46,066 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Inc\main.h
+2019-04-02 21:47:46,082 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:46,082 [INFO] CodeEngine:184 - oldGeneratedFile, C:\Users\Aaron\Desktop\stspin\spin32f0\Src\main.c_save
+2019-04-02 21:47:46,160 INFO  [LineInfo_to_exitCode.log_LineInfo] Generated code: C:\Users\Aaron\Desktop\stspin\spin32f0\Src\main.c
+2019-04-02 21:47:49,659 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:49,659 [INFO] ProjectBuilder:1412 - Time for Copy HAL[0] : 3046mS.
+2019-04-02 21:47:49,690 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:49,690 [INFO] ProjectBuilder:1974 - Project Generator version: 3.0.0
+2019-04-02 21:47:49,893 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:49,893 [INFO] ConfigFileManager:779 - The Die is : DIE444
+2019-04-02 21:47:52,143 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:52,143 [INFO] ConfigFileManager:1258 - mx.scratch is deleted!
+2019-04-02 21:47:52,143 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:52,143 [INFO] ProjectBuilder:2034 - Time for Generating toolchain IDE Files: 2469mS.
+2019-04-02 21:47:56,720 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:56,720 [INFO] ProjectBuilder:1316 - Time for Copy CMSIS : 4577mS.
+2019-04-02 21:47:57,423 DEBUG [LineInfo_to_exitCode.log_LineInfo] 2019-04-02 21:47:57,423 [INFO] ProjectBuilder:1316 - Time for Copy CMSIS : 703mS.
+2019-04-02 21:48:03,577 INFO  [Main.lambda$run$0] Code generation completed
+2019-04-02 21:48:03,577 DEBUG [Main.lambda$run$0] System exists with return code 0
