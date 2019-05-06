@@ -10,6 +10,8 @@ uint16_t 	MotorFinalEleAngle;
 
 u8 MOTOR_PHASE_SEQUENCE[7] = {0,3,5,4,1,2,6}; //阳工的轮子
 
+//u8 MOTOR_PHASE_SEQUENCE[7] = {0,1,3,2,5,6,4};
+
 //u8 MOTOR_PHASE_SEQUENCE[7] = {5,7,6,4,0,1,3}; //60 相位顺序表
 
 u16 MotorTimePoleBuf[6]; //角度数组

@@ -154,7 +154,7 @@ void ADC1_IRQHandler (void)
 	FocAdcBatteryBuf[FocGetAdcCnt]  = RegularConvData_Tab[4];		//母线电压
 	MotorCurr_ab.qI_Component1 =    FocMotorPhaseAOffset - FocMotorCurA;			//先进行自测，再到这里输出自测的差值
 	MotorCurr_ab.qI_Component2 = 	FocMotorPhaseBOffset - FocMotorCurB;
-	MotorAtatVolt_qd.qV_Component1 = FocSpeednow;			//SpeedPWM;之前是从窗口获得初值	
+	MotorAtatVolt_qd.qV_Component1 = 200;//FocSpeednow;			//SpeedPWM;之前是从窗口获得初值	
 	
 	//自测通过，并且有hall角度变动后，开始输出
 	if ( FocSelfCheckOK )
